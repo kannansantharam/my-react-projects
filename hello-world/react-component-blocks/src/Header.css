@@ -1,0 +1,16 @@
+.header{
+    background-color: #20232a;
+    color:#fff;
+    padding: 20px;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+}
+.logo_section img{
+    width: 35px
+}
+.header .headingName{
+    text-align: center;
+    width: 85%;
+    padding: 10px;
+}
