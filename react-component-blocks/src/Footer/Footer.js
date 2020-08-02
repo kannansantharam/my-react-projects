@@ -5,14 +5,28 @@ function ConstrustTodayDate(){
     return new Date()
 }
 class Footer extends React.Component {
-    construstTodayDate(){
-        return new Date().toLocaleTimeString()
+    constructor(props){
+        super(props);
+        this.state = {
+            date: new Date()
+        }
+    }
+    componentDidMount(){
+        this.timerId = setInterval(() => this.tick(),1000)
+    }
+    componentWillUnmount(){
+        clearInterval(this.timerId)
+    }
+    tick(){
+        this.setState({
+            date : new Date()
+        })
     }
     render() {
         return (
             <footer className='footer'>
                 <div>
-                    Copyright<sup>&copy;</sup> {new Date().toLocaleDateString()}
+                    Copyright<sup>&copy;</sup> {this.state.date.toLocaleTimeString()}
                 </div>
             </footer>
         )
