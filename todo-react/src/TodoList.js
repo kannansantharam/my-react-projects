@@ -4,9 +4,9 @@ function TodoList(myTodos) {
     return (
         myTodos.todo.map((myTodo, index) => {
             return (
-                <div key={myTodo + "_" + index}>
+                <li key={myTodo + "_" + index}>
                     <p>{myTodo}</p>
-                </div>
+                </li>
             )
         })
 

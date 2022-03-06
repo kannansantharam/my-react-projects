@@ -15,7 +15,9 @@ function App() {
         <button type="button" onClick={addTodo} className="btn btn-primary">Add Todo</button>
       </header>
       <section>
-        <TodoList todo={myTodos} />
+        <ul>
+          <TodoList todo={myTodos} />
+        </ul>
       </section>
     </div>
   );
