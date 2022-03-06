@@ -1,8 +1,15 @@
 import './App.css';
 
-function TodoList() {
+function TodoList(myTodos) {
     return (
-        <div>a</div>
+        myTodos.todo.map((myTodo, index) => {
+            return (
+                <div key={myTodo + "_" + index}>
+                    <p>{myTodo}</p>
+                </div>
+            )
+        })
+
     );
 }
 

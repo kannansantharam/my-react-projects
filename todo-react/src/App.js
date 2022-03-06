@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import './App.css';
 import TodoList from './TodoList'
-function addTodo() {
-  let inputValue = document.getElementById("todoValue").value;
-  console.log(inputValue)
-}
 function App() {
+  const [myTodos, setmyTodos] = useState([]);
+  const addTodo = () => {
+    let inputValue = document.getElementById("todoValue").value;
+    console.log(inputValue);
+    setmyTodos((myTodos) => [...myTodos, inputValue])
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +15,7 @@ function App() {
         <button type="button" onClick={addTodo} className="btn btn-primary">Add Todo</button>
       </header>
       <section>
-        <TodoList />
+        <TodoList todo={myTodos} />
       </section>
     </div>
   );
