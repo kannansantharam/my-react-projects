@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import TodoList from './TodoList'
+import Colleges from './Colleges';
 function App() {
   const [myTodos, setmyTodos] = useState([]);
   const addTodo = (stateTodos) => {
@@ -22,6 +23,9 @@ function App() {
         <ul>
           <TodoList todo={myTodos} updateState={addTodo} />
         </ul>
+      </section>
+      <section>
+        <Colleges></Colleges>
       </section>
     </div>
   );
