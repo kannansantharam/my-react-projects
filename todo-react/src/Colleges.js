@@ -13,7 +13,6 @@ function Colleges() {
             await fetch("http://universities.hipolabs.com/search?country=" + country)
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
                     setmyDropDownValue(data);
                 })
         }
