@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Score from './Score';
 import { Button } from '@material-ui/core';
+import './App.css';
 function GameHome() {
     const [drawnCard, setDrawnCard] = useState([]);
     const [deck, setDeck] = useState([]);
@@ -42,7 +43,7 @@ function GameHome() {
             setTotalPlayerScore(totalValue) : setTotalDealerScore(totalValue);
     }
     const drawCards = async (e, type) => {
-        setCurretPlayer(type)
+        setCurretPlayer(type);
         await axios.get(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=2`)
             .then((data) => {
                 setDrawnCard(data.data.cards);
@@ -69,13 +70,15 @@ function GameHome() {
                 As a Player you have an choice, click on the <i>Hit</i> button to play or
                 <i> Stand</i> button to give chance to the Dealer
                 <br />
-                <Button variant="contained" color="primary" onClick={e => drawCards(e, "Player")}>Hit (Play)</Button>
-                <Button variant="contained" color="primary" onClick={e => drawCards(e, "Dealer")}> Stand (Give chance to Dealer)</Button>
+                <Button variant="contained" className="primary" color="primary" onClick={e => drawCards(e, "Player")}>Hit (Play)</Button>
+                <Button variant="contained" className="primary" color="primary" onClick={e => drawCards(e, "Dealer")}> Stand (Give chance to Dealer)</Button>
 
                 <div className='drawing-cards'>
+                    <p className="dealer-playing hide">{curretPlayer} drawing the cards</p>
+                    <p className="player-playing hide">It's your turn, draw the cards</p>
+                    <Button variant="contained" className="primary hide" color="primary" onClick={e => drawCards(e, "Player")}> Draw Cards</Button>
                     <p>Your current score is {currentPlayerScore}</p>
                     <p>Dealer's current score is {currentDealerScore}</p>
-                    <i>{curretPlayer} drawing cards...</i>
                 </div>
             </div>
             <br />
