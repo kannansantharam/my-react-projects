@@ -1,0 +1,23 @@
+Object of the Game
+Player attempts to beat the dealer by getting a count as close to 21 as possible, without going over 21.
+
+Game process
+There are two participants in the game: "Dealer" and "Player"
+
+Starting Game State:
+Dealer gets dealt two cards
+Player gets dealt two cards
+
+If at any point the dealer's hand or the player's hand totals > 21 points, they automatically lose bust
+
+Player plays first
+x
+Player has a binary choice: hit or stand with buttons allowing a user to make that choice
+If the player chooses to hit, then they get dealt a new card
+4: Dealer plays after the player chooses to stand
+    Dealer will hit until they have a card total of greater than 17
+5: If no one has automatically lost due to busting, then compare point totals and declare the one with the higher point total the winner
+
+j10
+q 10
+k10

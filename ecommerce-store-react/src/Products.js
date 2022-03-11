@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import Card from './Card'
 function Products() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setProducts(data)
+        axios.get('https://fakestoreapi.com/products')
+            .then(function (res) {
+                console.log(res);
+                setProducts(res.data)
             })
     }, [])
 
