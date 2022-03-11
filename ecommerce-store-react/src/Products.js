@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Card from './Card'
 function Products() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -13,21 +14,7 @@ function Products() {
 
 
     return (
-        <div>
-            {
-                products.map((product) => {
-                    return (
-                        <div key={product.id} className="card">
-                            <div className="card-image">
-                                <img src={product.image} lazloading="lazy" width="100px" />
-                            </div>
-                            <div className="card-title">
-                                {product.title}
-                            </div>
-                        </div>)
-                })
-            }
-        </div>
+        <Card products={products}></Card>
     )
 }
 export default Products;

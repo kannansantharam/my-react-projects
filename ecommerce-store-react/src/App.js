@@ -13,6 +13,9 @@ function App() {
             <Header />
             <Products />
           </Route>
+          <Route path="/product/:productId">
+            <Header />
+          </Route>
           <Route path="/categories">
             <Header />
           </Route>

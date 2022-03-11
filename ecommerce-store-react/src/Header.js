@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 function Header() {
     return (
-        <div>
+        <div className='header-section'>
             <div className="header">
                 <nav>
                     <ul>
