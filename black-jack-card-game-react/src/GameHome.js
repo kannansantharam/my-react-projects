@@ -152,14 +152,14 @@ function GameHome() {
                 <Button variant="contained" className="primary " color="primary" onClick={restartGame}> Restart the game</Button>
             </div>
             <div className="main-button-section">
-                <p className="initial-button"><b>Player plays first,</b> and as a Player you have an choice, click on the <i>Hit</i> button to play or
+                <p className="initial-button text"><b>Player plays first,</b> and as a Player you have an choice, click on the <i>Hit</i> button to play or
                     <i> Stand</i> button to give chance to the Dealer<i style={{ fontSize: "12px", }}> (note: the dealer will play until he/she gets total score of 17)</i></p>
 
                 <Button variant="contained" className="primary initial-button" color="primary" onClick={() => onPlayerChoice("Player")}>Hit (Play)</Button>
                 <Button variant="contained" className="primary initial-button" color="primary" onClick={() => drawDealerCards()}> Stand (Give chance to Dealer)</Button>
 
                 <div className='drawing-cards hide'>
-                    <p className="dealer-playing hide"><i>Dealer drawing the cards...</i></p>
+                    <p className="dealer-playing hide"><b><i>Dealer drawing the cards...</i></b></p>
                     <p className="player-playing hide">It's your turn, draw the cards</p>
                     <Button variant="contained" className="primary hide drawCardsBtn" color="primary" onClick={() => drawCards("Player")}> Draw cards</Button>
                     <p>Your current score is {currentPlayerScore}</p>
