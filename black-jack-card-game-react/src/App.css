@@ -14,11 +14,27 @@
   display: none;
 }
 
+.max-score {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
 .main-button-section {
   width: 800px;
 }
 
 .main-button-section button.primary {
   margin: 10px 10px 0 0;
+}
+
+.main-button-section .drawing-cards .current-card-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 220px;
 }
 /*# sourceMappingURL=App.css.map */
