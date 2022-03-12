@@ -73,7 +73,7 @@ function GameHome() {
             if (total <= 17) {
                 setTimeout(() => {
                     drawDealerCards()
-                }, 1500)
+                }, 1000)
             } else {
                 onPlayerChoice("Player")
             }
