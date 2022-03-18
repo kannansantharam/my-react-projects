@@ -1,0 +1,25 @@
+.header-section {
+  margin-bottom: 90px;
+  z-index: 10;
+}
+
+.header-section .header {
+  -webkit-box-shadow: 2px 2px 10px 2px #ccc;
+          box-shadow: 2px 2px 10px 2px #ccc;
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 10px 20px;
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.header-section .header ul li {
+  display: inline-block;
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+}
+/*# sourceMappingURL=App.css.map */
