@@ -1,3 +1,4 @@
+import { FaEdit, FaTrash } from "react-icons/fa";
 function Users({ users }) {
     const onSelectAllInputChange = (event) => {
         console.log("se")
@@ -17,7 +18,7 @@ function Users({ users }) {
         console.log(event);
         let parentTr = event.target.parentNode.parentNode;
         if (event.target.checked) {
-            parentTr.style.backgroundColor = "#53bab9"
+            parentTr.style.backgroundColor = "#ddd"
         } else {
             parentTr.style.backgroundColor = "transparent"
         }
@@ -44,7 +45,7 @@ function Users({ users }) {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.role}</td>
-                        <td><span>Edit | </span><span>Delete</span></td>
+                        <td><FaEdit /> <FaTrash /></td>
                     </tr>
                 })}
 

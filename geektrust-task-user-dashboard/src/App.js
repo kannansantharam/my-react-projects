@@ -9,6 +9,7 @@ function App() {
   const [userPerPage, setUserPerPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(0)
   const [totalUserForPerPage, setTotalUserForPerPage] = useState(10);
+  const [filUsers, setFilUsers] = useState(users)
 
   useEffect(() => {
     fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
@@ -16,7 +17,7 @@ function App() {
       .then((userData) => {
         console.log(userData);
         setUsers(userData);
-        // setUserPerPage(userData.splice(0, totalUserForPerPage));
+        setFilUsers(userData)
       });
   }, []);
   const onPageChange = (number, origin) => {
@@ -29,22 +30,42 @@ function App() {
     setUserPerPage(currentUserNumber)
     setCurrentPage(number);
   }
-  // useEffect(() => {
-  //   let currentUserNumber = currentPage * userPerPage === 0 ? 10 : userPerPage; //3*10
-  //   console.log(currentUserNumber)
-  //   // setUserPerPage(currentUserNumber);
-  // }, [currentPage])
+  const debounce = (func, delay) => {
+    let debounceTimer
+    return function () {
+      const context = this
+      const args = arguments
+      clearTimeout(debounceTimer)
+      debounceTimer
+        = setTimeout(() => func.apply(context, args), delay)
+    }
+  }
+  const filterUsers = debounce(function (keyword) {
+    console.log(keyword)
+
+    let filteredUsers = users.filter((value) => {
+      if (value.id.toLowerCase().includes(keyword)
+        || value.name.toLowerCase().includes(keyword)
+        || value.email.toLowerCase().includes(keyword)
+        || value.role.toLowerCase().includes(keyword)
+      ) {
+        return value
+      }
+    });
+    console.log(filteredUsers)
+    setFilUsers(filteredUsers);
+  }, 500);
   return (
     <div className="main-container">
       <header>
-        <Header />
+        <Header filterUsers={filterUsers} />
       </header>
       <section className="user-list">
-        <Users users={users.slice(userPerPage, userPerPage + totalUserForPerPage)} />
+        <Users users={filUsers.slice(userPerPage, userPerPage + totalUserForPerPage)} />
       </section>
       <section className="pagination-section">
         <Pagination
-          totalUsers={users.length}
+          totalUsers={filUsers.length}
           totalUserPerPage={totalUserForPerPage}
           onPageNumberChange={onPageChange}
         />
