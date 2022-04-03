@@ -14,29 +14,42 @@ function App() {
     fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
       .then((response) => response.json())
       .then((userData) => {
-        console.log(userData)
+        console.log(userData);
         setUsers(userData);
         // setUserPerPage(userData.splice(0, totalUserForPerPage));
       });
   }, []);
-  const onPageChange = (number) => {
-    console.log("page ", number);
+  const onPageChange = (number, origin) => {
+    if (origin === "previousIndex") {
+      number = currentPage - 1;
+    } else if ((origin === "nextIndex")) {
+      number = currentPage + 1
+    }
+    let currentUserNumber = number * totalUserForPerPage; //3*10
+    setUserPerPage(currentUserNumber)
     setCurrentPage(number);
   }
-  useEffect(() => {
-    let currentUserNumber = currentPage * userPerPage.length; //3*10
-    console.log(currentUserNumber)
-    setUserPerPage(currentUserNumber);
-  }, [currentPage])
+  // useEffect(() => {
+  //   let currentUserNumber = currentPage * userPerPage === 0 ? 10 : userPerPage; //3*10
+  //   console.log(currentUserNumber)
+  //   // setUserPerPage(currentUserNumber);
+  // }, [currentPage])
   return (
-    <div>
-      <Header />
-      <Users users={users.splice(userPerPage, totalUserForPerPage)} />
-      <Pagination
-        totalUsers={users.length}
-        totalUserPerPage={users.splice(userPerPage, totalUserForPerPage).length}
-        onPageNumberChange={onPageChange}
-      />
+    <div className="main-container">
+      <header>
+        <Header />
+      </header>
+      <section className="user-list">
+        <Users users={users.slice(userPerPage, userPerPage + 10)} />
+      </section>
+      <section className="pagination-section">
+        <Pagination
+          totalUsers={users.length}
+          totalUserPerPage={totalUserForPerPage}
+          onPageNumberChange={onPageChange}
+        />
+      </section>
+
     </div>
   );
 }

@@ -1,6 +1,10 @@
 
 function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange }) {
-
+    if (!totalUsers) {
+        return (
+            <></>
+        )
+    }
     const totalPageNumbers = Math.ceil(totalUsers / totalUserPerPage);
     const totalPages = [];
     for (let i = 1; i <= totalPageNumbers; i++) {
@@ -10,13 +14,13 @@ function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange }) {
     return (
         <div>
             <ul>
-                <li>Previous</li>
+                <li onClick={() => onPageNumberChange(0, "previousIndex")}>Previous</li>
                 {
                     totalPages.map((number) => {
-                        return <li key={number} onClick={() => onPageNumberChange(number + 1)}>{number}</li>
+                        return <li key={number} onClick={() => onPageNumberChange(number - 1, "pageIndex")}>{number}</li>
                     })
                 }
-                <li>Next</li>
+                <li onClick={() => onPageNumberChange(0, "nextIndex")}>Next</li>
             </ul>
         </div>
     )
