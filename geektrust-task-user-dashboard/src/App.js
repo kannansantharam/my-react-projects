@@ -54,6 +54,7 @@ function App() {
     });
     console.log(filteredUsers)
     setFilUsers(filteredUsers);
+    setUserPerPage(0);
   }, 500);
   return (
     <div className="main-container">
