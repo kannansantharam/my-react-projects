@@ -14,7 +14,7 @@ function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange }) {
     return (
         <div>
             <ul>
-                <li onClick={() => onPageNumberChange(0, "previousIndex")}>Previous</li>
+                <li onClick={() => onPageNumberChange(0, "previousIndex")}> Previous </li>
                 {
                     totalPages.map((number) => {
                         return <li key={number} onClick={() => onPageNumberChange(number - 1, "pageIndex")}>{number}</li>

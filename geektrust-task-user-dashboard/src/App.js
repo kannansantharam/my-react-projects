@@ -40,7 +40,7 @@ function App() {
         <Header />
       </header>
       <section className="user-list">
-        <Users users={users.slice(userPerPage, userPerPage + 10)} />
+        <Users users={users.slice(userPerPage, userPerPage + totalUserForPerPage)} />
       </section>
       <section className="pagination-section">
         <Pagination
@@ -49,7 +49,16 @@ function App() {
           onPageNumberChange={onPageChange}
         />
       </section>
+      <div className="user-per-page">
+        Users per page
+        <select onChange={(e) => { setTotalUserForPerPage(e.target.value) }}>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
 
+        </select>
+      </div>
     </div>
   );
 }
