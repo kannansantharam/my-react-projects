@@ -1,9 +1,16 @@
 function Users({ users }) {
-    const onSelectAllInputChange = () => {
+    const onSelectAllInputChange = (event) => {
         console.log("se")
+
         let checkBoxes = document.querySelectorAll(".selectUser");
         checkBoxes.forEach((inputBox) => {
-            inputBox.click();
+            if (event.target.checked) {
+                inputBox.checked = true;
+                inputBox.parentNode.parentNode.style.backgroundColor = "#53bab9"
+            } else {
+                inputBox.checked = false
+                inputBox.parentNode.parentNode.style.backgroundColor = "transparent"
+            }
         })
     }
     const onInputChange = (event) => {
@@ -20,11 +27,12 @@ function Users({ users }) {
         <table>
             <thead>
                 <tr>
-                    <th><input type="checkbox" className="selectAll" onChange={() => { onSelectAllInputChange() }} /></th>
+                    <th><input type="checkbox" className="selectAll" onChange={(event) => { onSelectAllInputChange(event) }} /></th>
                     <th>ID </th>
                     <th>Name </th>
                     <th>Email </th>
                     <th>Role </th>
+                    <th>Action </th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +44,7 @@ function Users({ users }) {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.role}</td>
+                        <td><span>Edit | </span><span>Delete</span></td>
                     </tr>
                 })}
 

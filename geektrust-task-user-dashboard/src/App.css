@@ -43,23 +43,19 @@ body .header ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .pagination-section ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 50%;
 }
 
 .pagination-section ul li {
-  width: 96px;
+  width: 100px;
   list-style-type: none;
   text-align: center;
   background-color: #54BAB9;
@@ -69,5 +65,9 @@ body .header ul li {
   border-radius: 20px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.pagination-section ul li.page-numbers {
+  width: 20px;
 }
 /*# sourceMappingURL=App.css.map */
