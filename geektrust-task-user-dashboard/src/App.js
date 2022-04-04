@@ -9,7 +9,8 @@ function App() {
   const [userPerPage, setUserPerPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(0)
   const [totalUserForPerPage, setTotalUserForPerPage] = useState(10);
-  const [filUsers, setFilUsers] = useState(users)
+  const [filUsers, setFilUsers] = useState(users);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
@@ -17,7 +18,8 @@ function App() {
       .then((userData) => {
         console.log(userData);
         setUsers(userData);
-        setFilUsers(userData)
+        setFilUsers(userData);
+        setIsLoading(false)
       });
   }, []);
   const onPageChange = (number, origin) => {
@@ -62,7 +64,8 @@ function App() {
         <Header filterUsers={filterUsers} />
       </header>
       <section className="user-list">
-        <Users users={filUsers.slice(userPerPage, userPerPage + totalUserForPerPage)} />
+        {isLoading ? <i>loading users...</i> :
+          <Users users={filUsers.slice(userPerPage, userPerPage + totalUserForPerPage)} />}
       </section>
       <section className="pagination-section">
         <Pagination
