@@ -1,8 +1,6 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 function Users({ users }) {
     const onSelectAllInputChange = (event) => {
-        console.log("se")
-
         let checkBoxes = document.querySelectorAll(".selectUser");
         checkBoxes.forEach((inputBox) => {
             if (event.target.checked) {
@@ -15,7 +13,6 @@ function Users({ users }) {
         })
     }
     const onInputChange = (event) => {
-        console.log(event);
         let parentTr = event.target.parentNode.parentNode;
         if (event.target.checked) {
             parentTr.style.backgroundColor = "#ddd"
@@ -23,6 +20,10 @@ function Users({ users }) {
             parentTr.style.backgroundColor = "transparent"
         }
 
+    }
+    const removeUser = (event) => {
+        let parentTr = event.currentTarget.parentNode.parentNode;
+        parentTr.remove()
     }
     return (
         <table>
@@ -40,12 +41,15 @@ function Users({ users }) {
 
                 {users.map((user) => {
                     return <tr key={user.id}>
-                        <td><input type="checkbox" className="selectUser" onChange={(event) => { onInputChange(event) }} /></td>
+                        <td><input type="checkbox" name="checkbox" className="selectUser" onChange={(event) => { onInputChange(event) }} /></td>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.role}</td>
-                        <td><FaEdit /> <FaTrash /></td>
+                        <td>
+                            <span className="actionButtons" onClick={(event) => editUser(event)} ><FaEdit /></span>
+                            <span className="actionButtons" onClick={(event) => removeUser(event)} ><FaTrash /></span>
+                        </td>
                     </tr>
                 })}
 
