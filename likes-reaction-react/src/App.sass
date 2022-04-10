@@ -1,13 +1,19 @@
 body
     display: flex
-    align-items: center
     justify-content: center
-    height: 100vh
+    .posts-section
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .image-post
+            margin: 10px 0
+            img
+                width: 400px
     .reaction-section
         display: flex
         flex-direction: row
         align-content: center
-        justify-content: center
         align-items: center
         .reaction-counts
             display: flex

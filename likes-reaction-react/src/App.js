@@ -1,19 +1,14 @@
 import './App.css';
-import Reactions from "./Reaction/Reactions"
+import Posts from './Images/Posts';
+
 
 function App() {
   return (
     <div className="App">
       Hi Rocketlane
       <div>
-        Component 1
-        <Reactions />
+        <Posts />
       </div>
-      <div>
-        Component 2
-        <Reactions />
-      </div>
-
     </div>
   );
 }
