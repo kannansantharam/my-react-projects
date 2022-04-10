@@ -1,3 +1,3 @@
 #Task for comapany X
 
-#Builing Facebook Like and Reactions feature in react
+#Builing Facebook's Like and Reactions feature in react
