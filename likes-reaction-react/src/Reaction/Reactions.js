@@ -76,15 +76,15 @@ function Reactions() {
             <div className="reaction-counts">
                 {state.LikeCount ?
                     <div className={"like-count icon-count " + (!state.toggleLike ? 'active' : '')} onClick={() => updateCounts("LikeCount")}>
-                        {Like}  {state.LikeCount}
+                        {Like} .  {state.LikeCount}
                     </div> : ''}
                 {state.HeartCount ?
                     <div className={"heart-count icon-count " + (!state.toggleHeart ? 'active' : '')} onClick={() => updateCounts("HeartCount")}>
-                        {HeartIcon}  {state.HeartCount}
+                        {HeartIcon} . {state.HeartCount}
                     </div> : ''}
                 {state.ClapCount ?
                     <div className={"clap-count icon-count " + (!state.toggleClap ? 'active' : '')} onClick={() => updateCounts("ClapCount")}>
-                        {Clap} {state.ClapCount}
+                        {Clap} . {state.ClapCount}
                     </div> : ''}
             </div>
             <ReactionIcons updateCounts={updateCounts} />
