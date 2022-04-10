@@ -10,6 +10,11 @@ body
             margin: 10px 0
             img
                 width: 400px
+        .comments-section
+            margin-left: 20px
+            .user-comment
+                .user-name
+                    font-weight: bold
     .reaction-section
         display: flex
         flex-direction: row
@@ -24,9 +29,11 @@ body
                 padding: 5px
                 display: flex
                 align-items: center
-                width: 60px
                 justify-content: space-evenly
                 cursor: pointer
+                font-size: 14px
+                svg
+                    width: 20px
                 &:hover
                     background-color: #f1f1f1
                 &.active

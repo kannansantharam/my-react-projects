@@ -56,15 +56,16 @@ function reducer(state, action) {
             return state
     }
 }
-let initialState = {
-    LikeCount: 8,
-    HeartCount: 96,
-    ClapCount: 20,
-    toggleLike: true, //if true increment value
-    toggleHeart: true,//if true increment value
-    toggleClap: true //if true increment value
-}
-function Reactions() {
+
+function Reactions({ like, heart, clap }) {
+    let initialState = {
+        LikeCount: like ? like : 0,
+        HeartCount: heart ? heart : 0,
+        ClapCount: clap ? clap : 0,
+        toggleLike: true, //if true increment value
+        toggleHeart: true,//if true increment value
+        toggleClap: true //if true increment value
+    }
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const updateCounts = (actionType) => {

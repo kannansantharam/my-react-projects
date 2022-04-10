@@ -31,6 +31,14 @@ body .posts-section .image-post img {
   width: 400px;
 }
 
+body .posts-section .comments-section {
+  margin-left: 20px;
+}
+
+body .posts-section .comments-section .user-comment .user-name {
+  font-weight: bold;
+}
+
 body .reaction-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,11 +71,15 @@ body .reaction-section .reaction-counts .icon-count {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   cursor: pointer;
+  font-size: 14px;
+}
+
+body .reaction-section .reaction-counts .icon-count svg {
+  width: 20px;
 }
 
 body .reaction-section .reaction-counts .icon-count:hover {

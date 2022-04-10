@@ -1,5 +1,5 @@
 import './App.css';
-import Posts from './Images/Posts';
+import Posts from './Posts/Posts';
 
 
 function App() {
