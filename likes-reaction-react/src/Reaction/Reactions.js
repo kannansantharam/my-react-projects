@@ -5,20 +5,28 @@ function reducer(state, action) {
     console.log(state)
     switch (action.type) {
         case 'LikeCount':
-            return { ...state, LikeCount: state.LikeCount === 0 ? 1 : 0 };
+            let like = state.toggleLike ? state.LikeCount + 1 : state.LikeCount - 1;
+            return { ...state, LikeCount: like, toggleLike: !state.toggleLike };
+
         case 'HeartCount':
-            return { ...state, HeartCount: state.HeartCount === 0 ? 1 : 0 };
+            let heart = state.toggleHeart ? state.HeartCount + 1 : state.HeartCount - 1;
+            return { ...state, HeartCount: heart, toggleHeart: !state.toggleHeart };
 
         case 'ClapCount':
-            return { ...state, ClapCount: state.ClapCount === 0 ? 1 : 0 };
+            let clap = state.toggleClap ? state.ClapCount + 1 : state.ClapCount - 1;
+            return { ...state, ClapCount: clap, toggleClap: !state.toggleClap };
+
         default:
             return state
     }
 }
 let initialState = {
-    LikeCount: 0,
-    HeartCount: 0,
-    ClapCount: 0
+    LikeCount: 8,
+    HeartCount: 96,
+    ClapCount: 20,
+    toggleLike: true, //if true increment value
+    toggleHeart: true,//if true increment value
+    toggleClap: true //if true increment value
 }
 function Reactions() {
     const [state, dispatch] = useReducer(reducer, initialState);

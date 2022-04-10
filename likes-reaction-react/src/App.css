@@ -83,7 +83,7 @@ body .reaction-section .reaction-icon-section .reaction-buttons {
       justify-content: space-around;
   position: absolute;
   top: -45px;
-  left: -37px;
+  left: -62px;
   z-index: 9;
 }
 
@@ -96,6 +96,32 @@ body .reaction-section .reaction-icon-section .reaction-buttons .react-button:ho
           transform: scale(1.3) translate(0px, -10px);
   -webkit-transition: 300ms;
   transition: 300ms;
+}
+
+body .reaction-section .reaction-icon-section .reaction-buttons .react-button:hover div.react-button-title {
+  display: block;
+}
+
+body .reaction-section .reaction-icon-section .reaction-buttons .react-button:hover div.react-button-title.react-clap {
+  left: -20px;
+}
+
+body .reaction-section .reaction-icon-section .reaction-buttons .react-button:hover div.react-button-title.react-heart {
+  left: -9px;
+}
+
+body .reaction-section .reaction-icon-section .reaction-buttons .react-button .react-button-title {
+  position: absolute;
+  top: -25px;
+  background-color: black;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 50px;
+  left: -4px;
+  font-size: 12px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  display: none;
 }
 
 body .reaction-section .reaction-icon-section .react-trigger-section {

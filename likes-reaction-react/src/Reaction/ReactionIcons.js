@@ -16,9 +16,18 @@ function ReactionIcons({ updateCounts }) {
         <div className="reaction-icon-section">
             {isShowReaction ?
                 <div className="reaction-buttons">
-                    <div className="react-button" onClick={() => updateReactioCount("LikeCount")}> {Like}</div>
-                    <div className="react-button" onClick={() => updateReactioCount("HeartCount")}> {HeartIcon}</div>
-                    <div className="react-button" onClick={() => updateReactioCount("ClapCount")}> {Clap}</div>
+                    <div className="react-button" onClick={() => updateReactioCount("LikeCount")}>
+                        <div className="react-button-title react-like">Like</div>
+                        {Like}
+                    </div>
+                    <div className="react-button" onClick={() => updateReactioCount("HeartCount")}>
+                        <div className="react-button-title react-heart">Heart</div>
+                        {HeartIcon}
+                    </div>
+                    <div className="react-button" onClick={() => updateReactioCount("ClapCount")}>
+                        <div className="react-button-title react-clap">Appreciate</div>
+                        {Clap}
+                    </div>
                 </div>
                 : ''}
 

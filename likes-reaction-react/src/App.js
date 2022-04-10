@@ -5,7 +5,15 @@ function App() {
   return (
     <div className="App">
       Hi Rocketlane
-      <Reactions />
+      <div>
+        Component 1
+        <Reactions />
+      </div>
+      <div>
+        Component 2
+        <Reactions />
+      </div>
+
     </div>
   );
 }

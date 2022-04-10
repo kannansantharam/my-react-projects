@@ -39,13 +39,30 @@ body
                 justify-content: space-around
                 position: absolute
                 top: -45px
-                left: -37px
+                left: -62px
                 z-index: 9
                 .react-button
                     cursor: pointer
                     &:hover
                         transform: scale(1.3) translate(0px, -10px)
                         transition: 300ms
+                        div.react-button-title
+                            display: block
+                        div.react-button-title.react-clap
+                            left: -20px
+                        div.react-button-title.react-heart
+                            left: -9px
+                    .react-button-title
+                        position: absolute
+                        top: -25px
+                        background-color: black
+                        color: #fff
+                        padding: 4px 8px
+                        border-radius: 50px
+                        left: -4px
+                        font-size: 12px
+                        transform: scale(0.8)
+                        display: none
             .react-trigger-section
                 display: flex
                 justify-content: center
