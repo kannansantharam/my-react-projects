@@ -5,4 +5,4 @@
 #Update 1
 Facebook/LinkedIn's Reaction feature implemented. Reuse the component anywhere in your react.
 
-##Just Import the   ##<Reactions /> component in any other components
+##Just Import the   ## < Reactions /> component in any other components
