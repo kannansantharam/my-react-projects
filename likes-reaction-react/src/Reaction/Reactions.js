@@ -1,6 +1,8 @@
 import { useReducer } from "react";
+import axios from "axios";
 import { HeartIcon, Like, Clap } from './Icons'
 import ReactionIcons from './ReactionIcons'
+import Summary from "./Summary";
 function reducer(state, action) {
     let newState = {};
     switch (action.type) {
@@ -51,7 +53,8 @@ function reducer(state, action) {
                 newState["toggleHeart"] = !state.toggleHeart
             }
             return { ...state, ...newState };
-
+        case 'Users':
+            return { ...state, users: action.data }
         default:
             return state
     }
@@ -63,28 +66,75 @@ function Reactions({ like, heart, clap }) {
         HeartCount: heart ? heart : 0,
         ClapCount: clap ? clap : 0,
         toggleLike: true, //if true increment value
-        toggleHeart: true,//if true increment value
-        toggleClap: true //if true increment value
+        toggleHeart: true,
+        toggleClap: true,
+        users: []
     }
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const updateCounts = (actionType) => {
         dispatch({ type: actionType })
     }
+
+    const getUserContentReactions = async () => {
+        if (state.users.length) {
+            return state.users;
+        }
+        console.log("Api call");
+        let users = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/users', {});
+        let userContentReaction = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions', {})
+        let promise = [users, userContentReaction];
+        try {
+            let users = await Promise.all(promise);
+            console.log(users);
+            dispatch({ type: "Users", data: users });
+        } catch (ex) {
+            console.log(ex)
+            return '';
+        }
+    }
+    const showReactionSummary = (element) => {
+        console.log("summart ", element);
+        document.querySelectorAll(".reaction-summary-section").forEach((node) => {
+            node.style.display = "none"
+        })
+        getUserContentReactions();
+        element.target.parentNode.parentNode.querySelector(".reaction-summary-section") ? element.target.parentNode.parentNode.querySelector(".reaction-summary-section").style.display = "block" : ''
+    }
+    const hideReactionSummary = () => {
+        document.querySelectorAll(".reaction-summary-section").forEach((node) => {
+            node.style.display = "none"
+        })
+    }
     return (
         <div className="reaction-section">
+            <div className="reaction-summary-section">
+                <Summary users={state.users} />
+            </div>
 
             <div className="reaction-counts">
                 {state.LikeCount ?
-                    <div className={"like-count icon-count " + (!state.toggleLike ? 'active' : '')} onClick={() => updateCounts("LikeCount")}>
+                    <div className={"like-count icon-count " + (!state.toggleLike ? 'active' : '')}
+                        onClick={() => updateCounts("LikeCount")}
+                        onMouseOver={(e) => showReactionSummary(e)}
+                        onMouseOut={(e) => hideReactionSummary(e)}
+                    >
                         {Like} .  {state.LikeCount}
                     </div> : ''}
                 {state.HeartCount ?
-                    <div className={"heart-count icon-count " + (!state.toggleHeart ? 'active' : '')} onClick={() => updateCounts("HeartCount")}>
+                    <div className={"heart-count icon-count " + (!state.toggleHeart ? 'active' : '')}
+                        onClick={() => updateCounts("HeartCount")}
+                        onMouseOver={(e) => showReactionSummary(e)}
+                        onMouseOut={(e) => hideReactionSummary(e)}
+                    >
                         {HeartIcon} . {state.HeartCount}
                     </div> : ''}
                 {state.ClapCount ?
-                    <div className={"clap-count icon-count " + (!state.toggleClap ? 'active' : '')} onClick={() => updateCounts("ClapCount")}>
+                    <div className={"clap-count icon-count " + (!state.toggleClap ? 'active' : '')}
+                        onClick={() => updateCounts("ClapCount")}
+                        onMouseOver={(e) => showReactionSummary(e)}
+                        onMouseOut={(e) => hideReactionSummary(e)}
+                    >
                         {Clap} . {state.ClapCount}
                     </div> : ''}
             </div>

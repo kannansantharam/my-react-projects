@@ -2,16 +2,8 @@ import { useEffect, useState } from 'react';
 import Reactions from "../Reaction/Reactions";
 import Comments from '../Comments/Comments'
 
+
 function Posts() {
-    const [images, setImages] = useState([])
-    useEffect(() => {
-        fetch('https://my-json-server.typicode.com/artfuldev/json-db-data/users')
-            .then(res => res.json())
-            .then(json => {
-                console.log(json);
-                setImages(json)
-            })
-    }, []);
     return (
         <div className="posts-section">
             <div className="image-post">

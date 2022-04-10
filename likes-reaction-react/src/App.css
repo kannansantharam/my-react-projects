@@ -52,6 +52,7 @@ body .reaction-section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 body .reaction-section .reaction-counts {
@@ -177,5 +178,96 @@ body .reaction-section .reaction-icon-section .react-trigger-section .react-trig
   padding: 8px 9px 5px;
   border-radius: 50%;
   background-color: #eee;
+}
+
+body .reaction-section .summary-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  border: 1px solid;
+  height: 300px;
+  overflow: scroll;
+  position: absolute;
+  bottom: 50px;
+  background-color: #fff;
+  z-index: 99;
+}
+
+body .reaction-section .summary-section h5 {
+  margin: 15px 5px;
+}
+
+body .reaction-section .summary-section .summary-header-navbar {
+  margin-bottom: 10px;
+}
+
+body .reaction-section .summary-section .summary-header-navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+
+body .reaction-section .summary-section .summary-header-navbar ul li {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 0;
+}
+
+body .reaction-section .summary-section .summary-header-navbar ul li.active {
+  border-bottom: 2px solid blue;
+}
+
+body .reaction-section .summary-section .summary-content-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+}
+
+body .reaction-section .summary-section .summary-content-section .summary-info {
+  margin-right: 20px;
+}
+
+body .reaction-section .summary-section .summary-content-section .summary-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .reaction-section .summary-section .summary-content-section .summary-content .user-reaction svg {
+  width: 20px;
+}
+
+body .reaction-section .summary-section .summary-content-section .summary-content .user-profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=App.css.map */

@@ -20,6 +20,7 @@ body
         flex-direction: row
         align-content: center
         align-items: center
+        position: relative
         .reaction-counts
             display: flex
             .icon-count
@@ -90,3 +91,54 @@ body
                     padding: 8px 9px 5px
                     border-radius: 50%
                     background-color: #eee
+
+        .summary-section
+
+            display: flex
+            flex-direction: column
+            width: 400px
+            border: 1px solid
+            height: 300px
+            overflow: scroll
+            position: absolute
+            bottom: 50px
+            background-color: #fff
+            z-index: 99
+            h5
+                margin: 15px 5px
+            .summary-header-navbar
+                margin-bottom: 10px
+                ul
+                    display: flex
+                    list-style-type: none
+                    padding: 0
+                    margin: 0
+                    width: 100%
+                    border-bottom: 1px solid #333
+                    li
+                        width: 33%
+                        display: flex
+                        align-items: center
+                        cursor: pointer
+                        justify-content: center
+                        padding: 5px 0
+                        &.active
+                            border-bottom: 2px solid blue
+            .summary-content-section
+                display: flex
+                flex-direction: column
+                font-size: 14px
+                .summary-info
+                    margin-right: 20px
+                .summary-content
+                    display: flex
+                    padding: 0px 10px
+                    align-items: center
+                    .user-reaction
+                        svg
+                            width: 20px
+                    .user-profile
+                        img
+                            width: 30px
+                            height: 30px
+                            border-radius: 50%
