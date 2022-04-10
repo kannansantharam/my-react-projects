@@ -57,6 +57,11 @@ body .reaction-section .reaction-counts .icon-count:hover {
   background-color: #f1f1f1;
 }
 
+body .reaction-section .reaction-counts .icon-count.active {
+  border-color: #42C2FF;
+  background-color: #EFFFFD;
+}
+
 body .reaction-section .reaction-icon-section {
   display: -webkit-box;
   display: -ms-flexbox;
