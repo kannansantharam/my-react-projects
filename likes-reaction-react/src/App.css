@@ -189,26 +189,27 @@ body .reaction-section .summary-section {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 400px;
-  border: 1px solid #ccc;
   height: 300px;
   overflow: scroll;
   position: absolute;
   bottom: 50px;
   background-color: #fff;
   z-index: 99;
-  -webkit-box-shadow: 0 0 10px 0 #ccc;
-          box-shadow: 0 0 10px 0 #ccc;
+  -webkit-box-shadow: 0 0 40px 0 #ccc;
+          box-shadow: 0 0 40px 0 #ccc;
+  border-radius: 10px;
+  padding: 10px 0;
 }
 
 body .reaction-section .summary-section h5 {
-  margin: 15px 5px;
+  margin: 10px 5px;
 }
 
 body .reaction-section .summary-section .summary-header-navbar {
   margin-bottom: 10px;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: -10px;
   background-color: #fff;
   z-index: 9;
   -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -237,7 +238,7 @@ body .reaction-section .summary-section .summary-header-navbar ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 5px 0;
+  padding: 8px 0;
 }
 
 body .reaction-section .summary-section .summary-header-navbar ul li.active {
@@ -277,5 +278,12 @@ body .reaction-section .summary-section .summary-content-section .summary-conten
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+body .reaction-section .summary-section .close-summary {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

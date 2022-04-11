@@ -6,6 +6,9 @@ function App() {
   return (
     <div className="App">
       Hi Rocketlane
+      <p>Like Id : 1
+        Heart Id : 3
+        Appreciate Id: 5</p>
       <div>
         <Posts />
       </div>

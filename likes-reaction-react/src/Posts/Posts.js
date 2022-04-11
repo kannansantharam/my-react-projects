@@ -7,10 +7,7 @@ import axios from 'axios';
 function Posts() {
     const [reactionsData, setReactionsData] = useState([])
     useEffect(() => {
-        console.log("Api call");
-        //let users = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/users', {});
-
-        //let promise = [users, userContentReaction];
+        console.log("Getting reaction counts");
         const getUsersContent = async () => {
             try {
                 let data = await axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions', {})

@@ -107,7 +107,8 @@ function Reactions({ reactionCounts, contentId }) {
             initialSetup: true
         }
         dispatch({ type: "SetInitialCounts", data: data });
-    }, [reactionCounts])
+    }, [reactionCounts]);
+
     const getUserContentReactions = async () => {
         if (state.users.length) {
             return state.users;
@@ -134,9 +135,10 @@ function Reactions({ reactionCounts, contentId }) {
         element.target.parentNode.parentNode.querySelector(".reaction-summary-section") ? element.target.parentNode.parentNode.querySelector(".reaction-summary-section").style.display = "block" : ''
     }
     const hideReactionSummary = () => {
-        // document.querySelectorAll(".reaction-summary-section").forEach((node) => {
-        //     node.style.display = "none"
-        // })
+        console.log("hiding")
+        document.querySelectorAll(".reaction-summary-section").forEach((node) => {
+            node.style.display = "none"
+        })
     }
     const getReactionContent = async (reactionId) => {
         let url = `https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?reaction_id=${reactionId}&content_id=${contentId}`;
@@ -160,7 +162,7 @@ function Reactions({ reactionCounts, contentId }) {
             <div className="reaction-summary-section">
                 <Summary users={state.users} reactionContent={state.usersContents}
                     onReactionSelection={onReactionSelection}
-                    contentId={contentId} />
+                    closeSummary={() => hideReactionSummary()} />
             </div>
 
             <div className="reaction-counts">
@@ -168,7 +170,6 @@ function Reactions({ reactionCounts, contentId }) {
                     <div className={"like-count icon-count " + (!state.toggleLike ? 'active' : '')}
                         onClick={() => updateCounts("LikeCount")}
                         onMouseOver={(e) => showReactionSummary(e)}
-                        onMouseOut={(e) => hideReactionSummary(e)}
                     >
                         {Like} .  {state.LikeCount}
                     </div> : ''}
@@ -176,7 +177,6 @@ function Reactions({ reactionCounts, contentId }) {
                     <div className={"heart-count icon-count " + (!state.toggleHeart ? 'active' : '')}
                         onClick={() => updateCounts("HeartCount")}
                         onMouseOver={(e) => showReactionSummary(e)}
-                        onMouseOut={(e) => hideReactionSummary(e)}
                     >
                         {HeartIcon} . {state.HeartCount}
                     </div> : ''}
@@ -184,7 +184,6 @@ function Reactions({ reactionCounts, contentId }) {
                     <div className={"clap-count icon-count " + (!state.toggleClap ? 'active' : '')}
                         onClick={() => updateCounts("ClapCount")}
                         onMouseOver={(e) => showReactionSummary(e)}
-                        onMouseOut={(e) => hideReactionSummary(e)}
                     >
                         {Clap} . {state.ClapCount}
                     </div> : ''}

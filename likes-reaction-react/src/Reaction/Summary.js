@@ -1,5 +1,5 @@
-import { HeartIcon, Like, Clap } from './Icons'
-function Summary({ users, reactionContent, onReactionSelection, contentId }) {
+import { HeartIcon, Like, Clap, Close } from './Icons'
+function Summary({ users, reactionContent, onReactionSelection, closeSummary }) {
     if (!users.length) {
         return
     }
@@ -67,6 +67,9 @@ function Summary({ users, reactionContent, onReactionSelection, contentId }) {
                         </div>
                     })
                 }
+            </div>
+            <div className="close-summary" onClick={() => closeSummary()}>
+                {Close}
             </div>
         </div>
     )
