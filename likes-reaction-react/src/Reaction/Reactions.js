@@ -6,67 +6,6 @@ import Summary from "./Summary";
 const LIKE_REACTION_ID = 1;
 const HEART_REACTION_ID = 3;
 const CLAP_REACTION_ID = 4;
-function reducer(state, action) {
-    let newState = {};
-    switch (action.type) {
-        case 'LikeCount':
-            let like = state.toggleLike ? state.LikeCount + 1 : state.LikeCount - 1;
-            newState = {
-                LikeCount: like,
-                toggleLike: !state.toggleLike
-            };
-            if (!state.toggleHeart) {
-                newState["HeartCount"] = state.HeartCount - 1;
-                newState["toggleHeart"] = !state.toggleHeart
-            }
-            if (!state.toggleClap) {
-                newState["ClapCount"] = state.ClapCount - 1;
-                newState["toggleClap"] = !state.toggleClap
-            }
-            return { ...state, ...newState };
-
-        case 'HeartCount':
-            let heart = state.toggleHeart ? state.HeartCount + 1 : state.HeartCount - 1;
-            newState = {
-                HeartCount: heart,
-                toggleHeart: !state.toggleHeart
-            };
-            if (!state.toggleLike) {
-                newState["LikeCount"] = state.LikeCount - 1;
-                newState["toggleLike"] = !state.toggleLike
-            }
-            if (!state.toggleClap) {
-                newState["ClapCount"] = state.ClapCount - 1;
-                newState["toggleClap"] = !state.toggleClap
-            }
-            return { ...state, ...newState };
-
-        case 'ClapCount':
-            let clap = state.toggleClap ? state.ClapCount + 1 : state.ClapCount - 1;
-            newState = {
-                ClapCount: clap,
-                toggleClap: !state.toggleClap
-            };
-            if (!state.toggleLike) {
-                newState["LikeCount"] = state.LikeCount - 1;
-                newState["toggleLike"] = !state.toggleLike
-            }
-            if (!state.toggleHeart) {
-                newState["HeartCount"] = state.HeartCount - 1;
-                newState["toggleHeart"] = !state.toggleHeart
-            }
-            return { ...state, ...newState };
-        case 'Users':
-            return { ...state, users: action.data }
-        case "UsersContents":
-            return { ...state, usersContents: action.data }
-        case "SetInitialCounts":
-            let data = action.data
-            return { ...state, LikeCount: data.LikeCount, HeartCount: data.HeartCount, ClapCount: data.ClapCount, initialSetup: true }
-        default:
-            return state
-    }
-}
 
 function calculateReactionCounts(reactionCounts, contentId) {
 
@@ -91,13 +30,113 @@ function Reactions({ reactionCounts, contentId }) {
         toggleClap: true,
         users: [],
         usersContents: [],
-        initialSetup: false
+        initialSetup: false,
+        reactionId: {
+            content1: 0,
+            content2: 0
+        }
+    }
+    function reducer(state, action) {
+        let newState = {};
+        switch (action.type) {
+            case 'LikeCount':
+                let like = state.toggleLike ? state.LikeCount + 1 : state.LikeCount - 1;
+                newState = {
+                    LikeCount: like,
+                    toggleLike: !state.toggleLike
+                };
+                addReaction(1, action.contentId);
+                if (!state.toggleHeart) {
+                    newState["HeartCount"] = state.HeartCount - 1;
+                    newState["toggleHeart"] = !state.toggleHeart
+                }
+                if (!state.toggleClap) {
+                    newState["ClapCount"] = state.ClapCount - 1;
+                    newState["toggleClap"] = !state.toggleClap
+                }
+                return { ...state, ...newState };
+
+            case 'HeartCount':
+                let heart = state.toggleHeart ? state.HeartCount + 1 : state.HeartCount - 1;
+                newState = {
+                    HeartCount: heart,
+                    toggleHeart: !state.toggleHeart
+                };
+                if (!state.toggleLike) {
+                    newState["LikeCount"] = state.LikeCount - 1;
+                    newState["toggleLike"] = !state.toggleLike
+                }
+                if (!state.toggleClap) {
+                    newState["ClapCount"] = state.ClapCount - 1;
+                    newState["toggleClap"] = !state.toggleClap
+                }
+                return { ...state, ...newState };
+
+            case 'ClapCount':
+                let clap = state.toggleClap ? state.ClapCount + 1 : state.ClapCount - 1;
+                newState = {
+                    ClapCount: clap,
+                    toggleClap: !state.toggleClap
+                };
+                if (!state.toggleLike) {
+                    newState["LikeCount"] = state.LikeCount - 1;
+                    newState["toggleLike"] = !state.toggleLike
+                }
+                if (!state.toggleHeart) {
+                    newState["HeartCount"] = state.HeartCount - 1;
+                    newState["toggleHeart"] = !state.toggleHeart
+                }
+                return { ...state, ...newState };
+            case 'Users':
+                return { ...state, users: action.data }
+            case "UsersContents":
+                return { ...state, usersContents: action.data }
+            case "SetInitialCounts":
+                let data = action.data
+                return { ...state, LikeCount: data.LikeCount, HeartCount: data.HeartCount, ClapCount: data.ClapCount, initialSetup: true }
+            case "StoreReactionId":
+                let reactionIds = state.reactionId;
+                reactionIds[action.key] = action.data
+                return { ...state, reactionId: reactionIds }
+            default:
+                return state
+        }
     }
     const [state, dispatch] = useReducer(reducer, initialState);
 
-
-    const updateCounts = (actionType) => {
-        dispatch({ type: actionType })
+    const addReaction = async function (reactionId, contentId) {
+        try {
+            console.log("adding reaction")
+            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions';
+            let body = {
+                "user_id": 11,
+                "reaction_id": reactionId,
+                "content_id": contentId
+            }
+            let headers = {
+                "content-type": "application/json"
+            }
+            let reaction = await axios.post(url, { headers: headers, data: body })
+            console.log(reaction)
+            dispatch({ type: "StoreReactionId", key: "content" + contentId, data: reaction.data.id })
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+    }
+    const removeReaction = async function (reactionId) {
+        try {
+            console.log("removing reaction")
+            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions/' + reactionId;
+            let deletedReaction = await axios.delete(url, {})
+            console.log(deletedReaction)
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+    }
+    const updateCounts = (actionType, contentId) => {
+        dispatch({ type: actionType, contentId: contentId })
     }
 
     useEffect(() => {
@@ -171,21 +210,21 @@ function Reactions({ reactionCounts, contentId }) {
             <div className="reaction-counts">
                 {state.LikeCount ?
                     <div className={"like-count icon-count " + (!state.toggleLike ? 'active' : '')}
-                        onClick={() => updateCounts("LikeCount")}
+                        onClick={() => updateCounts("LikeCount", contentId)}
                         onMouseOver={(e) => showReactionSummary(e)}
                     >
                         {Like} .  {state.LikeCount}
                     </div> : ''}
                 {state.HeartCount ?
                     <div className={"heart-count icon-count " + (!state.toggleHeart ? 'active' : '')}
-                        onClick={() => updateCounts("HeartCount")}
+                        onClick={() => updateCounts("HeartCount", contentId)}
                         onMouseOver={(e) => showReactionSummary(e)}
                     >
                         {HeartIcon} . {state.HeartCount}
                     </div> : ''}
                 {state.ClapCount ?
                     <div className={"clap-count icon-count " + (!state.toggleClap ? 'active' : '')}
-                        onClick={() => updateCounts("ClapCount")}
+                        onClick={() => updateCounts("ClapCount", contentId)}
                         onMouseOver={(e) => showReactionSummary(e)}
                     >
                         {Clap} . {state.ClapCount}
