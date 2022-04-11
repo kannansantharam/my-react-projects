@@ -1,4 +1,7 @@
 import { HeartIcon, Like, Clap, Close } from './Icons'
+const LIKE_REACTION_ID = 1;
+const HEART_REACTION_ID = 3;
+const CLAP_REACTION_ID = 4;
 function Summary({ users, reactionContent, onReactionSelection, closeSummary }) {
     if (!users.length) {
         return
@@ -14,13 +17,13 @@ function Summary({ users, reactionContent, onReactionSelection, closeSummary }) 
         //     return Like
         // }
         // let Id = reactId.reaction_id;
-        if (Id === 1) {
+        if (Id === LIKE_REACTION_ID) {
             return Like
         }
-        if (Id === 3) {
+        if (Id === HEART_REACTION_ID) {
             return HeartIcon
         }
-        if (Id === 4) {
+        if (Id === CLAP_REACTION_ID) {
             return Clap
         }
         return ''

@@ -3,6 +3,9 @@ import axios from "axios";
 import { HeartIcon, Like, Clap } from './Icons'
 import ReactionIcons from './ReactionIcons'
 import Summary from "./Summary";
+const LIKE_REACTION_ID = 1;
+const HEART_REACTION_ID = 3;
+const CLAP_REACTION_ID = 4;
 function reducer(state, action) {
     let newState = {};
     switch (action.type) {
@@ -71,9 +74,9 @@ function calculateReactionCounts(reactionCounts, contentId) {
         return {}
     }
     let content = reactionCounts.filter(c => c.content_id === contentId);
-    let likeCount = content.filter(r => r.reaction_id === 1).length; //|| r.reaction_id === 2
-    let heartCount = content.filter(r => r.reaction_id === 3).length; //|| r.reaction_id === 4
-    let clapCount = content.filter(r => r.reaction_id === 5).length;
+    let likeCount = content.filter(r => r.reaction_id === LIKE_REACTION_ID).length; //|| r.reaction_id === 2
+    let heartCount = content.filter(r => r.reaction_id === HEART_REACTION_ID).length; //|| r.reaction_id === 4
+    let clapCount = content.filter(r => r.reaction_id === CLAP_REACTION_ID).length;
     let counts = { like: likeCount, heart: heartCount, clap: clapCount };
     return counts
 }
