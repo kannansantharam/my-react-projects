@@ -16,7 +16,7 @@ function Comments(props) {
                     </div>
                 </div>
             </div>
-            <Reactions like={10} heart={24} clap={5} />
+            <Reactions reactionCounts={props.reactionCounts} contentId={2} />
         </div>
     )
 }

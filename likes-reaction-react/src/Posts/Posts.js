@@ -1,19 +1,32 @@
 import { useEffect, useState } from 'react';
 import Reactions from "../Reaction/Reactions";
 import Comments from '../Comments/Comments'
+import axios from 'axios';
 
 
 function Posts() {
+    const [reactionsData, setReactionsData] = useState([])
+    useEffect(() => {
+        console.log("Api call");
+        //let users = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/users', {});
+
+        //let promise = [users, userContentReaction];
+        const getUsersContent = async () => {
+            try {
+                let data = await axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions', {})
+                setReactionsData(data.data)
+            } catch (ex) {
+                console.log(ex)
+            }
+        }
+        getUsersContent()
+    }, [])
     return (
         <div className="posts-section">
             <div className="image-post">
                 <img src="https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/isro.jpeg" alt="isro" />
-                <Reactions like={578} heart={274} clap={95} />
-                <Comments username="Kannan Santharam" content="Hi there, How are you? Look" />
-            </div>
-            <div className="image-post">
-                <img src="https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/rocket.jpeg" alt="rocket" />
-                <Reactions like={19} heart={4} clap={45} />
+                <Reactions reactionCounts={reactionsData} contentId={1} like={reactionsData.length} />
+                <Comments username="Kannan Santharam" content="Hi there, How are you? Look" reactionCounts={reactionsData} />
             </div>
 
         </div>

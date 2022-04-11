@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import axios from "axios";
 import { HeartIcon, Like, Clap } from './Icons'
 import ReactionIcons from './ReactionIcons'
@@ -57,35 +57,64 @@ function reducer(state, action) {
             return { ...state, users: action.data }
         case "UsersContents":
             return { ...state, usersContents: action.data }
+        case "SetInitialCounts":
+            let data = action.data
+            return { ...state, LikeCount: data.LikeCount, HeartCount: data.HeartCount, ClapCount: data.ClapCount, initialSetup: true }
         default:
             return state
     }
 }
 
-function Reactions({ like, heart, clap }) {
+function calculateReactionCounts(reactionCounts, contentId) {
+
+    if (!reactionCounts.length) {
+        return {}
+    }
+    let content = reactionCounts.filter(c => c.content_id === contentId);
+    let likeCount = content.filter(r => r.reaction_id === 1).length; //|| r.reaction_id === 2
+    let heartCount = content.filter(r => r.reaction_id === 3).length; //|| r.reaction_id === 4
+    let clapCount = content.filter(r => r.reaction_id === 5).length;
+    let counts = { like: likeCount, heart: heartCount, clap: clapCount };
+    return counts
+}
+function Reactions({ reactionCounts, contentId }) {
+
     let initialState = {
-        LikeCount: like ? like : 0,
-        HeartCount: heart ? heart : 0,
-        ClapCount: clap ? clap : 0,
+        LikeCount: 0,
+        HeartCount: 0,
+        ClapCount: 0,
         toggleLike: true, //if true increment value
         toggleHeart: true,
         toggleClap: true,
         users: [],
-        usersContents: []
+        usersContents: [],
+        initialSetup: false
     }
     const [state, dispatch] = useReducer(reducer, initialState);
+
 
     const updateCounts = (actionType) => {
         dispatch({ type: actionType })
     }
 
+    useEffect(() => {
+        console.log("component mounteed ", reactionCounts)
+        let iconCounts = calculateReactionCounts(reactionCounts, contentId);
+        let data = {
+            LikeCount: iconCounts.like,
+            HeartCount: iconCounts.heart,
+            ClapCount: iconCounts.clap,
+            initialSetup: true
+        }
+        dispatch({ type: "SetInitialCounts", data: data });
+    }, [reactionCounts])
     const getUserContentReactions = async () => {
         if (state.users.length) {
             return state.users;
         }
         console.log("Api call");
         let users = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/users', {});
-        let userContentReaction = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions', {})
+        let userContentReaction = axios.get(`https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?content_id=${contentId}`, {})
         let promise = [users, userContentReaction];
         try {
             let users = await Promise.all(promise);
@@ -110,7 +139,7 @@ function Reactions({ like, heart, clap }) {
         // })
     }
     const getReactionContent = async (reactionId) => {
-        let url = `https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?reaction_id=${reactionId}`;
+        let url = `https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?reaction_id=${reactionId}&content_id=${contentId}`;
         if (reactionId === 0) {
             dispatch({ type: "UsersContents", data: state.users[1] });
         }
@@ -129,7 +158,9 @@ function Reactions({ like, heart, clap }) {
     return (
         <div className="reaction-section">
             <div className="reaction-summary-section">
-                <Summary users={state.users} reactionContent={state.usersContents} onReactionSelection={onReactionSelection} />
+                <Summary users={state.users} reactionContent={state.usersContents}
+                    onReactionSelection={onReactionSelection}
+                    contentId={contentId} />
             </div>
 
             <div className="reaction-counts">
