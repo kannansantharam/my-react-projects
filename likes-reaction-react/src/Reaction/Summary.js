@@ -1,10 +1,13 @@
 import { HeartIcon, Like, Clap } from './Icons'
-function Summary(userList) {
-    if (!userList.users.length) {
+function Summary({ users, reactionContent, onReactionSelection }) {
+    if (!users.length) {
         return
     }
-    let users = userList.users[0].data;
-    let userContentReaction = userList.users[1].data;
+    let userList = users[0].data;
+    let userContentReaction = users[1].data;
+    if (reactionContent.length) {
+        userContentReaction = reactionContent
+    }
     const renderReactions = (userId) => {
         let reactId = userContentReaction.find(a => a.user_id === userId);
         if (!reactId) {
@@ -21,20 +24,27 @@ function Summary(userList) {
             return Clap
         }
     }
+    const displaySpecificReactionsSummary = (element, reactionId) => {
+        document.querySelectorAll(".summary-header-navbar ul li").forEach((list) => {
+            list.classList.remove("active")
+        });
+        element.currentTarget.classList.add("active");
+        onReactionSelection(reactionId)
+    }
     return (
         <div className="summary-section">
             <h5>Reactions</h5>
             <div className="summary-header-navbar">
                 <ul>
-                    <li className="active">All</li>
-                    <li>{Like}</li>
-                    <li>{HeartIcon}</li>
-                    <li>{Clap}</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 0)} className="active">All</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 1)} className=''>{Like}</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 2)} className=''>{HeartIcon}</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 4)} className=''>{Clap}</li>
                 </ul>
             </div>
             <div className="summary-content-section">
                 {
-                    users.map((user) => {
+                    userList.map((user) => {
                         return <div key={user.id} className="summary-content">
                             <div className="user-profile summary-info">
                                 <img src={user.avatar} />

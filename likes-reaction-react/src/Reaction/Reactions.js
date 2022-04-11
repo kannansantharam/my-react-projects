@@ -55,6 +55,8 @@ function reducer(state, action) {
             return { ...state, ...newState };
         case 'Users':
             return { ...state, users: action.data }
+        case "UsersContents":
+            return { ...state, usersContents: action.data }
         default:
             return state
     }
@@ -68,7 +70,8 @@ function Reactions({ like, heart, clap }) {
         toggleLike: true, //if true increment value
         toggleHeart: true,
         toggleClap: true,
-        users: []
+        users: [],
+        usersContents: []
     }
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -102,14 +105,31 @@ function Reactions({ like, heart, clap }) {
         element.target.parentNode.parentNode.querySelector(".reaction-summary-section") ? element.target.parentNode.parentNode.querySelector(".reaction-summary-section").style.display = "block" : ''
     }
     const hideReactionSummary = () => {
-        document.querySelectorAll(".reaction-summary-section").forEach((node) => {
-            node.style.display = "none"
-        })
+        // document.querySelectorAll(".reaction-summary-section").forEach((node) => {
+        //     node.style.display = "none"
+        // })
+    }
+    const getReactionContent = async (reactionId) => {
+        let url = `https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?reaction_id=${reactionId}`;
+        if (reactionId === 0) {
+            dispatch({ type: "UsersContents", data: state.users[1] });
+        }
+        try {
+            let reactionContents = await axios.get(url, {});
+            dispatch({ type: "UsersContents", data: reactionContents.data });
+        }
+        catch (ex) {
+            console.log(ex)
+            return ''
+        }
+    }
+    const onReactionSelection = (reactionId) => {
+        getReactionContent(reactionId)
     }
     return (
         <div className="reaction-section">
             <div className="reaction-summary-section">
-                <Summary users={state.users} />
+                <Summary users={state.users} reactionContent={state.usersContents} onReactionSelection={onReactionSelection} />
             </div>
 
             <div className="reaction-counts">
