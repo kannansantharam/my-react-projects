@@ -5,7 +5,7 @@ function Comments(props) {
         <div className="comments-section">
             <div>
                 <div className="user-avatar">
-
+                    <img src='https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/isro.jpeg' alt='user profile' />
                 </div>
                 <div className="user-comment">
                     <div className="user-name">

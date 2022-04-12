@@ -6,15 +6,34 @@ body
         flex-direction: column
         justify-content: center
         align-items: center
+        margin: 40px 0
+        box-shadow: 0px 2px 25px 0px rgba(0,0,0,.2)
+        padding: 20px 35px
+        &:hover
+            box-shadow: 0px 2px 45px 0px rgba(0,0,0,.3)
+            transition: 100ms
         .image-post
             margin: 10px 0
             img
                 width: 400px
         .comments-section
-            margin-left: 20px
+            padding: 10px 10px
+            position: relative
+            background-color: #F9F9F9
+            border-radius: 5px
             .user-comment
+                margin-left: 45px
                 .user-name
                     font-weight: bold
+            .user-avatar
+                position: absolute
+                top: 14px
+                img
+                    width: 35px
+                    height: 35px
+                    border-radius: 50%
+            .reaction-section
+                margin-left: 41px
     .reaction-section
         display: flex
         flex-direction: row

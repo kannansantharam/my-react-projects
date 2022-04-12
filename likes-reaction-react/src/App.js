@@ -11,6 +11,7 @@ function App() {
         Appreciate Id: 5</p>
       <div>
         <Posts />
+        <Posts />
       </div>
     </div>
   );
