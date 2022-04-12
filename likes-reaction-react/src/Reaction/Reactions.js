@@ -20,7 +20,6 @@ function calculateReactionCounts(reactionCounts, contentId) {
     return counts
 }
 function Reactions({ reactionCounts, contentId }) {
-
     let initialState = {
         LikeCount: 0,
         HeartCount: 0,
@@ -36,6 +35,40 @@ function Reactions({ reactionCounts, contentId }) {
             content2: 0
         }
     }
+    const addReaction = async function (reactionId, contentId) {
+        try {
+            console.log("adding reaction")
+            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions';
+            let body = {
+                "user_id": 11,
+                "reaction_id": reactionId,
+                "content_id": contentId
+            }
+            let headers = {
+                "content-type": "application/json"
+            }
+            let reaction = await axios.post(url, { headers: headers, data: body })
+            console.log("Successfully added the reaction ", reaction.data.id);
+            dispatch({ type: "StoreReactionId", key: "content" + contentId, data: reaction.data.id })
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+    }
+    const removeReaction = async function (contentId, reactionId) {
+        try {
+
+            console.log(`removing reaction ${reactionId} - Content id ${contentId}`);
+            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions/' + reactionId;
+            await axios.delete(url, {})
+            dispatch({ type: "StoreReactionId", key: "content" + contentId, data: 0 })
+            console.log("Deleted reaction succesully")
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+    }
+    const [state, dispatch] = useReducer(reducer, initialState);
     function reducer(state, action) {
         let newState = {};
         switch (action.type) {
@@ -45,7 +78,12 @@ function Reactions({ reactionCounts, contentId }) {
                     LikeCount: like,
                     toggleLike: !state.toggleLike
                 };
-                addReaction(1, action.contentId);
+                if (state.toggleLike) {
+                    addReaction(LIKE_REACTION_ID, action.contentId);
+                } else {
+                    removeReaction(action.contentId, state.reactionId["content" + action.contentId])
+                }
+
                 if (!state.toggleHeart) {
                     newState["HeartCount"] = state.HeartCount - 1;
                     newState["toggleHeart"] = !state.toggleHeart
@@ -62,6 +100,11 @@ function Reactions({ reactionCounts, contentId }) {
                     HeartCount: heart,
                     toggleHeart: !state.toggleHeart
                 };
+                if (state.toggleHeart) {
+                    addReaction(HEART_REACTION_ID, action.contentId);
+                } else {
+                    removeReaction(action.contentId, state.reactionId["content" + action.contentId])
+                }
                 if (!state.toggleLike) {
                     newState["LikeCount"] = state.LikeCount - 1;
                     newState["toggleLike"] = !state.toggleLike
@@ -78,6 +121,11 @@ function Reactions({ reactionCounts, contentId }) {
                     ClapCount: clap,
                     toggleClap: !state.toggleClap
                 };
+                if (state.toggleClap) {
+                    addReaction(CLAP_REACTION_ID, action.contentId);
+                } else {
+                    removeReaction(action.contentId, state.reactionId["content" + action.contentId])
+                }
                 if (!state.toggleLike) {
                     newState["LikeCount"] = state.LikeCount - 1;
                     newState["toggleLike"] = !state.toggleLike
@@ -102,39 +150,8 @@ function Reactions({ reactionCounts, contentId }) {
                 return state
         }
     }
-    const [state, dispatch] = useReducer(reducer, initialState);
 
-    const addReaction = async function (reactionId, contentId) {
-        try {
-            console.log("adding reaction")
-            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions';
-            let body = {
-                "user_id": 11,
-                "reaction_id": reactionId,
-                "content_id": contentId
-            }
-            let headers = {
-                "content-type": "application/json"
-            }
-            let reaction = await axios.post(url, { headers: headers, data: body })
-            console.log(reaction)
-            dispatch({ type: "StoreReactionId", key: "content" + contentId, data: reaction.data.id })
-        }
-        catch (ex) {
-            console.log(ex);
-        }
-    }
-    const removeReaction = async function (reactionId) {
-        try {
-            console.log("removing reaction")
-            let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions/' + reactionId;
-            let deletedReaction = await axios.delete(url, {})
-            console.log(deletedReaction)
-        }
-        catch (ex) {
-            console.log(ex);
-        }
-    }
+
     const updateCounts = (actionType, contentId) => {
         dispatch({ type: actionType, contentId: contentId })
     }
@@ -155,7 +172,6 @@ function Reactions({ reactionCounts, contentId }) {
         if (state.users.length) {
             return state.users;
         }
-        console.log("Api call");
         let users = axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/users', {});
         let userContentReaction = axios.get(`https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions?content_id=${contentId}`, {})
         let promise = [users, userContentReaction];
@@ -169,7 +185,6 @@ function Reactions({ reactionCounts, contentId }) {
         }
     }
     const showReactionSummary = (element) => {
-        console.log("summart ", element);
         document.querySelectorAll(".reaction-summary-section").forEach((node) => {
             node.style.display = "none"
         })
@@ -230,7 +245,7 @@ function Reactions({ reactionCounts, contentId }) {
                         {Clap} . {state.ClapCount}
                     </div> : ''}
             </div>
-            <ReactionIcons updateCounts={updateCounts} />
+            <ReactionIcons updateCounts={updateCounts} contentId={contentId} />
         </div>
     )
 }
