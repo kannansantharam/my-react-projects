@@ -23,7 +23,12 @@ function Posts() {
             <div className="image-post">
                 <img src="https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/isro.jpeg" alt="isro" />
                 <Reactions reactionCounts={reactionsData} contentId={1} like={reactionsData.length} />
-                <Comments username="Kannan Santharam" content="Hi there, How are you? Look" reactionCounts={reactionsData} />
+                <Comments username="Kannan Santharam" content="Hi there, Congrats on successfull launch" reactionCounts={reactionsData} />
+            </div>
+            <div className="image-post">
+                <img src="https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/rocket.jpeg" alt="isro" />
+                <Reactions reactionCounts={reactionsData} contentId={2} like={reactionsData.length} />
+                <Comments username="Kannan Santharam" content="Way to go!" reactionCounts={reactionsData} />
             </div>
 
         </div>

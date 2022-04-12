@@ -6,11 +6,10 @@ function App() {
   return (
     <div className="App">
       Hi Rocketlane
-      <p>Like Id : 1
+      <pre>Like Id : 1
         Heart Id : 3
-        Appreciate Id: 5</p>
+        Appreciate Id: 5</pre>
       <div>
-        <Posts />
         <Posts />
       </div>
     </div>
