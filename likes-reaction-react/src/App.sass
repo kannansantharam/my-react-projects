@@ -1,6 +1,9 @@
 body
     display: flex
     justify-content: center
+    @media screen and (max-width: 400px)
+        font-size: 12px
+
     .posts-section
         display: flex
         flex-direction: column
@@ -15,6 +18,9 @@ body
                 transition: 100ms
             img
                 width: 400px
+                @media screen and (max-width: 400px)
+                    width: 100%
+
         .comments-section
             padding: 10px 10px
             position: relative

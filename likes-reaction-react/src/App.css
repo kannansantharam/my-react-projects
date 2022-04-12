@@ -7,6 +7,12 @@ body {
           justify-content: center;
 }
 
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 body .posts-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,6 +45,12 @@ body .posts-section .image-post:hover {
 
 body .posts-section .image-post img {
   width: 400px;
+}
+
+@media screen and (max-width: 400px) {
+  body .posts-section .image-post img {
+    width: 100%;
+  }
 }
 
 body .posts-section .comments-section {

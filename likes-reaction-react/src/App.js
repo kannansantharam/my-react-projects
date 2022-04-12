@@ -5,14 +5,12 @@ import Posts from './Posts/Posts';
 function App() {
   return (
     <div className="App">
-      Hi Rocketlane
-      <pre>Like Id : 1
-        Heart Id : 3
-        Appreciate Id: 5</pre>
+
       <div>
+        <h4 style={{ textAlign: "center" }}>Rocketlane! Reaction and Summary Task</h4>
         <Posts />
       </div>
-    </div>
+    </div >
   );
 }
 

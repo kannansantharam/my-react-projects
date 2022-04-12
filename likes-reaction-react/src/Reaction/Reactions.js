@@ -3,6 +3,7 @@ import axios from "axios";
 import { HeartIcon, Like, Clap } from './Icons'
 import ReactionIcons from './ReactionIcons'
 import Summary from "./Summary";
+import { act } from "react-dom/test-utils";
 const LIKE_REACTION_ID = 1;
 const HEART_REACTION_ID = 3;
 const CLAP_REACTION_ID = 4;
@@ -37,7 +38,8 @@ function Reactions({ reactionCounts, contentId }) {
     }
     const addReaction = async function (reactionId, contentId) {
         try {
-            console.log("adding reaction")
+            console.log("adding reaction ", reactionId);
+
             let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions';
             let body = {
                 "user_id": 11,
@@ -69,6 +71,7 @@ function Reactions({ reactionCounts, contentId }) {
         }
     }
     const [state, dispatch] = useReducer(reducer, initialState);
+
     function reducer(state, action) {
         let newState = {};
         switch (action.type) {
@@ -79,6 +82,7 @@ function Reactions({ reactionCounts, contentId }) {
                     toggleLike: !state.toggleLike
                 };
                 if (state.toggleLike) {
+                    console.log("Like called")
                     addReaction(LIKE_REACTION_ID, action.contentId);
                 } else {
                     removeReaction(action.contentId, state.reactionId["content" + action.contentId])
@@ -101,6 +105,7 @@ function Reactions({ reactionCounts, contentId }) {
                     toggleHeart: !state.toggleHeart
                 };
                 if (state.toggleHeart) {
+                    console.log("heart called")
                     addReaction(HEART_REACTION_ID, action.contentId);
                 } else {
                     removeReaction(action.contentId, state.reactionId["content" + action.contentId])
@@ -122,6 +127,7 @@ function Reactions({ reactionCounts, contentId }) {
                     toggleClap: !state.toggleClap
                 };
                 if (state.toggleClap) {
+                    console.log("clap called")
                     addReaction(CLAP_REACTION_ID, action.contentId);
                 } else {
                     removeReaction(action.contentId, state.reactionId["content" + action.contentId])

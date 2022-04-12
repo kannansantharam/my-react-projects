@@ -12,11 +12,6 @@ function Summary({ users, reactionContent, onReactionSelection, closeSummary }) 
         userContentReaction = reactionContent
     }
     const renderReactions = (Id) => {
-        // let reactId = userContentReaction.find(a => a.user_id === userId);
-        // if (!reactId) {
-        //     return Like
-        // }
-        // let Id = reactId.reaction_id;
         if (Id === LIKE_REACTION_ID) {
             return Like
         }
