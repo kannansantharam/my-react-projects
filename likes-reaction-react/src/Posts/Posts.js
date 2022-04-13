@@ -18,7 +18,6 @@ function Posts() {
         getUsersContent()
     }, [])
     const hideSummary = (e) => {
-        console.log(e)
         if (!(e.target.className.baseVal || e.target.parentElement.className.baseVal
             || e.target.parentElement.parentElement.className.includes("summary-nav")
             || e.target.parentElement.className.includes("summary-nav")
