@@ -38,8 +38,6 @@ function Reactions({ reactionCounts, contentId }) {
     }
     const addReaction = async function (reactionId, contentId) {
         try {
-            console.log("adding reaction ", reactionId);
-
             let url = 'https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions';
             let body = {
                 "user_id": 11,
@@ -163,7 +161,6 @@ function Reactions({ reactionCounts, contentId }) {
     }
 
     useEffect(() => {
-        console.log("component mounteed ", reactionCounts)
         let iconCounts = calculateReactionCounts(reactionCounts, contentId);
         let data = {
             LikeCount: iconCounts.like,
@@ -183,7 +180,6 @@ function Reactions({ reactionCounts, contentId }) {
         let promise = [users, userContentReaction];
         try {
             let users = await Promise.all(promise);
-            console.log(users);
             dispatch({ type: "Users", data: users });
         } catch (ex) {
             console.log(ex)
@@ -198,7 +194,6 @@ function Reactions({ reactionCounts, contentId }) {
         element.target.parentNode.parentNode.querySelector(".reaction-summary-section") ? element.target.parentNode.parentNode.querySelector(".reaction-summary-section").style.display = "block" : ''
     }
     const hideReactionSummary = () => {
-        console.log("hiding")
         document.querySelectorAll(".reaction-summary-section").forEach((node) => {
             node.style.display = "none"
         })

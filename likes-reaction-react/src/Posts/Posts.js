@@ -7,7 +7,6 @@ import axios from 'axios';
 function Posts() {
     const [reactionsData, setReactionsData] = useState([])
     useEffect(() => {
-        console.log("Getting reaction counts");
         const getUsersContent = async () => {
             try {
                 let data = await axios.get('https://my-json-server.typicode.com/artfuldev/json-db-data/user_content_reactions', {})
@@ -20,7 +19,11 @@ function Posts() {
     }, [])
     const hideSummary = (e) => {
         console.log(e)
-        if (!((typeof e.target.className === "string") || e.target.className.includes("summary-nav")) || !e.target.parentElement.className.includes("summary-nav")) {
+        if (!(e.target.className.baseVal || e.target.parentElement.className.baseVal
+            || e.target.parentElement.parentElement.className.includes("summary-nav")
+            || e.target.parentElement.className.includes("summary-nav")
+            || e.target.className.includes("summary-nav")
+        )) {
             document.querySelectorAll(".reaction-summary-section").forEach((node) => {
                 node.style.display = "none"
             })

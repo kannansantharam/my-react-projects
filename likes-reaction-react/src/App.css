@@ -245,6 +245,12 @@ body .reaction-section .summary-section {
   padding: 10px 0;
 }
 
+@media screen and (max-width: 350px) {
+  body .reaction-section .summary-section {
+    width: 270px;
+  }
+}
+
 body .reaction-section .summary-section h5 {
   margin: 10px 5px;
 }
