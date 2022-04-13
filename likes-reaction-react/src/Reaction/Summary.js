@@ -41,11 +41,11 @@ function Summary({ users, reactionContent, onReactionSelection, closeSummary }) 
         <div className="summary-section">
             <h5>Reactions</h5>
             <div className="summary-header-navbar">
-                <ul>
-                    <li onClick={(e) => displaySpecificReactionsSummary(e, 0)} className="active">All</li>
-                    <li onClick={(e) => displaySpecificReactionsSummary(e, 1)} className=''>{Like}</li>
-                    <li onClick={(e) => displaySpecificReactionsSummary(e, 3)} className=''>{HeartIcon}</li>
-                    <li onClick={(e) => displaySpecificReactionsSummary(e, 4)} className=''>{Clap}</li>
+                <ul className="summary-nav">
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 0)} className="summary-nav active">All</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 1)} className='summary-nav'>{Like}</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 3)} className='summary-nav'>{HeartIcon}</li>
+                    <li onClick={(e) => displaySpecificReactionsSummary(e, 4)} className='summary-nav'>{Clap}</li>
                 </ul>
             </div>
             <div className="summary-content-section">

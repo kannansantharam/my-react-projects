@@ -18,8 +18,17 @@ function Posts() {
         }
         getUsersContent()
     }, [])
+    const hideSummary = (e) => {
+        console.log(e)
+        if (!((typeof e.target.className === "string") || e.target.className.includes("summary-nav")) || !e.target.parentElement.className.includes("summary-nav")) {
+            document.querySelectorAll(".reaction-summary-section").forEach((node) => {
+                node.style.display = "none"
+            })
+        }
+
+    }
     return (
-        <div className="posts-section">
+        <div className="posts-section" onClick={(e) => hideSummary(e)}>
             <div className="image-post">
                 <img src="https://raw.githubusercontent.com/kannansantharam/my-react-projects/development/likes-reaction-react/src/Posts/isro.jpeg" alt="isro" />
                 <Reactions reactionCounts={reactionsData} contentId={1} like={reactionsData.length} />
