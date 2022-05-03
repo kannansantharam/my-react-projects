@@ -9,3 +9,5 @@ Facebook/LinkedIn's Reaction feature implemented. Reuse the component anywhere i
 
 
 
+#Improvements
+1. Reduce the repeated API calls in the Summary popup
