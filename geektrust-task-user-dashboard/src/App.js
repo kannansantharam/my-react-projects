@@ -17,6 +17,12 @@ function App() {
       .then((response) => response.json())
       .then((userData) => {
         console.log(userData);
+        userData.map((user) => {
+          console.log(user)
+          user["isChecked"] = false;
+          user["allowEdit"] = false;
+          users["isRemoved"] = false;
+        });
         setUsers(userData);
         setFilUsers(userData);
         setIsLoading(false)
