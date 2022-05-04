@@ -78,9 +78,10 @@ function App() {
           totalUsers={filUsers.length}
           totalUserPerPage={totalUserForPerPage}
           onPageNumberChange={onPageChange}
+          currentPage={currentPage}
         />
       </section>
-      <div className="user-per-page">
+      {/* <div className="user-per-page">
         Users per page
         <select onChange={(e) => { setTotalUserForPerPage(e.target.value) }}>
           <option value="10">10</option>
@@ -89,7 +90,7 @@ function App() {
           <option value="40">40</option>
 
         </select>
-      </div>
+      </div> */}
     </div>
   );
 }

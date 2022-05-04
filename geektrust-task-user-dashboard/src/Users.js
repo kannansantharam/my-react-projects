@@ -32,12 +32,10 @@ function Users({ users }) {
 
     }
     const removeUser = (userId) => {
-        userProp.find(u => u.id === userId).isRemoved = true;
-        setUserProp(userProp)
+        setUserProp(prev => [...prev, userProp.find(u => u.id === userId).isRemoved = true])
     }
     const editUser = (userId) => {
-        userProp.find(u => u.id === userId).allowEdit = true;
-        setUserProp(userProp)
+        setUserProp(prev => [...prev, userProp.find(u => u.id === userId).allowEdit = true])
     }
     return (
         <table>

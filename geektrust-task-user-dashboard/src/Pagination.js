@@ -1,5 +1,5 @@
 
-function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange }) {
+function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange, currentPage }) {
     if (!totalUsers) {
         return (
             <></>
@@ -11,19 +11,20 @@ function Pagination({ totalUsers, totalUserPerPage, onPageNumberChange }) {
         totalPages.push(i)
     }
     console.log(totalUsers, totalUserPerPage)
+    const lastPage = totalPages.length - 1
     return (
         <div>
-            <ul>
-                <li onClick={() => onPageNumberChange(0)}>{"<< "}Start</li>
-                <li onClick={() => onPageNumberChange(0, "previousIndex")}> {"< "} Previous </li>
+            <div class="pages">
+                <button disabled={currentPage === 0 && true} onClick={() => onPageNumberChange(0)}>{"<< "}Start</button>
+                <button disabled={currentPage === 0 && true} onClick={() => onPageNumberChange(0, "previousIndex")}> {"< "} Previous </button>
                 {
                     totalPages.map((number) => {
-                        return <li key={number} className="page-numbers" onClick={() => onPageNumberChange(number - 1, "pageIndex")}>{number}</li>
+                        return <button key={number} className={"page-numbers " + (currentPage === number - 1 ? "active" : '')} onClick={() => onPageNumberChange(number - 1, "pageIndex")}>{number}</button>
                     })
                 }
-                <li onClick={() => onPageNumberChange(0, "nextIndex")}>Next {" >"}</li>
-                <li onClick={() => onPageNumberChange(totalPages.length - 1)}>End {" >>"}</li>
-            </ul>
+                <button disabled={currentPage === lastPage && true} onClick={() => onPageNumberChange(0, "nextIndex")}>Next {" >"}</button>
+                <button disabled={currentPage === lastPage && true} onClick={() => onPageNumberChange(totalPages.length - 1)}>End {" >>"}</button>
+            </div>
         </div>
     )
 }
