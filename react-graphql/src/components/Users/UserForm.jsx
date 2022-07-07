@@ -6,8 +6,7 @@ import {
 	Button,
 	DisplayText,
 } from "@shopify/polaris";
-import { Link } from "react-router-dom";
-function UserForm({ user, addUpdateUser }) {
+function UserForm({ user, addUpdateUser, goBack }) {
 	const [userDetail, setUserDetails] = useState({});
 	const handleSubmit = () => {
 		addUpdateUser(userDetail);
@@ -24,10 +23,6 @@ function UserForm({ user, addUpdateUser }) {
 	}, [user]);
 	return (
 		<div>
-			<Link to="/">All users</Link>
-			<DisplayText size="large">
-				{user ? "Edit User" : "Create new user"}
-			</DisplayText>
 			<Form onSubmit={handleSubmit}>
 				<FormLayout>
 					<TextField
@@ -49,6 +44,7 @@ function UserForm({ user, addUpdateUser }) {
 						onChange={(e) => onInputChange("twitter", e)}
 					/>
 					<Button submit>{user ? "Update user" : "Create user"}</Button>
+					<Button onClick={(e) => goBack(e)}>Back</Button>
 				</FormLayout>
 			</Form>
 		</div>

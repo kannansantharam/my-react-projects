@@ -12476,3 +12476,8 @@ body {
   border: 0 !important;
   white-space: nowrap !important;
 }
+
+/* src/components/Users/users.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1015,7 +1015,7 @@
             }
             return lazyType;
           }
-          function forwardRef4(render) {
+          function forwardRef5(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1061,7 +1061,7 @@
             }
             return dispatcher;
           }
-          function useContext13(Context, unstable_observedBits) {
+          function useContext14(Context, unstable_observedBits) {
             var dispatcher = resolveDispatcher();
             {
               if (unstable_observedBits !== void 0) {
@@ -1078,7 +1078,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState19(initialState) {
+          function useState20(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1090,7 +1090,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect26(create, deps) {
+          function useEffect27(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1098,7 +1098,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useLayoutEffect(create, deps);
           }
-          function useCallback19(callback, deps) {
+          function useCallback20(callback, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
@@ -1356,20 +1356,20 @@
           exports.createElement = createElement$1;
           exports.createFactory = createFactory;
           exports.createRef = createRef5;
-          exports.forwardRef = forwardRef4;
+          exports.forwardRef = forwardRef5;
           exports.isValidElement = isValidElement5;
           exports.lazy = lazy;
           exports.memo = memo7;
-          exports.useCallback = useCallback19;
-          exports.useContext = useContext13;
+          exports.useCallback = useCallback20;
+          exports.useContext = useContext14;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect26;
+          exports.useEffect = useEffect27;
           exports.useImperativeHandle = useImperativeHandle2;
           exports.useLayoutEffect = useLayoutEffect4;
           exports.useMemo = useMemo7;
           exports.useReducer = useReducer;
           exports.useRef = useRef19;
-          exports.useState = useState19;
+          exports.useState = useState20;
           exports.version = ReactVersion;
         })();
       }
@@ -2354,12 +2354,12 @@
       if (true) {
         (function() {
           "use strict";
-          var React104 = require_react();
+          var React107 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var checkPropTypes = require_checkPropTypes();
           var tracing = require_tracing();
-          var ReactSharedInternals = React104.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React107.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           if (!ReactSharedInternals.hasOwnProperty("ReactCurrentDispatcher")) {
             ReactSharedInternals.ReactCurrentDispatcher = {
               current: null
@@ -2412,7 +2412,7 @@
               }
             }
           }
-          if (!React104) {
+          if (!React107) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3757,7 +3757,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React104.Children.forEach(children, function(child) {
+            React107.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3768,7 +3768,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React104.Children.forEach(props.children, function(child) {
+                React107.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10802,7 +10802,7 @@
           }
           var fakeInternalInstance = {};
           var isArray2 = Array.isArray;
-          var emptyRefsObject = new React104.Component().refs;
+          var emptyRefsObject = new React107.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -24217,10 +24217,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Button/utils.js
-  var import_react61 = __toESM(require_react());
+  var import_react62 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Button/Button.js
-  var import_react60 = __toESM(require_react());
+  var import_react61 = __toESM(require_react());
 
   // node_modules/@shopify/polaris-icons/dist/icons/AlertMinor.svg.mjs
   var import_react19 = __toESM(require_react(), 1);
@@ -24293,48 +24293,59 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }));
   };
 
-  // node_modules/@shopify/polaris-icons/dist/icons/EditMajor.svg.mjs
+  // node_modules/@shopify/polaris-icons/dist/icons/DeleteMajor.svg.mjs
   var import_react26 = __toESM(require_react(), 1);
-  var SvgEditMajor = function SvgEditMajor2(props) {
+  var SvgDeleteMajor = function SvgDeleteMajor2(props) {
     return /* @__PURE__ */ import_react26.default.createElement("svg", Object.assign({
       viewBox: "0 0 20 20"
     }, props), /* @__PURE__ */ import_react26.default.createElement("path", {
+      fillRule: "evenodd",
+      d: "M14 4h3a1 1 0 0 1 1 1v1h-16v-1a1 1 0 0 1 1-1h3v-2.5a1.5 1.5 0 0 1 1.5-1.5h5a1.5 1.5 0 0 1 1.5 1.5v2.5zm-6-2v2h4v-2h-4zm-5 6h14v10.5a1.5 1.5 0 0 1-1.5 1.5h-11a1.5 1.5 0 0 1-1.5-1.5v-10.5zm4 3h-2v6h2v-6zm4 0h-2v6h2v-6zm2 0h2v6h-2v-6z"
+    }));
+  };
+
+  // node_modules/@shopify/polaris-icons/dist/icons/EditMajor.svg.mjs
+  var import_react27 = __toESM(require_react(), 1);
+  var SvgEditMajor = function SvgEditMajor2(props) {
+    return /* @__PURE__ */ import_react27.default.createElement("svg", Object.assign({
+      viewBox: "0 0 20 20"
+    }, props), /* @__PURE__ */ import_react27.default.createElement("path", {
       d: "m14.846 1.403 3.752 3.753.625-.626a2.653 2.653 0 0 0-3.752-3.752l-.625.625zm2.029 5.472-3.752-3.753-11.905 11.906-1.218 4.97 4.97-1.217 11.905-11.906z"
     }));
   };
 
   // node_modules/@shopify/polaris-icons/dist/icons/HorizontalDotsMinor.svg.mjs
-  var import_react27 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react(), 1);
   var SvgHorizontalDotsMinor = function SvgHorizontalDotsMinor2(props) {
-    return /* @__PURE__ */ import_react27.default.createElement("svg", Object.assign({
+    return /* @__PURE__ */ import_react28.default.createElement("svg", Object.assign({
       viewBox: "0 0 20 20"
-    }, props), /* @__PURE__ */ import_react27.default.createElement("path", {
+    }, props), /* @__PURE__ */ import_react28.default.createElement("path", {
       d: "M6 10a2 2 0 1 1-4.001-.001 2 2 0 0 1 4.001.001zm6 0a2 2 0 1 1-4.001-.001 2 2 0 0 1 4.001.001zm6 0a2 2 0 1 1-4.001-.001 2 2 0 0 1 4.001.001z"
     }));
   };
 
   // node_modules/@shopify/polaris-icons/dist/icons/MobileCancelMajor.svg.mjs
-  var import_react28 = __toESM(require_react(), 1);
+  var import_react29 = __toESM(require_react(), 1);
   var SvgMobileCancelMajor = function SvgMobileCancelMajor2(props) {
-    return /* @__PURE__ */ import_react28.default.createElement("svg", Object.assign({
+    return /* @__PURE__ */ import_react29.default.createElement("svg", Object.assign({
       viewBox: "0 0 20 20"
-    }, props), /* @__PURE__ */ import_react28.default.createElement("path", {
+    }, props), /* @__PURE__ */ import_react29.default.createElement("path", {
       d: "m11.414 10 6.293-6.293a1 1 0 1 0-1.414-1.414l-6.293 6.293-6.293-6.293a1 1 0 0 0-1.414 1.414l6.293 6.293-6.293 6.293a1 1 0 1 0 1.414 1.414l6.293-6.293 6.293 6.293a.998.998 0 0 0 1.707-.707.999.999 0 0 0-.293-.707l-6.293-6.293z"
     }));
   };
 
   // node_modules/@shopify/polaris-icons/dist/icons/SelectMinor.svg.mjs
-  var import_react29 = __toESM(require_react(), 1);
+  var import_react30 = __toESM(require_react(), 1);
   var SvgSelectMinor = function SvgSelectMinor2(props) {
-    return /* @__PURE__ */ import_react29.default.createElement("svg", Object.assign({
+    return /* @__PURE__ */ import_react30.default.createElement("svg", Object.assign({
       viewBox: "0 0 20 20"
-    }, props), /* @__PURE__ */ import_react29.default.createElement("path", {
+    }, props), /* @__PURE__ */ import_react30.default.createElement("path", {
       d: "M7.676 9h4.648c.563 0 .879-.603.53-1.014l-2.323-2.746a.708.708 0 0 0-1.062 0l-2.324 2.746c-.347.411-.032 1.014.531 1.014Zm4.648 2h-4.648c-.563 0-.878.603-.53 1.014l2.323 2.746c.27.32.792.32 1.062 0l2.323-2.746c.349-.411.033-1.014-.53-1.014Z"
     }));
   };
 
   // node_modules/@shopify/polaris-icons/dist/index.mjs
-  var import_react30 = __toESM(require_react(), 1);
+  var import_react31 = __toESM(require_react(), 1);
 
   // node_modules/@shopify/polaris/build/esm/utilities/is-element-in-viewport.js
   function isElementInViewport(element) {
@@ -24492,13 +24503,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Spinner/Spinner.js
-  var import_react33 = __toESM(require_react());
+  var import_react34 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-is-after-initial-mount.js
-  var import_react31 = __toESM(require_react());
+  var import_react32 = __toESM(require_react());
   function useIsAfterInitialMount() {
-    const [isAfterInitialMount, setIsAfterInitialMount] = (0, import_react31.useState)(false);
-    (0, import_react31.useEffect)(() => {
+    const [isAfterInitialMount, setIsAfterInitialMount] = (0, import_react32.useState)(false);
+    (0, import_react32.useEffect)(() => {
       setIsAfterInitialMount(true);
     }, []);
     return isAfterInitialMount;
@@ -24512,7 +24523,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/VisuallyHidden/VisuallyHidden.js
-  var import_react32 = __toESM(require_react());
+  var import_react33 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/VisuallyHidden/VisuallyHidden.scss.js
   var styles3 = {
@@ -24523,7 +24534,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   function VisuallyHidden({
     children
   }) {
-    return /* @__PURE__ */ import_react32.default.createElement("span", {
+    return /* @__PURE__ */ import_react33.default.createElement("span", {
       className: styles3.VisuallyHidden
     }, children);
   }
@@ -24536,15 +24547,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }) {
     const isAfterInitialMount = useIsAfterInitialMount();
     const className = classNames(styles2.Spinner, size && styles2[variationName("size", size)]);
-    const spinnerSVGMarkup = size === "large" ? /* @__PURE__ */ import_react33.default.createElement("svg", {
+    const spinnerSVGMarkup = size === "large" ? /* @__PURE__ */ import_react34.default.createElement("svg", {
       viewBox: "0 0 44 44",
       xmlns: "http://www.w3.org/2000/svg"
-    }, /* @__PURE__ */ import_react33.default.createElement("path", {
+    }, /* @__PURE__ */ import_react34.default.createElement("path", {
       d: "M15.542 1.487A21.507 21.507 0 00.5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 00-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 10-.9-2.863z"
-    })) : /* @__PURE__ */ import_react33.default.createElement("svg", {
+    })) : /* @__PURE__ */ import_react34.default.createElement("svg", {
       viewBox: "0 0 20 20",
       xmlns: "http://www.w3.org/2000/svg"
-    }, /* @__PURE__ */ import_react33.default.createElement("path", {
+    }, /* @__PURE__ */ import_react34.default.createElement("path", {
       d: "M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"
     }));
     const spanAttributes = {
@@ -24552,14 +24563,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         role: "status"
       }
     };
-    const accessibilityLabelMarkup = (isAfterInitialMount || !hasFocusableParent) && /* @__PURE__ */ import_react33.default.createElement(VisuallyHidden, null, accessibilityLabel);
-    return /* @__PURE__ */ import_react33.default.createElement(import_react33.default.Fragment, null, /* @__PURE__ */ import_react33.default.createElement("span", {
+    const accessibilityLabelMarkup = (isAfterInitialMount || !hasFocusableParent) && /* @__PURE__ */ import_react34.default.createElement(VisuallyHidden, null, accessibilityLabel);
+    return /* @__PURE__ */ import_react34.default.createElement(import_react34.default.Fragment, null, /* @__PURE__ */ import_react34.default.createElement("span", {
       className
-    }, spinnerSVGMarkup), /* @__PURE__ */ import_react33.default.createElement("span", spanAttributes, accessibilityLabelMarkup));
+    }, spinnerSVGMarkup), /* @__PURE__ */ import_react34.default.createElement("span", spanAttributes, accessibilityLabelMarkup));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/Popover.js
-  var import_react47 = __toESM(require_react());
+  var import_react48 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/set-activator-attributes.js
   function setActivatorAttributes(activator, {
@@ -24580,13 +24591,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Portal/Portal.js
-  var import_react36 = __toESM(require_react());
+  var import_react37 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // node_modules/@shopify/polaris/build/esm/utilities/portals/hooks.js
-  var import_react34 = __toESM(require_react());
+  var import_react35 = __toESM(require_react());
   function usePortalsManager() {
-    const portalsManager = (0, import_react34.useContext)(PortalsManagerContext);
+    const portalsManager = (0, import_react35.useContext)(PortalsManagerContext);
     if (!portalsManager) {
       throw new Error("No portals manager was provided. Your application must be wrapped in an <AppProvider> component. See https://polaris.shopify.com/components/structure/app-provider for implementation instructions.");
     }
@@ -24594,7 +24605,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/utilities/unique-id/hooks.js
-  var import_react35 = __toESM(require_react());
+  var import_react36 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/errors.js
   var MissingAppProviderError = class extends Error {
@@ -24606,8 +24617,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 
   // node_modules/@shopify/polaris/build/esm/utilities/unique-id/hooks.js
   function useUniqueId(prefix2 = "", overrideId = "") {
-    const idFactory = (0, import_react35.useContext)(UniqueIdFactoryContext);
-    const uniqueIdRef = (0, import_react35.useRef)(null);
+    const idFactory = (0, import_react36.useContext)(UniqueIdFactoryContext);
+    const uniqueIdRef = (0, import_react36.useRef)(null);
     if (!idFactory) {
       throw new MissingAppProviderError("No UniqueIdFactory was provided.");
     }
@@ -24631,10 +24642,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     } = usePortalsManager();
     const uniqueId = useUniqueId("portal");
     const portalId = idPrefix !== "" ? `${idPrefix}-${uniqueId}` : uniqueId;
-    (0, import_react36.useEffect)(() => {
+    (0, import_react37.useEffect)(() => {
       onPortalCreated();
     }, [onPortalCreated]);
-    return container ? /* @__PURE__ */ (0, import_react_dom.createPortal)(/* @__PURE__ */ import_react36.default.createElement("div", {
+    return container ? /* @__PURE__ */ (0, import_react_dom.createPortal)(/* @__PURE__ */ import_react37.default.createElement("div", {
       "data-portal-id": portalId
     }, children), container) : null;
   }
@@ -24642,20 +24653,20 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/components/PopoverOverlay/PopoverOverlay.js
-  var import_react46 = __toESM(require_react());
+  var import_react47 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/components.js
-  var import_react37 = __toESM(require_react());
+  var import_react38 = __toESM(require_react());
   function wrapWithComponent(element, Component4, props) {
     if (element == null) {
       return null;
     }
-    return isElementOfType(element, Component4) ? element : /* @__PURE__ */ import_react37.default.createElement(Component4, props, element);
+    return isElementOfType(element, Component4) ? element : /* @__PURE__ */ import_react38.default.createElement(Component4, props, element);
   }
   var isComponent = true ? hotReloadComponentCheck : (AComponent, AnotherComponent) => AComponent === AnotherComponent;
   function isElementOfType(element, Component4) {
     var _element$props;
-    if (element == null || !/* @__PURE__ */ (0, import_react37.isValidElement)(element) || typeof element.type === "string") {
+    if (element == null || !/* @__PURE__ */ (0, import_react38.isValidElement)(element) || typeof element.type === "string") {
       return false;
     }
     const {
@@ -24667,7 +24678,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     return Components.some((AComponent) => typeof type !== "string" && isComponent(AComponent, type));
   }
   function elementChildren(children, predicate = () => true) {
-    return import_react37.Children.toArray(children).filter((child) => /* @__PURE__ */ (0, import_react37.isValidElement)(child) && predicate(child));
+    return import_react38.Children.toArray(children).filter((child) => /* @__PURE__ */ (0, import_react38.isValidElement)(child) && predicate(child));
   }
   function ConditionalWrapper({
     condition,
@@ -24710,11 +24721,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/KeypressListener/KeypressListener.js
-  var import_react39 = __toESM(require_react());
+  var import_react40 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-isomorphic-layout-effect.js
-  var import_react38 = __toESM(require_react());
-  var useIsomorphicLayoutEffect = isServer ? import_react38.useEffect : import_react38.useLayoutEffect;
+  var import_react39 = __toESM(require_react());
+  var useIsomorphicLayoutEffect = isServer ? import_react39.useEffect : import_react39.useLayoutEffect;
 
   // node_modules/@shopify/polaris/build/esm/components/KeypressListener/KeypressListener.js
   function KeypressListener({
@@ -24724,7 +24735,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     options,
     useCapture
   }) {
-    const tracked = (0, import_react39.useRef)({
+    const tracked = (0, import_react40.useRef)({
       handler,
       keyCode
     });
@@ -24734,7 +24745,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         keyCode
       };
     }, [handler, keyCode]);
-    const handleKeyEvent = (0, import_react39.useCallback)((event) => {
+    const handleKeyEvent = (0, import_react40.useCallback)((event) => {
       const {
         handler: handler2,
         keyCode: keyCode2
@@ -24743,7 +24754,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         handler2(event);
       }
     }, []);
-    (0, import_react39.useEffect)(() => {
+    (0, import_react40.useEffect)(() => {
       document.addEventListener(keyEvent, handleKeyEvent, useCapture || options);
       return () => {
         document.removeEventListener(keyEvent, handleKeyEvent, useCapture || options);
@@ -24753,7 +24764,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/PositionedOverlay/PositionedOverlay.js
-  var import_react43 = __toESM(require_react());
+  var import_react44 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/PositionedOverlay/utilities/math.js
   function calculateVerticalPosition(activatorRect, overlayRect, overlayMargins, scrollableContainerRect, containerRect, preferredPosition, fixed, topBarOffset = 0) {
@@ -24838,11 +24849,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Scrollable/Scrollable.js
-  var import_react42 = __toESM(require_react());
+  var import_react43 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Scrollable/context.js
-  var import_react40 = __toESM(require_react());
-  var ScrollableContext = /* @__PURE__ */ (0, import_react40.createContext)(void 0);
+  var import_react41 = __toESM(require_react());
+  var ScrollableContext = /* @__PURE__ */ (0, import_react41.createContext)(void 0);
 
   // node_modules/@shopify/polaris/build/esm/components/Scrollable/Scrollable.scss.js
   var styles6 = {
@@ -24855,18 +24866,18 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Scrollable/components/ScrollTo/ScrollTo.js
-  var import_react41 = __toESM(require_react());
+  var import_react42 = __toESM(require_react());
   function ScrollTo() {
-    const anchorNode = (0, import_react41.useRef)(null);
-    const scrollToPosition = (0, import_react41.useContext)(ScrollableContext);
-    (0, import_react41.useEffect)(() => {
+    const anchorNode = (0, import_react42.useRef)(null);
+    const scrollToPosition = (0, import_react42.useContext)(ScrollableContext);
+    (0, import_react42.useEffect)(() => {
       if (!scrollToPosition || !anchorNode.current) {
         return;
       }
       scrollToPosition(anchorNode.current.offsetTop);
     }, [scrollToPosition]);
     const id = useUniqueId(`ScrollTo`);
-    return /* @__PURE__ */ import_react41.default.createElement("a", {
+    return /* @__PURE__ */ import_react42.default.createElement("a", {
       id,
       ref: anchorNode
     });
@@ -24879,7 +24890,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   var EVENTS_TO_LOCK = ["scroll", "touchmove", "wheel"];
   var PREFERS_REDUCED_MOTION = prefersReducedMotion();
   var LOW_RES_BUFFER = 2;
-  var Scrollable = class extends import_react42.Component {
+  var Scrollable = class extends import_react43.Component {
     constructor(...args) {
       super(...args);
       this.state = {
@@ -25029,11 +25040,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         ...rest
       } = this.props;
       const finalClassName = classNames(className, styles6.Scrollable, vertical && styles6.vertical, horizontal && styles6.horizontal, topShadow && styles6.hasTopShadow, bottomShadow && styles6.hasBottomShadow, vertical && canScroll && styles6.verticalHasScrolling);
-      return /* @__PURE__ */ import_react42.default.createElement(ScrollableContext.Provider, {
+      return /* @__PURE__ */ import_react43.default.createElement(ScrollableContext.Provider, {
         value: this.scrollToPosition
-      }, /* @__PURE__ */ import_react42.default.createElement(StickyManagerContext.Provider, {
+      }, /* @__PURE__ */ import_react43.default.createElement(StickyManagerContext.Provider, {
         value: this.stickyManager
-      }, /* @__PURE__ */ import_react42.default.createElement("div", Object.assign({
+      }, /* @__PURE__ */ import_react43.default.createElement("div", Object.assign({
         className: finalClassName
       }, scrollable.props, rest, {
         ref: this.setScrollArea,
@@ -25074,7 +25085,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     subtree: true,
     characterData: true
   };
-  var PositionedOverlay = class extends import_react43.PureComponent {
+  var PositionedOverlay = class extends import_react44.PureComponent {
     constructor(props) {
       super(props);
       this.state = {
@@ -25242,11 +25253,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         zIndex: zIndexOverride || zIndex2 || void 0
       };
       const className = classNames(styles5.PositionedOverlay, fixed && styles5.fixed, preventInteraction && styles5.preventInteraction, propClassNames);
-      return /* @__PURE__ */ import_react43.default.createElement("div", {
+      return /* @__PURE__ */ import_react44.default.createElement("div", {
         className,
         style,
         ref: this.setOverlay
-      }, /* @__PURE__ */ import_react43.default.createElement(EventListener, {
+      }, /* @__PURE__ */ import_react44.default.createElement(EventListener, {
         event: "resize",
         handler: this.handleMeasurement
       }), render(this.overlayDetails()));
@@ -25273,14 +25284,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/components/Pane/Pane.js
-  var import_react45 = __toESM(require_react());
+  var import_react46 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/components/Section/Section.js
-  var import_react44 = __toESM(require_react());
+  var import_react45 = __toESM(require_react());
   function Section({
     children
   }) {
-    return /* @__PURE__ */ import_react44.default.createElement("div", {
+    return /* @__PURE__ */ import_react45.default.createElement("div", {
       className: styles4.Section
     }, children);
   }
@@ -25300,10 +25311,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       maxHeight: height,
       minHeight: height
     } : void 0;
-    return fixed ? /* @__PURE__ */ import_react45.default.createElement("div", {
+    return fixed ? /* @__PURE__ */ import_react46.default.createElement("div", {
       style,
       className
-    }, content) : /* @__PURE__ */ import_react45.default.createElement(Scrollable, {
+    }, content) : /* @__PURE__ */ import_react46.default.createElement(Scrollable, {
       shadow: true,
       className,
       style,
@@ -25326,13 +25337,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     TransitionStatus3["Exiting"] = "exiting";
     TransitionStatus3["Exited"] = "exited";
   })(TransitionStatus || (TransitionStatus = {}));
-  var PopoverOverlay = class extends import_react46.PureComponent {
+  var PopoverOverlay = class extends import_react47.PureComponent {
     constructor(props) {
       super(props);
       this.state = {
         transitionStatus: this.props.active ? TransitionStatus.Entering : TransitionStatus.Exited
       };
-      this.contentNode = /* @__PURE__ */ (0, import_react46.createRef)();
+      this.contentNode = /* @__PURE__ */ (0, import_react47.createRef)();
       this.enteringTimer = void 0;
       this.exitingTimer = void 0;
       this.overlayRef = void 0;
@@ -25358,7 +25369,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           height: desiredHeight
         };
         const contentClassNames = classNames(styles4.Content, fullHeight && styles4["Content-fullHeight"], fluidContent && styles4["Content-fluidContent"]);
-        const content = /* @__PURE__ */ import_react46.default.createElement("div", {
+        const content = /* @__PURE__ */ import_react47.default.createElement("div", {
           id,
           tabIndex: autofocusTarget === "none" ? void 0 : -1,
           className: contentClassNames,
@@ -25367,26 +25378,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }, renderPopoverContent(children, {
           sectioned
         }));
-        return /* @__PURE__ */ import_react46.default.createElement("div", Object.assign({
+        return /* @__PURE__ */ import_react47.default.createElement("div", Object.assign({
           className
-        }, overlay.props), /* @__PURE__ */ import_react46.default.createElement(EventListener, {
+        }, overlay.props), /* @__PURE__ */ import_react47.default.createElement(EventListener, {
           event: "click",
           handler: this.handleClick
-        }), /* @__PURE__ */ import_react46.default.createElement(EventListener, {
+        }), /* @__PURE__ */ import_react47.default.createElement(EventListener, {
           event: "touchstart",
           handler: this.handleClick
-        }), /* @__PURE__ */ import_react46.default.createElement(KeypressListener, {
+        }), /* @__PURE__ */ import_react47.default.createElement(KeypressListener, {
           keyCode: Key.Escape,
           handler: this.handleEscape
-        }), /* @__PURE__ */ import_react46.default.createElement("div", {
+        }), /* @__PURE__ */ import_react47.default.createElement("div", {
           className: styles4.FocusTracker,
           tabIndex: 0,
           onFocus: this.handleFocusFirstItem
-        }), /* @__PURE__ */ import_react46.default.createElement(CustomProperties, {
+        }), /* @__PURE__ */ import_react47.default.createElement(CustomProperties, {
           colorScheme
-        }, /* @__PURE__ */ import_react46.default.createElement("div", {
+        }, /* @__PURE__ */ import_react47.default.createElement("div", {
           className: styles4.Wrapper
-        }, content)), /* @__PURE__ */ import_react46.default.createElement("div", {
+        }, content)), /* @__PURE__ */ import_react47.default.createElement("div", {
           className: styles4.FocusTracker,
           tabIndex: 0,
           onFocus: this.handleFocusLastItem
@@ -25420,7 +25431,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       this.handleFocusLastItem = () => {
         this.props.onClose(PopoverCloseSource.FocusOut);
       };
-      this.overlayRef = /* @__PURE__ */ (0, import_react46.createRef)();
+      this.overlayRef = /* @__PURE__ */ (0, import_react47.createRef)();
     }
     forceUpdatePosition() {
       var _this$overlayRef$curr;
@@ -25481,7 +25492,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       if (transitionStatus === TransitionStatus.Exited && !active)
         return null;
       const className = classNames(styles4.PopoverOverlay, transitionStatus === TransitionStatus.Entering && styles4["PopoverOverlay-entering"], transitionStatus === TransitionStatus.Entered && styles4["PopoverOverlay-open"], transitionStatus === TransitionStatus.Exiting && styles4["PopoverOverlay-exiting"]);
-      return /* @__PURE__ */ import_react46.default.createElement(PositionedOverlay, {
+      return /* @__PURE__ */ import_react47.default.createElement(PositionedOverlay, {
         ref: this.overlayRef,
         fullWidth,
         active,
@@ -25529,7 +25540,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   };
   function renderPopoverContent(children, props) {
-    const childrenArray = import_react46.Children.toArray(children);
+    const childrenArray = import_react47.Children.toArray(children);
     if (isElementOfType(childrenArray[0], Pane)) {
       return childrenArray;
     }
@@ -25550,7 +25561,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Popover/Popover.js
-  var PopoverComponent = /* @__PURE__ */ (0, import_react47.forwardRef)(function Popover({
+  var PopoverComponent = /* @__PURE__ */ (0, import_react48.forwardRef)(function Popover({
     activatorWrapper = "div",
     children,
     onClose,
@@ -25564,21 +25575,21 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     zIndexOverride,
     ...rest
   }, ref) {
-    const [activatorNode, setActivatorNode] = (0, import_react47.useState)();
-    const overlayRef = (0, import_react47.useRef)(null);
-    const activatorContainer = (0, import_react47.useRef)(null);
+    const [activatorNode, setActivatorNode] = (0, import_react48.useState)();
+    const overlayRef = (0, import_react48.useRef)(null);
+    const activatorContainer = (0, import_react48.useRef)(null);
     const WrapperComponent = activatorWrapper;
     const id = useUniqueId("popover");
     function forceUpdatePosition() {
       var _overlayRef$current;
       (_overlayRef$current = overlayRef.current) === null || _overlayRef$current === void 0 ? void 0 : _overlayRef$current.forceUpdatePosition();
     }
-    (0, import_react47.useImperativeHandle)(ref, () => {
+    (0, import_react48.useImperativeHandle)(ref, () => {
       return {
         forceUpdatePosition
       };
     });
-    const setAccessibilityAttributes = (0, import_react47.useCallback)(() => {
+    const setAccessibilityAttributes = (0, import_react48.useCallback)(() => {
       if (activatorContainer.current == null) {
         return;
       }
@@ -25604,7 +25615,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       }
     };
-    (0, import_react47.useEffect)(() => {
+    (0, import_react48.useEffect)(() => {
       if (!activatorNode && activatorContainer.current) {
         setActivatorNode(activatorContainer.current.firstElementChild);
       } else if (activatorNode && activatorContainer.current && !activatorContainer.current.contains(activatorNode)) {
@@ -25612,7 +25623,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }
       setAccessibilityAttributes();
     }, [activatorNode, setAccessibilityAttributes]);
-    (0, import_react47.useEffect)(() => {
+    (0, import_react48.useEffect)(() => {
       if (activatorNode && activatorContainer.current) {
         setActivatorNode(activatorContainer.current.firstElementChild);
       }
@@ -25621,9 +25632,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     if (colorScheme && true) {
       console.warn("Deprecation: The `colorScheme` prop on the `Popover` component has been deprecated. See the v10 migration guide for replacing dark color scheme styles. https://github.com/Shopify/polaris/blob/main/documentation/guides/migrating-from-v9-to-v10.md");
     }
-    const portal2 = activatorNode ? /* @__PURE__ */ import_react47.default.createElement(Portal, {
+    const portal2 = activatorNode ? /* @__PURE__ */ import_react48.default.createElement(Portal, {
       idPrefix: "popover"
-    }, /* @__PURE__ */ import_react47.default.createElement(PopoverOverlay, Object.assign({
+    }, /* @__PURE__ */ import_react48.default.createElement(PopoverOverlay, Object.assign({
       ref: overlayRef,
       id,
       activator: activatorNode,
@@ -25634,9 +25645,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       colorScheme,
       zIndexOverride
     }, rest), children)) : null;
-    return /* @__PURE__ */ import_react47.default.createElement(WrapperComponent, {
+    return /* @__PURE__ */ import_react48.default.createElement(WrapperComponent, {
       ref: activatorContainer
-    }, import_react47.Children.only(activator), portal2);
+    }, import_react48.Children.only(activator), portal2);
   });
   function isInPortal(element) {
     let parentElement = element.parentElement;
@@ -25653,7 +25664,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   });
 
   // node_modules/@shopify/polaris/build/esm/components/ActionList/ActionList.js
-  var import_react58 = __toESM(require_react());
+  var import_react59 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionList/ActionList.scss.js
   var styles7 = {
@@ -25675,13 +25686,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ActionList/components/Section/Section.js
-  var import_react57 = __toESM(require_react());
+  var import_react58 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionList/components/Item/Item.js
-  var import_react56 = __toESM(require_react());
+  var import_react57 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/TextStyle/TextStyle.js
-  var import_react48 = __toESM(require_react());
+  var import_react49 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/TextStyle/TextStyle.scss.js
   var styles8 = {
@@ -25709,7 +25720,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }) {
     const className = classNames(variation && styles8[variationName("variation", variation)], variation === VariationValue.Code && styles8.code);
     const Element2 = variationElement(variation);
-    return /* @__PURE__ */ import_react48.default.createElement(Element2, {
+    return /* @__PURE__ */ import_react49.default.createElement(Element2, {
       className
     }, children);
   }
@@ -25718,11 +25729,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Badge/Badge.js
-  var import_react53 = __toESM(require_react());
+  var import_react54 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/within-filter-context.js
-  var import_react49 = __toESM(require_react());
-  var WithinFilterContext = /* @__PURE__ */ (0, import_react49.createContext)(false);
+  var import_react50 = __toESM(require_react());
+  var WithinFilterContext = /* @__PURE__ */ (0, import_react50.createContext)(false);
 
   // node_modules/@shopify/polaris/build/esm/components/Badge/Badge.scss.js
   var styles9 = {
@@ -25807,7 +25818,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Badge/components/Pip/Pip.js
-  var import_react51 = __toESM(require_react());
+  var import_react52 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Badge/components/Pip/Pip.scss.js
   var styles10 = {
@@ -25824,9 +25835,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/utilities/i18n/hooks.js
-  var import_react50 = __toESM(require_react());
+  var import_react51 = __toESM(require_react());
   function useI18n() {
-    const i18n = (0, import_react50.useContext)(I18nContext);
+    const i18n = (0, import_react51.useContext)(I18nContext);
     if (!i18n) {
       throw new MissingAppProviderError("No i18n was provided.");
     }
@@ -25842,13 +25853,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const i18n = useI18n();
     const className = classNames(styles10.Pip, status && styles10[variationName("status", status)], progress && styles10[variationName("progress", progress)]);
     const accessibilityLabel = accessibilityLabelOverride ? accessibilityLabelOverride : getDefaultAccessibilityLabel(i18n, progress, status);
-    return /* @__PURE__ */ import_react51.default.createElement("span", {
+    return /* @__PURE__ */ import_react52.default.createElement("span", {
       className
-    }, /* @__PURE__ */ import_react51.default.createElement(VisuallyHidden, null, accessibilityLabel));
+    }, /* @__PURE__ */ import_react52.default.createElement(VisuallyHidden, null, accessibilityLabel));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Icon/Icon.js
-  var import_react52 = __toESM(require_react());
+  var import_react53 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Icon/Icon.scss.js
   var styles11 = {
@@ -25893,24 +25904,24 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const className = classNames(styles11.Icon, color && styles11[variationName("color", color)], color && styles11.applyColor, backdrop && styles11.hasBackdrop);
     const SourceComponent = source;
     const contentMarkup = {
-      function: /* @__PURE__ */ import_react52.default.createElement(SourceComponent, {
+      function: /* @__PURE__ */ import_react53.default.createElement(SourceComponent, {
         className: styles11.Svg,
         focusable: "false",
         "aria-hidden": "true"
       }),
-      placeholder: /* @__PURE__ */ import_react52.default.createElement("div", {
+      placeholder: /* @__PURE__ */ import_react53.default.createElement("div", {
         className: styles11.Placeholder
       }),
-      external: /* @__PURE__ */ import_react52.default.createElement("img", {
+      external: /* @__PURE__ */ import_react53.default.createElement("img", {
         className: styles11.Img,
         src: `data:image/svg+xml;utf8,${source}`,
         alt: "",
         "aria-hidden": "true"
       })
     };
-    return /* @__PURE__ */ import_react52.default.createElement("span", {
+    return /* @__PURE__ */ import_react53.default.createElement("span", {
       className
-    }, /* @__PURE__ */ import_react52.default.createElement(VisuallyHidden, null, accessibilityLabel), contentMarkup[sourceType]);
+    }, /* @__PURE__ */ import_react53.default.createElement(VisuallyHidden, null, accessibilityLabel), contentMarkup[sourceType]);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Badge/Badge.js
@@ -25924,43 +25935,43 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     statusAndProgressLabelOverride
   }) {
     const i18n = useI18n();
-    const withinFilter = (0, import_react53.useContext)(WithinFilterContext);
+    const withinFilter = (0, import_react54.useContext)(WithinFilterContext);
     const className = classNames(styles9.Badge, status && styles9[variationName("status", status)], icon && styles9.icon, size && size !== DEFAULT_SIZE && styles9[variationName("size", size)], withinFilter && styles9.withinFilter);
     const accessibilityLabel = statusAndProgressLabelOverride ? statusAndProgressLabelOverride : getDefaultAccessibilityLabel(i18n, progress, status);
-    let accessibilityMarkup = Boolean(accessibilityLabel) && /* @__PURE__ */ import_react53.default.createElement(VisuallyHidden, null, accessibilityLabel);
+    let accessibilityMarkup = Boolean(accessibilityLabel) && /* @__PURE__ */ import_react54.default.createElement(VisuallyHidden, null, accessibilityLabel);
     if (progress && !icon) {
-      accessibilityMarkup = /* @__PURE__ */ import_react53.default.createElement("span", {
+      accessibilityMarkup = /* @__PURE__ */ import_react54.default.createElement("span", {
         className: styles9.PipContainer
-      }, /* @__PURE__ */ import_react53.default.createElement(Pip, {
+      }, /* @__PURE__ */ import_react54.default.createElement(Pip, {
         progress,
         status,
         accessibilityLabelOverride: accessibilityLabel
       }));
     }
-    return /* @__PURE__ */ import_react53.default.createElement("span", {
+    return /* @__PURE__ */ import_react54.default.createElement("span", {
       className
-    }, accessibilityMarkup, icon && /* @__PURE__ */ import_react53.default.createElement("span", {
+    }, accessibilityMarkup, icon && /* @__PURE__ */ import_react54.default.createElement("span", {
       className: styles9.Icon
-    }, /* @__PURE__ */ import_react53.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react54.default.createElement(Icon, {
       source: icon
-    })), children && /* @__PURE__ */ import_react53.default.createElement("span", null, children));
+    })), children && /* @__PURE__ */ import_react54.default.createElement("span", null, children));
   }
   Badge.Pip = Pip;
 
   // node_modules/@shopify/polaris/build/esm/components/UnstyledLink/UnstyledLink.js
-  var import_react55 = __toESM(require_react());
+  var import_react56 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/link/hooks.js
-  var import_react54 = __toESM(require_react());
+  var import_react55 = __toESM(require_react());
   function useLink() {
-    return (0, import_react54.useContext)(LinkContext);
+    return (0, import_react55.useContext)(LinkContext);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/UnstyledLink/UnstyledLink.js
-  var UnstyledLink = /* @__PURE__ */ (0, import_react55.memo)(/* @__PURE__ */ (0, import_react55.forwardRef)(function UnstyledLink2(props, _ref) {
+  var UnstyledLink = /* @__PURE__ */ (0, import_react56.memo)(/* @__PURE__ */ (0, import_react56.forwardRef)(function UnstyledLink2(props, _ref) {
     const LinkComponent = useLink();
     if (LinkComponent) {
-      return /* @__PURE__ */ import_react55.default.createElement(LinkComponent, Object.assign({}, unstyled.props, props));
+      return /* @__PURE__ */ import_react56.default.createElement(LinkComponent, Object.assign({}, unstyled.props, props));
     }
     const {
       external,
@@ -25969,7 +25980,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     } = props;
     const target = external ? "_blank" : void 0;
     const rel = external ? "noopener noreferrer" : void 0;
-    return /* @__PURE__ */ import_react55.default.createElement("a", Object.assign({
+    return /* @__PURE__ */ import_react56.default.createElement("a", Object.assign({
       target
     }, rest, {
       href: url,
@@ -26000,17 +26011,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const className = classNames(styles7.Item, disabled && styles7.disabled, destructive && styles7.destructive, active && styles7.active);
     let prefixMarkup = null;
     if (prefix2) {
-      prefixMarkup = /* @__PURE__ */ import_react56.default.createElement("span", {
+      prefixMarkup = /* @__PURE__ */ import_react57.default.createElement("span", {
         className: styles7.Prefix
       }, prefix2);
     } else if (icon) {
-      prefixMarkup = /* @__PURE__ */ import_react56.default.createElement("span", {
+      prefixMarkup = /* @__PURE__ */ import_react57.default.createElement("span", {
         className: styles7.Prefix
-      }, /* @__PURE__ */ import_react56.default.createElement(Icon, {
+      }, /* @__PURE__ */ import_react57.default.createElement(Icon, {
         source: icon
       }));
     } else if (image) {
-      prefixMarkup = /* @__PURE__ */ import_react56.default.createElement("span", {
+      prefixMarkup = /* @__PURE__ */ import_react57.default.createElement("span", {
         role: "presentation",
         className: styles7.Prefix,
         style: {
@@ -26019,29 +26030,29 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       });
     }
     const contentText = ellipsis && content ? `${content}\u2026` : content;
-    const contentMarkup = helpText ? /* @__PURE__ */ import_react56.default.createElement("span", {
+    const contentMarkup = helpText ? /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.ContentBlock
-    }, /* @__PURE__ */ import_react56.default.createElement("span", {
+    }, /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.ContentBlockInner
-    }, contentText), /* @__PURE__ */ import_react56.default.createElement(TextStyle, {
+    }, contentText), /* @__PURE__ */ import_react57.default.createElement(TextStyle, {
       variation: "subdued"
     }, helpText)) : contentText;
-    const badgeMarkup = badge && /* @__PURE__ */ import_react56.default.createElement("span", {
+    const badgeMarkup = badge && /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.Suffix
-    }, /* @__PURE__ */ import_react56.default.createElement(Badge, {
+    }, /* @__PURE__ */ import_react57.default.createElement(Badge, {
       status: badge.status
     }, badge.content));
-    const suffixMarkup = suffix && /* @__PURE__ */ import_react56.default.createElement("span", {
+    const suffixMarkup = suffix && /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.Suffix
     }, suffix);
-    const textMarkup = /* @__PURE__ */ import_react56.default.createElement("span", {
+    const textMarkup = /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.Text
     }, contentMarkup);
-    const contentElement = /* @__PURE__ */ import_react56.default.createElement("span", {
+    const contentElement = /* @__PURE__ */ import_react57.default.createElement("span", {
       className: styles7.Content
     }, prefixMarkup, textMarkup, badgeMarkup, suffixMarkup);
-    const scrollMarkup = active ? /* @__PURE__ */ import_react56.default.createElement(Scrollable.ScrollTo, null) : null;
-    const control = url ? /* @__PURE__ */ import_react56.default.createElement(UnstyledLink, {
+    const scrollMarkup = active ? /* @__PURE__ */ import_react57.default.createElement(Scrollable.ScrollTo, null) : null;
+    const control = url ? /* @__PURE__ */ import_react57.default.createElement(UnstyledLink, {
       id,
       url: disabled ? null : url,
       className,
@@ -26049,7 +26060,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       "aria-label": accessibilityLabel,
       onClick: disabled ? null : onAction,
       role
-    }, contentElement) : /* @__PURE__ */ import_react56.default.createElement("button", {
+    }, contentElement) : /* @__PURE__ */ import_react57.default.createElement("button", {
       id,
       type: "button",
       className,
@@ -26059,7 +26070,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onMouseUp: handleMouseUpByBlurring,
       role
     }, contentElement);
-    return /* @__PURE__ */ import_react56.default.createElement(import_react56.default.Fragment, null, scrollMarkup, control);
+    return /* @__PURE__ */ import_react57.default.createElement(import_react57.default.Fragment, null, scrollMarkup, control);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/ActionList/components/Section/Section.js
@@ -26085,10 +26096,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onAction,
       ...item
     }, index2) => {
-      return /* @__PURE__ */ import_react57.default.createElement("li", {
+      return /* @__PURE__ */ import_react58.default.createElement("li", {
         key: `${content}-${index2}`,
         role: actionRole === "menuitem" ? "presentation" : void 0
-      }, /* @__PURE__ */ import_react57.default.createElement(Item, Object.assign({
+      }, /* @__PURE__ */ import_react58.default.createElement(Item, Object.assign({
         content,
         helpText,
         role: actionRole,
@@ -26096,7 +26107,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }, item)));
     });
     const className = section.title ? void 0 : styles7["Section-withoutTitle"];
-    const titleMarkup = section.title ? /* @__PURE__ */ import_react57.default.createElement("p", {
+    const titleMarkup = section.title ? /* @__PURE__ */ import_react58.default.createElement("p", {
       className: styles7.Title
     }, section.title) : null;
     let sectionRole;
@@ -26111,14 +26122,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         sectionRole = void 0;
         break;
     }
-    const sectionMarkup = /* @__PURE__ */ import_react57.default.createElement("div", {
+    const sectionMarkup = /* @__PURE__ */ import_react58.default.createElement("div", {
       className
-    }, titleMarkup, /* @__PURE__ */ import_react57.default.createElement("ul", {
+    }, titleMarkup, /* @__PURE__ */ import_react58.default.createElement("ul", {
       className: styles7.Actions,
       role: sectionRole,
       tabIndex: !hasMultipleSections ? -1 : void 0
     }, actionMarkup));
-    return hasMultipleSections ? /* @__PURE__ */ import_react57.default.createElement("li", {
+    return hasMultipleSections ? /* @__PURE__ */ import_react58.default.createElement("li", {
       className: styles7.Section,
       role: "presentation"
     }, sectionMarkup) : sectionMarkup;
@@ -26132,7 +26143,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onActionAnyItem
   }) {
     let finalSections = [];
-    const actionListRef = (0, import_react58.useRef)(null);
+    const actionListRef = (0, import_react59.useRef)(null);
     if (items) {
       finalSections = [{
         items
@@ -26146,7 +26157,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const elementRole = hasMultipleSections && actionRole === "menuitem" ? "menu" : void 0;
     const elementTabIndex = hasMultipleSections && actionRole === "menuitem" ? -1 : void 0;
     const sectionMarkup = finalSections.map((section, index2) => {
-      return section.items.length > 0 ? /* @__PURE__ */ import_react58.default.createElement(Section2, {
+      return section.items.length > 0 ? /* @__PURE__ */ import_react59.default.createElement(Section2, {
         key: section.title || index2,
         section,
         hasMultipleSections,
@@ -26170,16 +26181,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       }
     };
-    const listeners = actionRole === "menuitem" ? /* @__PURE__ */ import_react58.default.createElement(import_react58.default.Fragment, null, /* @__PURE__ */ import_react58.default.createElement(KeypressListener, {
+    const listeners = actionRole === "menuitem" ? /* @__PURE__ */ import_react59.default.createElement(import_react59.default.Fragment, null, /* @__PURE__ */ import_react59.default.createElement(KeypressListener, {
       keyEvent: "keydown",
       keyCode: Key.DownArrow,
       handler: handleFocusNextItem
-    }), /* @__PURE__ */ import_react58.default.createElement(KeypressListener, {
+    }), /* @__PURE__ */ import_react59.default.createElement(KeypressListener, {
       keyEvent: "keydown",
       keyCode: Key.UpArrow,
       handler: handleFocusPreviousItem
     })) : null;
-    return /* @__PURE__ */ import_react58.default.createElement(Element2, {
+    return /* @__PURE__ */ import_react59.default.createElement(Element2, {
       ref: actionListRef,
       className,
       role: elementRole,
@@ -26189,7 +26200,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   ActionList.Item = Item;
 
   // node_modules/@shopify/polaris/build/esm/components/UnstyledButton/UnstyledButton.js
-  var import_react59 = __toESM(require_react());
+  var import_react60 = __toESM(require_react());
   function UnstyledButton({
     id,
     children,
@@ -26234,13 +26245,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onTouchStart
     };
     if (url) {
-      buttonMarkup = disabled ? /* @__PURE__ */ import_react59.default.createElement("a", commonProps, children) : /* @__PURE__ */ import_react59.default.createElement(UnstyledLink, Object.assign({}, interactiveProps, {
+      buttonMarkup = disabled ? /* @__PURE__ */ import_react60.default.createElement("a", commonProps, children) : /* @__PURE__ */ import_react60.default.createElement(UnstyledLink, Object.assign({}, interactiveProps, {
         url,
         external,
         download
       }, rest), children);
     } else {
-      buttonMarkup = /* @__PURE__ */ import_react59.default.createElement("button", Object.assign({}, interactiveProps, {
+      buttonMarkup = /* @__PURE__ */ import_react60.default.createElement("button", Object.assign({}, interactiveProps, {
         type: submit ? "submit" : "button",
         disabled,
         "aria-busy": loading ? true : void 0,
@@ -26300,31 +26311,31 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const i18n = useI18n();
     const isDisabled = disabled || loading;
     const className = classNames(styles.Button, primary && styles.primary, outline && styles.outline, destructive && styles.destructive, isDisabled && styles.disabled, loading && styles.loading, plain && styles.plain, pressed && !disabled && !url && styles.pressed, monochrome && styles.monochrome, size && size !== DEFAULT_SIZE2 && styles[variationName("size", size)], textAlign && styles[variationName("textAlign", textAlign)], fullWidth && styles.fullWidth, icon && children == null && styles.iconOnly, connectedDisclosure && styles.connectedDisclosure, removeUnderline && styles.removeUnderline);
-    const disclosureMarkup = disclosure ? /* @__PURE__ */ import_react60.default.createElement("span", {
+    const disclosureMarkup = disclosure ? /* @__PURE__ */ import_react61.default.createElement("span", {
       className: styles.Icon
-    }, /* @__PURE__ */ import_react60.default.createElement("div", {
+    }, /* @__PURE__ */ import_react61.default.createElement("div", {
       className: classNames(styles.DisclosureIcon, loading && styles.hidden)
-    }, /* @__PURE__ */ import_react60.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react61.default.createElement(Icon, {
       source: loading ? "placeholder" : getDisclosureIconSource(disclosure)
     }))) : null;
-    const iconSource = isIconSource(icon) ? /* @__PURE__ */ import_react60.default.createElement(Icon, {
+    const iconSource = isIconSource(icon) ? /* @__PURE__ */ import_react61.default.createElement(Icon, {
       source: loading ? "placeholder" : icon
     }) : icon;
-    const iconMarkup = iconSource ? /* @__PURE__ */ import_react60.default.createElement("span", {
+    const iconMarkup = iconSource ? /* @__PURE__ */ import_react61.default.createElement("span", {
       className: classNames(styles.Icon, loading && styles.hidden)
     }, iconSource) : null;
-    const childMarkup = children ? /* @__PURE__ */ import_react60.default.createElement("span", {
+    const childMarkup = children ? /* @__PURE__ */ import_react61.default.createElement("span", {
       className: classNames(styles.Text, removeUnderline && styles.removeUnderline),
       key: disabled ? "text-disabled" : "text"
     }, children) : null;
-    const spinnerSVGMarkup = loading ? /* @__PURE__ */ import_react60.default.createElement("span", {
+    const spinnerSVGMarkup = loading ? /* @__PURE__ */ import_react61.default.createElement("span", {
       className: styles.Spinner
-    }, /* @__PURE__ */ import_react60.default.createElement(Spinner, {
+    }, /* @__PURE__ */ import_react61.default.createElement(Spinner, {
       size: "small",
       accessibilityLabel: i18n.translate("Polaris.Button.spinnerAccessibilityLabel")
     })) : null;
-    const [disclosureActive, setDisclosureActive] = (0, import_react60.useState)(false);
-    const toggleDisclosureActive = (0, import_react60.useCallback)(() => {
+    const [disclosureActive, setDisclosureActive] = (0, import_react61.useState)(false);
+    const toggleDisclosureActive = (0, import_react61.useCallback)(() => {
       setDisclosureActive((disclosureActive2) => !disclosureActive2);
     }, []);
     let connectedDisclosureMarkup;
@@ -26335,7 +26346,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         disabled: disabled2,
         accessibilityLabel: disclosureLabel = defaultLabel
       } = connectedDisclosure;
-      const connectedDisclosureActivator = /* @__PURE__ */ import_react60.default.createElement("button", {
+      const connectedDisclosureActivator = /* @__PURE__ */ import_react61.default.createElement("button", {
         type: "button",
         className: connectedDisclosureClassName,
         disabled: disabled2,
@@ -26344,17 +26355,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         "aria-checked": ariaChecked,
         onClick: toggleDisclosureActive,
         onMouseUp: handleMouseUpByBlurring
-      }, /* @__PURE__ */ import_react60.default.createElement("span", {
+      }, /* @__PURE__ */ import_react61.default.createElement("span", {
         className: styles.Icon
-      }, /* @__PURE__ */ import_react60.default.createElement(Icon, {
+      }, /* @__PURE__ */ import_react61.default.createElement(Icon, {
         source: SvgCaretDownMinor
       })));
-      connectedDisclosureMarkup = /* @__PURE__ */ import_react60.default.createElement(Popover2, {
+      connectedDisclosureMarkup = /* @__PURE__ */ import_react61.default.createElement(Popover2, {
         active: disclosureActive,
         onClose: toggleDisclosureActive,
         activator: connectedDisclosureActivator,
         preferredAlignment: "right"
-      }, /* @__PURE__ */ import_react60.default.createElement(ActionList, {
+      }, /* @__PURE__ */ import_react61.default.createElement(ActionList, {
         items: connectedDisclosure.actions,
         onActionAnyItem: toggleDisclosureActive
       }));
@@ -26390,10 +26401,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onKeyPress,
       onPointerDown
     };
-    const buttonMarkup = /* @__PURE__ */ import_react60.default.createElement(UnstyledButton, Object.assign({}, commonProps, linkProps, actionProps), /* @__PURE__ */ import_react60.default.createElement("span", {
+    const buttonMarkup = /* @__PURE__ */ import_react61.default.createElement(UnstyledButton, Object.assign({}, commonProps, linkProps, actionProps), /* @__PURE__ */ import_react61.default.createElement("span", {
       className: styles.Content
     }, spinnerSVGMarkup, iconMarkup, childMarkup, disclosureMarkup));
-    return connectedDisclosureMarkup ? /* @__PURE__ */ import_react60.default.createElement("div", {
+    return connectedDisclosureMarkup ? /* @__PURE__ */ import_react61.default.createElement("div", {
       className: styles.ConnectedDisclosureWrapper
     }, buttonMarkup, connectedDisclosureMarkup) : buttonMarkup;
   }
@@ -26421,14 +26432,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onAction,
     ...action
   }, overrides, key) {
-    return /* @__PURE__ */ import_react61.default.createElement(Button, Object.assign({
+    return /* @__PURE__ */ import_react62.default.createElement(Button, Object.assign({
       key,
       onClick: onAction
     }, action, overrides), content);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/ButtonGroup/ButtonGroup.js
-  var import_react63 = __toESM(require_react());
+  var import_react64 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ButtonGroup/ButtonGroup.scss.js
   var styles12 = {
@@ -26444,7 +26455,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ButtonGroup/components/Item/Item.js
-  var import_react62 = __toESM(require_react());
+  var import_react63 = __toESM(require_react());
   function Item2({
     button
   }) {
@@ -26454,7 +26465,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       setFalse: forceFalseFocused
     } = useToggle(false);
     const className = classNames(styles12.Item, focused && styles12["Item-focused"], button.props.plain && styles12["Item-plain"]);
-    return /* @__PURE__ */ import_react62.default.createElement("div", {
+    return /* @__PURE__ */ import_react63.default.createElement("div", {
       className,
       onFocus: forceTrueFocused,
       onBlur: forceFalseFocused
@@ -26470,11 +26481,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     connectedTop
   }) {
     const className = classNames(styles12.ButtonGroup, spacing2 && styles12[spacing2], segmented && styles12.segmented, fullWidth && styles12.fullWidth);
-    const contents = elementChildren(children).map((child, index2) => /* @__PURE__ */ import_react63.default.createElement(Item2, {
+    const contents = elementChildren(children).map((child, index2) => /* @__PURE__ */ import_react64.default.createElement(Item2, {
       button: child,
       key: index2
     }));
-    return /* @__PURE__ */ import_react63.default.createElement("div", {
+    return /* @__PURE__ */ import_react64.default.createElement("div", {
       className,
       "data-buttongroup-segmented": segmented,
       "data-buttongroup-connected-top": connectedTop,
@@ -26483,7 +26494,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Stack/Stack.js
-  var import_react65 = __toESM(require_react());
+  var import_react66 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Stack/Stack.scss.js
   var styles13 = {
@@ -26512,19 +26523,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Stack/components/Item/Item.js
-  var import_react64 = __toESM(require_react());
+  var import_react65 = __toESM(require_react());
   function Item3({
     children,
     fill
   }) {
     const className = classNames(styles13.Item, fill && styles13["Item-fill"]);
-    return /* @__PURE__ */ import_react64.default.createElement("div", {
+    return /* @__PURE__ */ import_react65.default.createElement("div", {
       className
     }, children);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Stack/Stack.js
-  var Stack = /* @__PURE__ */ (0, import_react65.memo)(function Stack2({
+  var Stack = /* @__PURE__ */ (0, import_react66.memo)(function Stack2({
     children,
     vertical,
     spacing: spacing2,
@@ -26539,14 +26550,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
       return wrapWithComponent(child, Item3, props);
     });
-    return /* @__PURE__ */ import_react65.default.createElement("div", {
+    return /* @__PURE__ */ import_react66.default.createElement("div", {
       className
     }, itemMarkup);
   });
   Stack.Item = Item3;
 
   // node_modules/@shopify/polaris/build/esm/components/Heading/Heading.js
-  var import_react66 = __toESM(require_react());
+  var import_react67 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Heading/Heading.scss.js
   var styles14 = {
@@ -26559,14 +26570,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     children,
     id
   }) {
-    return /* @__PURE__ */ import_react66.default.createElement(Element2, {
+    return /* @__PURE__ */ import_react67.default.createElement(Element2, {
       className: styles14.Heading,
       id
     }, children);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Image/Image.js
-  var import_react67 = __toESM(require_react());
+  var import_react68 = __toESM(require_react());
   function Image({
     alt,
     sourceSet,
@@ -26580,11 +26591,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       source: subSource,
       descriptor
     }) => `${subSource} ${descriptor}`).join(",") : null;
-    const handleLoad = (0, import_react67.useCallback)(() => {
+    const handleLoad = (0, import_react68.useCallback)(() => {
       if (onLoad)
         onLoad();
     }, [onLoad]);
-    return /* @__PURE__ */ import_react67.default.createElement("img", Object.assign({
+    return /* @__PURE__ */ import_react68.default.createElement("img", Object.assign({
       alt,
       src: source,
       crossOrigin,
@@ -26596,7 +26607,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/ActionMenu.js
-  var import_react72 = __toESM(require_react());
+  var import_react73 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/ActionMenu.scss.js
   var styles15 = {
@@ -26604,7 +26615,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/RollupActions/RollupActions.js
-  var import_react68 = __toESM(require_react());
+  var import_react69 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/RollupActions/RollupActions.scss.js
   var styles16 = {
@@ -26625,21 +26636,21 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     if (items.length === 0 && sections.length === 0) {
       return null;
     }
-    const activatorMarkup = /* @__PURE__ */ import_react68.default.createElement("div", {
+    const activatorMarkup = /* @__PURE__ */ import_react69.default.createElement("div", {
       className: styles16.RollupActivator
-    }, /* @__PURE__ */ import_react68.default.createElement(Button, {
+    }, /* @__PURE__ */ import_react69.default.createElement(Button, {
       outline: true,
       icon: SvgHorizontalDotsMinor,
       accessibilityLabel: accessibilityLabel || i18n.translate("Polaris.ActionMenu.RollupActions.rollupButton"),
       onClick: toggleRollupOpen
     }));
-    return /* @__PURE__ */ import_react68.default.createElement(Popover2, {
+    return /* @__PURE__ */ import_react69.default.createElement(Popover2, {
       active: rollupOpen,
       activator: activatorMarkup,
       preferredAlignment: "right",
       onClose: toggleRollupOpen,
       hideOnPrint: true
-    }, /* @__PURE__ */ import_react68.default.createElement(ActionList, {
+    }, /* @__PURE__ */ import_react69.default.createElement(ActionList, {
       items,
       sections,
       onActionAnyItem: toggleRollupOpen
@@ -26647,7 +26658,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/Actions/Actions.js
-  var import_react71 = __toESM(require_react());
+  var import_react72 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/Actions/Actions.scss.js
   var styles17 = {
@@ -26655,7 +26666,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/MenuGroup/MenuGroup.js
-  var import_react70 = __toESM(require_react());
+  var import_react71 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/MenuGroup/MenuGroup.scss.js
   var styles18 = {
@@ -26663,7 +26674,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/SecondaryAction/SecondaryAction.js
-  var import_react69 = __toESM(require_react());
+  var import_react70 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/ActionMenu/components/SecondaryAction/SecondaryAction.scss.js
   var styles19 = {
@@ -26679,17 +26690,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     getOffsetWidth,
     ...rest
   }) {
-    const secondaryActionsRef = (0, import_react69.useRef)(null);
-    (0, import_react69.useEffect)(() => {
+    const secondaryActionsRef = (0, import_react70.useRef)(null);
+    (0, import_react70.useEffect)(() => {
       var _secondaryActionsRef$;
       if (!getOffsetWidth || !secondaryActionsRef.current)
         return;
       getOffsetWidth((_secondaryActionsRef$ = secondaryActionsRef.current) === null || _secondaryActionsRef$ === void 0 ? void 0 : _secondaryActionsRef$.offsetWidth);
     }, [getOffsetWidth]);
-    return /* @__PURE__ */ import_react69.default.createElement("span", {
+    return /* @__PURE__ */ import_react70.default.createElement("span", {
       className: classNames(styles19.SecondaryAction, destructive && styles19.destructive),
       ref: secondaryActionsRef
-    }, /* @__PURE__ */ import_react69.default.createElement(Button, Object.assign({
+    }, /* @__PURE__ */ import_react70.default.createElement(Button, Object.assign({
       onClick: onAction
     }, rest), children));
   }
@@ -26709,25 +26720,25 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     getOffsetWidth,
     sections
   }) {
-    const handleClose = (0, import_react70.useCallback)(() => {
+    const handleClose = (0, import_react71.useCallback)(() => {
       onClose(title);
     }, [onClose, title]);
-    const handleOpen = (0, import_react70.useCallback)(() => {
+    const handleOpen = (0, import_react71.useCallback)(() => {
       onOpen(title);
     }, [onOpen, title]);
-    const handleClick = (0, import_react70.useCallback)(() => {
+    const handleClick = (0, import_react71.useCallback)(() => {
       if (onClick) {
         onClick(handleOpen);
       } else {
         handleOpen();
       }
     }, [onClick, handleOpen]);
-    const handleOffsetWidth = (0, import_react70.useCallback)((width) => {
+    const handleOffsetWidth = (0, import_react71.useCallback)((width) => {
       if (!getOffsetWidth)
         return;
       getOffsetWidth(width);
     }, [getOffsetWidth]);
-    const popoverActivator = /* @__PURE__ */ import_react70.default.createElement(SecondaryAction, {
+    const popoverActivator = /* @__PURE__ */ import_react71.default.createElement(SecondaryAction, {
       disclosure: true,
       disabled,
       icon,
@@ -26735,17 +26746,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onClick: handleClick,
       getOffsetWidth: handleOffsetWidth
     }, title);
-    return /* @__PURE__ */ import_react70.default.createElement(Popover2, {
+    return /* @__PURE__ */ import_react71.default.createElement(Popover2, {
       active: Boolean(active),
       activator: popoverActivator,
       preferredAlignment: "left",
       onClose: handleClose,
       hideOnPrint: true
-    }, /* @__PURE__ */ import_react70.default.createElement(ActionList, {
+    }, /* @__PURE__ */ import_react71.default.createElement(ActionList, {
       items: actions,
       sections,
       onActionAnyItem: handleClose
-    }), details && /* @__PURE__ */ import_react70.default.createElement("div", {
+    }), details && /* @__PURE__ */ import_react71.default.createElement("div", {
       className: styles18.Details
     }, details));
   }
@@ -26758,15 +26769,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onActionRollup
   }) {
     const i18n = useI18n();
-    const actionsLayoutRef = (0, import_react71.useRef)(null);
-    const menuGroupWidthRef = (0, import_react71.useRef)(0);
-    const availableWidthRef = (0, import_react71.useRef)(0);
-    const actionsAndGroupsLengthRef = (0, import_react71.useRef)(0);
-    const timesMeasured = (0, import_react71.useRef)(0);
-    const actionWidthsRef = (0, import_react71.useRef)([]);
-    const rollupActiveRef = (0, import_react71.useRef)(null);
-    const [activeMenuGroup, setActiveMenuGroup] = (0, import_react71.useState)(void 0);
-    const [measuredActions, setMeasuredActions] = (0, import_react71.useState)({
+    const actionsLayoutRef = (0, import_react72.useRef)(null);
+    const menuGroupWidthRef = (0, import_react72.useRef)(0);
+    const availableWidthRef = (0, import_react72.useRef)(0);
+    const actionsAndGroupsLengthRef = (0, import_react72.useRef)(0);
+    const timesMeasured = (0, import_react72.useRef)(0);
+    const actionWidthsRef = (0, import_react72.useRef)([]);
+    const rollupActiveRef = (0, import_react72.useRef)(null);
+    const [activeMenuGroup, setActiveMenuGroup] = (0, import_react72.useState)(void 0);
+    const [measuredActions, setMeasuredActions] = (0, import_react72.useState)({
       showable: [],
       rolledUp: []
     });
@@ -26776,12 +26787,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
     const lastMenuGroup = [...groups].pop();
     const lastMenuGroupWidth = [...actionWidthsRef.current].pop() || 0;
-    const handleActionsOffsetWidth = (0, import_react71.useCallback)((width) => {
+    const handleActionsOffsetWidth = (0, import_react72.useCallback)((width) => {
       actionWidthsRef.current = [...actionWidthsRef.current, width];
     }, []);
-    const handleMenuGroupToggle = (0, import_react71.useCallback)((group) => setActiveMenuGroup(activeMenuGroup ? void 0 : group), [activeMenuGroup]);
-    const handleMenuGroupClose = (0, import_react71.useCallback)(() => setActiveMenuGroup(void 0), []);
-    const updateActions = (0, import_react71.useCallback)(() => {
+    const handleMenuGroupToggle = (0, import_react72.useCallback)((group) => setActiveMenuGroup(activeMenuGroup ? void 0 : group), [activeMenuGroup]);
+    const handleMenuGroupClose = (0, import_react72.useCallback)(() => setActiveMenuGroup(void 0), []);
+    const updateActions = (0, import_react72.useCallback)(() => {
       let actionsAndGroups = [...actions, ...groups];
       if (groups.length > 0) {
         actionsAndGroups = [...actionsAndGroups].slice(0, actionsAndGroups.length - 1);
@@ -26793,7 +26804,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         rolledUp
       });
     }, [actions, groups, measuredActions.showable.length]);
-    const measureActions = (0, import_react71.useCallback)(() => {
+    const measureActions = (0, import_react72.useCallback)(() => {
       if (actionWidthsRef.current.length === 0 || availableWidthRef.current === 0) {
         return;
       }
@@ -26834,7 +26845,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       timesMeasured.current += 1;
       actionsAndGroupsLengthRef.current = actionsAndGroups.length;
     }, [actions, groups, lastMenuGroup, lastMenuGroupWidth, onActionRollup]);
-    const handleResize = (0, import_react71.useMemo)(() => debounce(() => {
+    const handleResize = (0, import_react72.useMemo)(() => debounce(() => {
       if (!actionsLayoutRef.current)
         return;
       availableWidthRef.current = actionsLayoutRef.current.offsetWidth;
@@ -26844,7 +26855,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       leading: false,
       trailing: true
     }), [measureActions]);
-    (0, import_react71.useEffect)(() => {
+    (0, import_react72.useEffect)(() => {
       if (!actionsLayoutRef.current) {
         return;
       }
@@ -26863,14 +26874,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onAction,
         ...rest
       } = action;
-      return /* @__PURE__ */ import_react71.default.createElement(SecondaryAction, Object.assign({
+      return /* @__PURE__ */ import_react72.default.createElement(SecondaryAction, Object.assign({
         key: content,
         onClick: onAction
       }, rest, {
         getOffsetWidth: handleActionsOffsetWidth
       }), content);
     });
-    const rollUppableActionsMarkup = measuredActions.showable.length > 0 ? measuredActions.showable.map((action) => action.content && /* @__PURE__ */ import_react71.default.createElement(SecondaryAction, Object.assign({
+    const rollUppableActionsMarkup = measuredActions.showable.length > 0 ? measuredActions.showable.map((action) => action.content && /* @__PURE__ */ import_react72.default.createElement(SecondaryAction, Object.assign({
       key: action.content
     }, action, {
       getOffsetWidth: handleActionsOffsetWidth
@@ -26901,7 +26912,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         return [actions2, sections];
       }, [[], []]);
       if (!isDefaultGroup && !isLastMenuGroup) {
-        return /* @__PURE__ */ import_react71.default.createElement(MenuGroup, Object.assign({
+        return /* @__PURE__ */ import_react72.default.createElement(MenuGroup, Object.assign({
           key: title,
           title,
           active: title === activeMenuGroup,
@@ -26912,7 +26923,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           getOffsetWidth: handleActionsOffsetWidth
         }));
       } else if (!isDefaultGroup && isLastMenuGroup) {
-        return /* @__PURE__ */ import_react71.default.createElement(MenuGroup, Object.assign({
+        return /* @__PURE__ */ import_react72.default.createElement(MenuGroup, Object.assign({
           key: title,
           title,
           active: title === activeMenuGroup,
@@ -26924,7 +26935,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           getOffsetWidth: handleActionsOffsetWidth
         }));
       } else if (isDefaultGroup && groups.length === 0 && finalRolledUpActions.length) {
-        return /* @__PURE__ */ import_react71.default.createElement(MenuGroup, Object.assign({
+        return /* @__PURE__ */ import_react72.default.createElement(MenuGroup, Object.assign({
           key: title,
           title,
           active: title === activeMenuGroup,
@@ -26937,13 +26948,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }));
       }
     });
-    const groupedActionsMarkup = /* @__PURE__ */ import_react71.default.createElement(ButtonGroup, {
+    const groupedActionsMarkup = /* @__PURE__ */ import_react72.default.createElement(ButtonGroup, {
       spacing: "extraTight"
     }, rollUppableActionsMarkup, actionsMarkup, groupsMarkup);
-    return /* @__PURE__ */ import_react71.default.createElement("div", {
+    return /* @__PURE__ */ import_react72.default.createElement("div", {
       className: styles17.ActionsLayout,
       ref: actionsLayoutRef
-    }, groupedActionsMarkup, /* @__PURE__ */ import_react71.default.createElement(EventListener, {
+    }, groupedActionsMarkup, /* @__PURE__ */ import_react72.default.createElement(EventListener, {
       event: "resize",
       handler: handleResize
     }));
@@ -26965,13 +26976,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
     const actionMenuClassNames = classNames(styles15.ActionMenu, rollup && styles15.rollup);
     const rollupSections = groups.map((group) => convertGroupToSection(group));
-    return /* @__PURE__ */ import_react72.default.createElement("div", {
+    return /* @__PURE__ */ import_react73.default.createElement("div", {
       className: actionMenuClassNames
-    }, rollup ? /* @__PURE__ */ import_react72.default.createElement(RollupActions, {
+    }, rollup ? /* @__PURE__ */ import_react73.default.createElement(RollupActions, {
       accessibilityLabel: rollupActionsLabel,
       items: actions,
       sections: rollupSections
-    }) : /* @__PURE__ */ import_react72.default.createElement(Actions, {
+    }) : /* @__PURE__ */ import_react73.default.createElement(Actions, {
       actions,
       groups,
       onActionRollup
@@ -26995,7 +27006,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/InlineError/InlineError.js
-  var import_react73 = __toESM(require_react());
+  var import_react74 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/InlineError/InlineError.scss.js
   var styles20 = {
@@ -27011,12 +27022,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     if (!message) {
       return null;
     }
-    return /* @__PURE__ */ import_react73.default.createElement("div", {
+    return /* @__PURE__ */ import_react74.default.createElement("div", {
       id: errorTextID(fieldID),
       className: styles20.InlineError
-    }, /* @__PURE__ */ import_react73.default.createElement("div", {
+    }, /* @__PURE__ */ import_react74.default.createElement("div", {
       className: styles20.Icon
-    }, /* @__PURE__ */ import_react73.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react74.default.createElement(Icon, {
       source: SvgAlertMinor
     })), message);
   }
@@ -27025,7 +27036,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/TextField/TextField.js
-  var import_react80 = __toESM(require_react());
+  var import_react81 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/TextField/TextField.scss.js
   var styles21 = {
@@ -27059,7 +27070,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Labelled/Labelled.js
-  var import_react75 = __toESM(require_react());
+  var import_react76 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Labelled/Labelled.scss.js
   var styles22 = {
@@ -27071,7 +27082,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Label/Label.js
-  var import_react74 = __toESM(require_react());
+  var import_react75 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Label/Label.scss.js
   var styles23 = {
@@ -27092,9 +27103,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     requiredIndicator
   }) {
     const className = classNames(styles23.Label, hidden && styles23.hidden);
-    return /* @__PURE__ */ import_react74.default.createElement("div", {
+    return /* @__PURE__ */ import_react75.default.createElement("div", {
       className
-    }, /* @__PURE__ */ import_react74.default.createElement("label", {
+    }, /* @__PURE__ */ import_react75.default.createElement("label", {
       id: labelID(id),
       htmlFor: id,
       className: classNames(styles23.Text, requiredIndicator && styles23.RequiredIndicator)
@@ -27114,30 +27125,30 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     ...rest
   }) {
     const className = classNames(labelHidden && styles22.hidden);
-    const actionMarkup = action ? /* @__PURE__ */ import_react75.default.createElement("div", {
+    const actionMarkup = action ? /* @__PURE__ */ import_react76.default.createElement("div", {
       className: styles22.Action
     }, buttonFrom(action, {
       plain: true
     })) : null;
-    const helpTextMarkup = helpText ? /* @__PURE__ */ import_react75.default.createElement("div", {
+    const helpTextMarkup = helpText ? /* @__PURE__ */ import_react76.default.createElement("div", {
       className: styles22.HelpText,
       id: helpTextID(id)
     }, helpText) : null;
-    const errorMarkup = error && typeof error !== "boolean" && /* @__PURE__ */ import_react75.default.createElement("div", {
+    const errorMarkup = error && typeof error !== "boolean" && /* @__PURE__ */ import_react76.default.createElement("div", {
       className: styles22.Error
-    }, /* @__PURE__ */ import_react75.default.createElement(InlineError, {
+    }, /* @__PURE__ */ import_react76.default.createElement(InlineError, {
       message: error,
       fieldID: id
     }));
-    const labelMarkup = label ? /* @__PURE__ */ import_react75.default.createElement("div", {
+    const labelMarkup = label ? /* @__PURE__ */ import_react76.default.createElement("div", {
       className: styles22.LabelWrapper
-    }, /* @__PURE__ */ import_react75.default.createElement(Label, Object.assign({
+    }, /* @__PURE__ */ import_react76.default.createElement(Label, Object.assign({
       id,
       requiredIndicator
     }, rest, {
       hidden: false
     }), label), actionMarkup) : null;
-    return /* @__PURE__ */ import_react75.default.createElement("div", {
+    return /* @__PURE__ */ import_react76.default.createElement("div", {
       className
     }, labelMarkup, children, errorMarkup, helpTextMarkup);
   }
@@ -27146,7 +27157,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Connected/Connected.js
-  var import_react77 = __toESM(require_react());
+  var import_react78 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Connected/Connected.scss.js
   var styles24 = {
@@ -27157,7 +27168,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Connected/components/Item/Item.js
-  var import_react76 = __toESM(require_react());
+  var import_react77 = __toESM(require_react());
   function Item4({
     children,
     position
@@ -27168,7 +27179,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       setFalse: forceFalseFocused
     } = useToggle(false);
     const className = classNames(styles24.Item, focused && styles24["Item-focused"], position === "primary" ? styles24["Item-primary"] : styles24["Item-connection"]);
-    return /* @__PURE__ */ import_react76.default.createElement("div", {
+    return /* @__PURE__ */ import_react77.default.createElement("div", {
       onBlur: forceFalseFocused,
       onFocus: forceTrueFocused,
       className
@@ -27181,21 +27192,21 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     left,
     right
   }) {
-    const leftConnectionMarkup = left ? /* @__PURE__ */ import_react77.default.createElement(Item4, {
+    const leftConnectionMarkup = left ? /* @__PURE__ */ import_react78.default.createElement(Item4, {
       position: "left"
     }, left) : null;
-    const rightConnectionMarkup = right ? /* @__PURE__ */ import_react77.default.createElement(Item4, {
+    const rightConnectionMarkup = right ? /* @__PURE__ */ import_react78.default.createElement(Item4, {
       position: "right"
     }, right) : null;
-    return /* @__PURE__ */ import_react77.default.createElement("div", {
+    return /* @__PURE__ */ import_react78.default.createElement("div", {
       className: styles24.Connected
-    }, leftConnectionMarkup, /* @__PURE__ */ import_react77.default.createElement(Item4, {
+    }, leftConnectionMarkup, /* @__PURE__ */ import_react78.default.createElement(Item4, {
       position: "primary"
     }, children), rightConnectionMarkup);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/TextField/components/Spinner/Spinner.js
-  var import_react78 = __toESM(require_react());
+  var import_react79 = __toESM(require_react());
   function Spinner2({
     onChange,
     onClick,
@@ -27212,65 +27223,65 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onMouseDown(onChange2);
       };
     }
-    return /* @__PURE__ */ import_react78.default.createElement("div", {
+    return /* @__PURE__ */ import_react79.default.createElement("div", {
       className: styles21.Spinner,
       onClick,
       "aria-hidden": true
-    }, /* @__PURE__ */ import_react78.default.createElement("div", {
+    }, /* @__PURE__ */ import_react79.default.createElement("div", {
       role: "button",
       className: styles21.Segment,
       tabIndex: -1,
       onClick: handleStep(1),
       onMouseDown: handleMouseDown(handleStep(1)),
       onMouseUp
-    }, /* @__PURE__ */ import_react78.default.createElement("div", {
+    }, /* @__PURE__ */ import_react79.default.createElement("div", {
       className: styles21.SpinnerIcon
-    }, /* @__PURE__ */ import_react78.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react79.default.createElement(Icon, {
       source: SvgCaretUpMinor
-    }))), /* @__PURE__ */ import_react78.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react79.default.createElement("div", {
       role: "button",
       className: styles21.Segment,
       tabIndex: -1,
       onClick: handleStep(-1),
       onMouseDown: handleMouseDown(handleStep(-1)),
       onMouseUp
-    }, /* @__PURE__ */ import_react78.default.createElement("div", {
+    }, /* @__PURE__ */ import_react79.default.createElement("div", {
       className: styles21.SpinnerIcon
-    }, /* @__PURE__ */ import_react78.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react79.default.createElement(Icon, {
       source: SvgCaretDownMinor
     }))));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/TextField/components/Resizer/Resizer.js
-  var import_react79 = __toESM(require_react());
+  var import_react80 = __toESM(require_react());
   function Resizer({
     contents,
     currentHeight: currentHeightProp = null,
     minimumLines,
     onHeightChange
   }) {
-    const contentNode = (0, import_react79.useRef)(null);
-    const minimumLinesNode = (0, import_react79.useRef)(null);
-    const animationFrame = (0, import_react79.useRef)();
-    const currentHeight = (0, import_react79.useRef)(currentHeightProp);
+    const contentNode = (0, import_react80.useRef)(null);
+    const minimumLinesNode = (0, import_react80.useRef)(null);
+    const animationFrame = (0, import_react80.useRef)();
+    const currentHeight = (0, import_react80.useRef)(currentHeightProp);
     if (currentHeightProp !== currentHeight.current) {
       currentHeight.current = currentHeightProp;
     }
-    (0, import_react79.useEffect)(() => {
+    (0, import_react80.useEffect)(() => {
       return () => {
         if (animationFrame.current) {
           cancelAnimationFrame(animationFrame.current);
         }
       };
     }, []);
-    const minimumLinesMarkup = minimumLines ? /* @__PURE__ */ import_react79.default.createElement("div", {
+    const minimumLinesMarkup = minimumLines ? /* @__PURE__ */ import_react80.default.createElement("div", {
       ref: minimumLinesNode,
       className: styles21.DummyInput,
       dangerouslySetInnerHTML: {
         __html: getContentsForMinimumLines(minimumLines)
       }
     }) : null;
-    const handleHeightCheck = (0, import_react79.useCallback)(() => {
+    const handleHeightCheck = (0, import_react80.useCallback)(() => {
       if (animationFrame.current) {
         cancelAnimationFrame(animationFrame.current);
       }
@@ -27284,16 +27295,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       });
     }, [onHeightChange]);
-    (0, import_react79.useLayoutEffect)(() => {
+    (0, import_react80.useLayoutEffect)(() => {
       handleHeightCheck();
     });
-    return /* @__PURE__ */ import_react79.default.createElement("div", {
+    return /* @__PURE__ */ import_react80.default.createElement("div", {
       "aria-hidden": true,
       className: styles21.Resizer
-    }, /* @__PURE__ */ import_react79.default.createElement(EventListener, {
+    }, /* @__PURE__ */ import_react80.default.createElement(EventListener, {
       event: "resize",
       handler: handleHeightCheck
-    }), /* @__PURE__ */ import_react79.default.createElement("div", {
+    }), /* @__PURE__ */ import_react80.default.createElement("div", {
       ref: contentNode,
       className: styles21.DummyInput,
       dangerouslySetInnerHTML: {
@@ -27374,23 +27385,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onBlur
   }) {
     const i18n = useI18n();
-    const [height, setHeight] = (0, import_react80.useState)(null);
-    const [focus, setFocus] = (0, import_react80.useState)(Boolean(focused));
+    const [height, setHeight] = (0, import_react81.useState)(null);
+    const [focus, setFocus] = (0, import_react81.useState)(Boolean(focused));
     const isAfterInitial = useIsAfterInitialMount();
     const id = useUniqueId("TextField", idProp);
-    const inputRef = (0, import_react80.useRef)(null);
-    const textAreaRef = (0, import_react80.useRef)(null);
-    const prefixRef = (0, import_react80.useRef)(null);
-    const suffixRef = (0, import_react80.useRef)(null);
-    const verticalContentRef = (0, import_react80.useRef)(null);
-    const buttonPressTimer = (0, import_react80.useRef)();
-    (0, import_react80.useEffect)(() => {
+    const inputRef = (0, import_react81.useRef)(null);
+    const textAreaRef = (0, import_react81.useRef)(null);
+    const prefixRef = (0, import_react81.useRef)(null);
+    const suffixRef = (0, import_react81.useRef)(null);
+    const verticalContentRef = (0, import_react81.useRef)(null);
+    const buttonPressTimer = (0, import_react81.useRef)();
+    (0, import_react81.useEffect)(() => {
       const input2 = inputRef.current;
       if (!input2 || focused === void 0)
         return;
       focused ? input2.focus() : input2.blur();
     }, [focused, verticalContent]);
-    (0, import_react80.useEffect)(() => {
+    (0, import_react81.useEffect)(() => {
       const input2 = inputRef.current;
       const isSupportedInputType = type === "text" || type === "tel" || type === "search" || type === "url" || type === "password";
       if (!input2 || !isSupportedInputType || !suggestion) {
@@ -27404,12 +27415,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const normalizedMin = min != null ? min : -Infinity;
     const className = classNames(styles21.TextField, Boolean(normalizedValue) && styles21.hasValue, disabled && styles21.disabled, readOnly && styles21.readOnly, error && styles21.error, multiline && styles21.multiline, focus && styles21.focus);
     const inputType = type === "currency" ? "text" : type;
-    const prefixMarkup = prefix2 ? /* @__PURE__ */ import_react80.default.createElement("div", {
+    const prefixMarkup = prefix2 ? /* @__PURE__ */ import_react81.default.createElement("div", {
       className: styles21.Prefix,
       id: `${id}-Prefix`,
       ref: prefixRef
     }, prefix2) : null;
-    const suffixMarkup = suffix ? /* @__PURE__ */ import_react80.default.createElement("div", {
+    const suffixMarkup = suffix ? /* @__PURE__ */ import_react81.default.createElement("div", {
       className: styles21.Suffix,
       id: `${id}-Suffix`,
       ref: suffixRef
@@ -27425,7 +27436,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       });
       const characterCountClassName = classNames(styles21.CharacterCount, multiline && styles21.AlignFieldBottom);
       const characterCountText = !maxLength ? characterCount : `${characterCount}/${maxLength}`;
-      characterCountMarkup = /* @__PURE__ */ import_react80.default.createElement("div", {
+      characterCountMarkup = /* @__PURE__ */ import_react81.default.createElement("div", {
         id: `${id}-CharacterCounter`,
         className: characterCountClassName,
         "aria-label": characterCountLabel,
@@ -27435,16 +27446,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }, characterCountText);
     }
     const clearButtonVisible = normalizedValue !== "";
-    const clearButtonMarkup = clearButton && clearButtonVisible ? /* @__PURE__ */ import_react80.default.createElement("button", {
+    const clearButtonMarkup = clearButton && clearButtonVisible ? /* @__PURE__ */ import_react81.default.createElement("button", {
       type: "button",
       className: styles21.ClearButton,
       onClick: handleClearButtonPress,
       disabled
-    }, /* @__PURE__ */ import_react80.default.createElement(VisuallyHidden, null, i18n.translate("Polaris.Common.clear")), /* @__PURE__ */ import_react80.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react81.default.createElement(VisuallyHidden, null, i18n.translate("Polaris.Common.clear")), /* @__PURE__ */ import_react81.default.createElement(Icon, {
       source: SvgCircleCancelMinor,
       color: "base"
     })) : null;
-    const handleNumberChange = (0, import_react80.useCallback)((steps) => {
+    const handleNumberChange = (0, import_react81.useCallback)((steps) => {
       if (onChange == null) {
         return;
       }
@@ -27457,10 +27468,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const newValue = Math.min(Number(normalizedMax), Math.max(numericValue + steps * normalizedStep, Number(normalizedMin)));
       onChange(String(newValue.toFixed(decimalPlaces)), id);
     }, [id, normalizedMax, normalizedMin, onChange, normalizedStep, value]);
-    const handleButtonRelease = (0, import_react80.useCallback)(() => {
+    const handleButtonRelease = (0, import_react81.useCallback)(() => {
       clearTimeout(buttonPressTimer.current);
     }, []);
-    const handleButtonPress = (0, import_react80.useCallback)((onChange2) => {
+    const handleButtonPress = (0, import_react81.useCallback)((onChange2) => {
       const minInterval = 50;
       const decrementBy = 10;
       let interval = 200;
@@ -27475,7 +27486,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         once: true
       });
     }, [handleButtonRelease]);
-    const spinnerMarkup = type === "number" && step !== 0 && !disabled && !readOnly ? /* @__PURE__ */ import_react80.default.createElement(Spinner2, {
+    const spinnerMarkup = type === "number" && step !== 0 && !disabled && !readOnly ? /* @__PURE__ */ import_react81.default.createElement(Spinner2, {
       onClick: handleClickChild,
       onChange: handleNumberChange,
       onMouseDown: handleButtonPress,
@@ -27485,10 +27496,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       height,
       maxHeight
     } : null;
-    const handleExpandingResize = (0, import_react80.useCallback)((height2) => {
+    const handleExpandingResize = (0, import_react81.useCallback)((height2) => {
       setHeight(height2);
     }, []);
-    const resizer = multiline && isAfterInitial ? /* @__PURE__ */ import_react80.default.createElement(Resizer, {
+    const resizer = multiline && isAfterInitial ? /* @__PURE__ */ import_react81.default.createElement(Resizer, {
       contents: normalizedValue || placeholder,
       currentHeight: height,
       minimumLines: typeof multiline === "number" ? multiline : 1,
@@ -27532,7 +27543,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onBlur(event);
       }
     };
-    const input = /* @__PURE__ */ (0, import_react80.createElement)(multiline ? "textarea" : "input", {
+    const input = /* @__PURE__ */ (0, import_react81.createElement)(multiline ? "textarea" : "input", {
       name,
       id,
       disabled,
@@ -27572,17 +27583,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onChange: !suggestion ? handleChange : void 0,
       onInput: suggestion ? handleChange : void 0
     });
-    const inputWithVerticalContentMarkup = verticalContent ? /* @__PURE__ */ import_react80.default.createElement("div", {
+    const inputWithVerticalContentMarkup = verticalContent ? /* @__PURE__ */ import_react81.default.createElement("div", {
       className: styles21.VerticalContent,
       id: `${id}-VerticalContent`,
       ref: verticalContentRef,
       onClick: handleClickChild
     }, verticalContent, input) : null;
     const inputMarkup = verticalContent ? inputWithVerticalContentMarkup : input;
-    const backdropMarkup = /* @__PURE__ */ import_react80.default.createElement("div", {
+    const backdropMarkup = /* @__PURE__ */ import_react81.default.createElement("div", {
       className: classNames(styles21.Backdrop, connectedLeft && styles21["Backdrop-connectedLeft"], connectedRight && styles21["Backdrop-connectedRight"])
     });
-    return /* @__PURE__ */ import_react80.default.createElement(Labelled, {
+    return /* @__PURE__ */ import_react81.default.createElement(Labelled, {
       label,
       id,
       error,
@@ -27590,10 +27601,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       labelHidden,
       helpText,
       requiredIndicator
-    }, /* @__PURE__ */ import_react80.default.createElement(Connected, {
+    }, /* @__PURE__ */ import_react81.default.createElement(Connected, {
       left: connectedLeft,
       right: connectedRight
-    }, /* @__PURE__ */ import_react80.default.createElement("div", {
+    }, /* @__PURE__ */ import_react81.default.createElement("div", {
       className,
       onClick: handleClick
     }, prefixMarkup, inputMarkup, suffixMarkup, characterCountMarkup, clearButtonMarkup, spinnerMarkup, backdropMarkup, resizer)));
@@ -27656,7 +27667,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Backdrop/Backdrop.js
-  var import_react83 = __toESM(require_react());
+  var import_react84 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Backdrop/Backdrop.scss.js
   var styles25 = {
@@ -27666,12 +27677,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/ScrollLock/ScrollLock.js
-  var import_react82 = __toESM(require_react());
+  var import_react83 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/scroll-lock-manager/hooks.js
-  var import_react81 = __toESM(require_react());
+  var import_react82 = __toESM(require_react());
   function useScrollLockManager() {
-    const scrollLockManager = (0, import_react81.useContext)(ScrollLockManagerContext);
+    const scrollLockManager = (0, import_react82.useContext)(ScrollLockManagerContext);
     if (!scrollLockManager) {
       throw new MissingAppProviderError("No ScrollLockManager was provided.");
     }
@@ -27681,7 +27692,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   // node_modules/@shopify/polaris/build/esm/components/ScrollLock/ScrollLock.js
   function ScrollLock(_) {
     const scrollLockManager = useScrollLockManager();
-    (0, import_react82.useEffect)(() => {
+    (0, import_react83.useEffect)(() => {
       scrollLockManager.registerScrollLock();
       return () => {
         scrollLockManager.unregisterScrollLock();
@@ -27699,7 +27710,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       transparent
     } = props;
     const className = classNames(styles25.Backdrop, belowNavigation && styles25.belowNavigation, transparent && styles25.transparent);
-    return /* @__PURE__ */ import_react83.default.createElement(import_react83.default.Fragment, null, /* @__PURE__ */ import_react83.default.createElement(ScrollLock, null), /* @__PURE__ */ import_react83.default.createElement("div", {
+    return /* @__PURE__ */ import_react84.default.createElement(import_react84.default.Fragment, null, /* @__PURE__ */ import_react84.default.createElement(ScrollLock, null), /* @__PURE__ */ import_react84.default.createElement("div", {
       className,
       onClick,
       onTouchStart
@@ -27707,7 +27718,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Breadcrumbs/Breadcrumbs.js
-  var import_react84 = __toESM(require_react());
+  var import_react85 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Breadcrumbs/Breadcrumbs.scss.js
   var styles26 = {
@@ -27727,18 +27738,18 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const {
       content
     } = breadcrumb;
-    const contentMarkup = /* @__PURE__ */ import_react84.default.createElement(import_react84.default.Fragment, null, /* @__PURE__ */ import_react84.default.createElement("span", {
+    const contentMarkup = /* @__PURE__ */ import_react85.default.createElement(import_react85.default.Fragment, null, /* @__PURE__ */ import_react85.default.createElement("span", {
       className: styles26.Icon
-    }, /* @__PURE__ */ import_react84.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react85.default.createElement(Icon, {
       source: SvgArrowLeftMinor
-    })), /* @__PURE__ */ import_react84.default.createElement(VisuallyHidden, null, content));
-    const breadcrumbMarkup = "url" in breadcrumb ? /* @__PURE__ */ import_react84.default.createElement(UnstyledLink, {
+    })), /* @__PURE__ */ import_react85.default.createElement(VisuallyHidden, null, content));
+    const breadcrumbMarkup = "url" in breadcrumb ? /* @__PURE__ */ import_react85.default.createElement(UnstyledLink, {
       key: content,
       url: breadcrumb.url,
       className: styles26.Breadcrumb,
       onMouseUp: handleMouseUpByBlurring,
       "aria-label": breadcrumb.accessibilityLabel
-    }, contentMarkup) : /* @__PURE__ */ import_react84.default.createElement("button", {
+    }, contentMarkup) : /* @__PURE__ */ import_react85.default.createElement("button", {
       key: content,
       className: styles26.Breadcrumb,
       onClick: breadcrumb.onAction,
@@ -27746,7 +27757,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       type: "button",
       "aria-label": breadcrumb.accessibilityLabel
     }, contentMarkup);
-    return /* @__PURE__ */ import_react84.default.createElement("nav", {
+    return /* @__PURE__ */ import_react85.default.createElement("nav", {
       role: "navigation"
     }, breadcrumbMarkup);
   }
@@ -27826,11 +27837,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/react-transition-group/esm/CSSTransition.js
-  var import_react87 = __toESM(require_react());
+  var import_react88 = __toESM(require_react());
 
   // node_modules/react-transition-group/esm/Transition.js
   var import_prop_types2 = __toESM(require_prop_types());
-  var import_react86 = __toESM(require_react());
+  var import_react87 = __toESM(require_react());
   var import_react_dom2 = __toESM(require_react_dom());
 
   // node_modules/react-transition-group/esm/config.js
@@ -27859,8 +27870,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   })]) : null;
 
   // node_modules/react-transition-group/esm/TransitionGroupContext.js
-  var import_react85 = __toESM(require_react());
-  var TransitionGroupContext_default = import_react85.default.createContext(null);
+  var import_react86 = __toESM(require_react());
+  var TransitionGroupContext_default = import_react86.default.createContext(null);
 
   // node_modules/react-transition-group/esm/Transition.js
   var UNMOUNTED = "unmounted";
@@ -28064,12 +28075,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         return null;
       }
       var _this$props = this.props, children = _this$props.children, _in = _this$props.in, _mountOnEnter = _this$props.mountOnEnter, _unmountOnExit = _this$props.unmountOnExit, _appear = _this$props.appear, _enter = _this$props.enter, _exit = _this$props.exit, _timeout = _this$props.timeout, _addEndListener = _this$props.addEndListener, _onEnter = _this$props.onEnter, _onEntering = _this$props.onEntering, _onEntered = _this$props.onEntered, _onExit = _this$props.onExit, _onExiting = _this$props.onExiting, _onExited = _this$props.onExited, _nodeRef = _this$props.nodeRef, childProps = _objectWithoutPropertiesLoose(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
-      return /* @__PURE__ */ import_react86.default.createElement(TransitionGroupContext_default.Provider, {
+      return /* @__PURE__ */ import_react87.default.createElement(TransitionGroupContext_default.Provider, {
         value: null
-      }, typeof children === "function" ? children(status, childProps) : import_react86.default.cloneElement(import_react86.default.Children.only(children), childProps));
+      }, typeof children === "function" ? children(status, childProps) : import_react87.default.cloneElement(import_react87.default.Children.only(children), childProps));
     };
     return Transition2;
-  }(import_react86.default.Component);
+  }(import_react87.default.Component);
   Transition.contextType = TransitionGroupContext_default;
   Transition.propTypes = true ? {
     nodeRef: import_prop_types2.default.shape({
@@ -28246,7 +28257,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
     _proto.render = function render() {
       var _this$props = this.props, _ = _this$props.classNames, props = _objectWithoutPropertiesLoose(_this$props, ["classNames"]);
-      return /* @__PURE__ */ import_react87.default.createElement(Transition_default, _extends({}, props, {
+      return /* @__PURE__ */ import_react88.default.createElement(Transition_default, _extends({}, props, {
         onEnter: this.onEnter,
         onEntered: this.onEntered,
         onEntering: this.onEntering,
@@ -28256,7 +28267,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }));
     };
     return CSSTransition2;
-  }(import_react87.default.Component);
+  }(import_react88.default.Component);
   CSSTransition.defaultProps = {
     classNames: ""
   };
@@ -28281,17 +28292,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 
   // node_modules/react-transition-group/esm/TransitionGroup.js
   var import_prop_types4 = __toESM(require_prop_types());
-  var import_react89 = __toESM(require_react());
+  var import_react90 = __toESM(require_react());
 
   // node_modules/react-transition-group/esm/utils/ChildMapping.js
-  var import_react88 = __toESM(require_react());
+  var import_react89 = __toESM(require_react());
   function getChildMapping(children, mapFn) {
     var mapper = function mapper2(child) {
-      return mapFn && (0, import_react88.isValidElement)(child) ? mapFn(child) : child;
+      return mapFn && (0, import_react89.isValidElement)(child) ? mapFn(child) : child;
     };
     var result2 = /* @__PURE__ */ Object.create(null);
     if (children)
-      import_react88.Children.map(children, function(c) {
+      import_react89.Children.map(children, function(c) {
         return c;
       }).forEach(function(child) {
         result2[child.key] = mapper(child);
@@ -28337,7 +28348,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
   function getInitialChildMapping(props, onExited) {
     return getChildMapping(props.children, function(child) {
-      return (0, import_react88.cloneElement)(child, {
+      return (0, import_react89.cloneElement)(child, {
         onExited: onExited.bind(null, child),
         in: true,
         appear: getProp(child, "appear", props),
@@ -28351,25 +28362,25 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     var children = mergeChildMappings(prevChildMapping, nextChildMapping);
     Object.keys(children).forEach(function(key) {
       var child = children[key];
-      if (!(0, import_react88.isValidElement)(child))
+      if (!(0, import_react89.isValidElement)(child))
         return;
       var hasPrev = key in prevChildMapping;
       var hasNext = key in nextChildMapping;
       var prevChild = prevChildMapping[key];
-      var isLeaving = (0, import_react88.isValidElement)(prevChild) && !prevChild.props.in;
+      var isLeaving = (0, import_react89.isValidElement)(prevChild) && !prevChild.props.in;
       if (hasNext && (!hasPrev || isLeaving)) {
-        children[key] = (0, import_react88.cloneElement)(child, {
+        children[key] = (0, import_react89.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: true,
           exit: getProp(child, "exit", nextProps),
           enter: getProp(child, "enter", nextProps)
         });
       } else if (!hasNext && hasPrev && !isLeaving) {
-        children[key] = (0, import_react88.cloneElement)(child, {
+        children[key] = (0, import_react89.cloneElement)(child, {
           in: false
         });
-      } else if (hasNext && hasPrev && (0, import_react88.isValidElement)(prevChild)) {
-        children[key] = (0, import_react88.cloneElement)(child, {
+      } else if (hasNext && hasPrev && (0, import_react89.isValidElement)(prevChild)) {
+        children[key] = (0, import_react89.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: prevChild.props.in,
           exit: getProp(child, "exit", nextProps),
@@ -28451,16 +28462,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       delete props.enter;
       delete props.exit;
       if (Component4 === null) {
-        return /* @__PURE__ */ import_react89.default.createElement(TransitionGroupContext_default.Provider, {
+        return /* @__PURE__ */ import_react90.default.createElement(TransitionGroupContext_default.Provider, {
           value: contextValue
         }, children);
       }
-      return /* @__PURE__ */ import_react89.default.createElement(TransitionGroupContext_default.Provider, {
+      return /* @__PURE__ */ import_react90.default.createElement(TransitionGroupContext_default.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ import_react89.default.createElement(Component4, props, children));
+      }, /* @__PURE__ */ import_react90.default.createElement(Component4, props, children));
     };
     return TransitionGroup2;
-  }(import_react89.default.Component);
+  }(import_react90.default.Component);
   TransitionGroup.propTypes = true ? {
     component: import_prop_types4.default.any,
     children: import_prop_types4.default.node,
@@ -28473,15 +28484,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   var TransitionGroup_default = TransitionGroup;
 
   // node_modules/@shopify/polaris/build/esm/utilities/frame/hooks.js
-  var import_react91 = __toESM(require_react());
+  var import_react92 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/frame/context.js
-  var import_react90 = __toESM(require_react());
-  var FrameContext = /* @__PURE__ */ (0, import_react90.createContext)(void 0);
+  var import_react91 = __toESM(require_react());
+  var FrameContext = /* @__PURE__ */ (0, import_react91.createContext)(void 0);
 
   // node_modules/@shopify/polaris/build/esm/utilities/frame/hooks.js
   function useFrame() {
-    const frame = (0, import_react91.useContext)(FrameContext);
+    const frame = (0, import_react92.useContext)(FrameContext);
     if (!frame) {
       throw new Error("No Frame context was provided. Your component must be wrapped in a <Frame> component. See https://polaris.shopify.com/components/structure/frame for implementation instructions.");
     }
@@ -28489,10 +28500,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Tooltip/Tooltip.js
-  var import_react93 = __toESM(require_react());
+  var import_react94 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.js
-  var import_react92 = __toESM(require_react());
+  var import_react93 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Tooltip/components/TooltipOverlay/TooltipOverlay.scss.js
   var styles27 = {
@@ -28513,7 +28524,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     accessibilityLabel
   }) {
     const i18n = useI18n();
-    const markup = active ? /* @__PURE__ */ import_react92.default.createElement(PositionedOverlay, {
+    const markup = active ? /* @__PURE__ */ import_react93.default.createElement(PositionedOverlay, {
       active,
       activator,
       preferredPosition,
@@ -28531,9 +28542,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const contentStyles = measuring ? void 0 : {
         minHeight: desiredHeight
       };
-      return /* @__PURE__ */ import_react92.default.createElement("div", Object.assign({
+      return /* @__PURE__ */ import_react93.default.createElement("div", Object.assign({
         className: containerClassName
-      }, layer.props), /* @__PURE__ */ import_react92.default.createElement("div", {
+      }, layer.props), /* @__PURE__ */ import_react93.default.createElement("div", {
         id,
         role: "tooltip",
         className: styles27.Content,
@@ -28561,11 +28572,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       setTrue: handleFocus,
       setFalse: handleBlur
     } = useToggle(Boolean(originalActive));
-    const [activatorNode, setActivatorNode] = (0, import_react93.useState)(null);
+    const [activatorNode, setActivatorNode] = (0, import_react94.useState)(null);
     const id = useUniqueId("TooltipContent");
-    const activatorContainer = (0, import_react93.useRef)(null);
-    const mouseEntered = (0, import_react93.useRef)(false);
-    (0, import_react93.useEffect)(() => {
+    const activatorContainer = (0, import_react94.useRef)(null);
+    const mouseEntered = (0, import_react94.useRef)(false);
+    (0, import_react94.useEffect)(() => {
       const firstFocusable = activatorContainer.current ? findFirstFocusableNode(activatorContainer.current) : null;
       const accessibilityNode = firstFocusable || activatorContainer.current;
       if (!accessibilityNode)
@@ -28574,14 +28585,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       accessibilityNode.setAttribute("aria-describedby", id);
       accessibilityNode.setAttribute("data-polaris-tooltip-activator", "true");
     }, [id, children]);
-    const handleKeyUp = (0, import_react93.useCallback)((event) => {
+    const handleKeyUp = (0, import_react94.useCallback)((event) => {
       if (event.keyCode !== Key.Escape)
         return;
       handleBlur();
     }, [handleBlur]);
-    const portal2 = activatorNode ? /* @__PURE__ */ import_react93.default.createElement(Portal, {
+    const portal2 = activatorNode ? /* @__PURE__ */ import_react94.default.createElement(Portal, {
       idPrefix: "tooltip"
-    }, /* @__PURE__ */ import_react93.default.createElement(TooltipOverlay, {
+    }, /* @__PURE__ */ import_react94.default.createElement(TooltipOverlay, {
       id,
       preferredPosition,
       activator: activatorNode,
@@ -28590,7 +28601,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onClose: noop4,
       preventInteraction: dismissOnMouseOut
     }, content)) : null;
-    return /* @__PURE__ */ import_react93.default.createElement(WrapperComponent, {
+    return /* @__PURE__ */ import_react94.default.createElement(WrapperComponent, {
       onFocus: handleFocus,
       onBlur: handleBlur,
       onMouseLeave: handleMouseLeave,
@@ -28624,7 +28635,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/DisplayText/DisplayText.js
-  var import_react94 = __toESM(require_react());
+  var import_react95 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/DisplayText/DisplayText.scss.js
   var styles28 = {
@@ -28642,15 +28653,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     size = "medium"
   }) {
     const className = classNames(styles28.DisplayText, size && styles28[variationName("size", size)]);
-    return /* @__PURE__ */ import_react94.default.createElement(Element2, {
+    return /* @__PURE__ */ import_react95.default.createElement(Element2, {
       className
     }, children);
   }
 
   // node_modules/@shopify/polaris/build/esm/utilities/media-query/hooks.js
-  var import_react95 = __toESM(require_react());
+  var import_react96 = __toESM(require_react());
   function useMediaQuery() {
-    const mediaQuery = (0, import_react95.useContext)(MediaQueryContext);
+    const mediaQuery = (0, import_react96.useContext)(MediaQueryContext);
     if (!mediaQuery) {
       throw new Error("No mediaQuery was provided. Your application must be wrapped in an <AppProvider> component. See https://polaris.shopify.com/components/structure/app-provider for implementation instructions.");
     }
@@ -28658,14 +28669,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/TrapFocus/TrapFocus.js
-  var import_react98 = __toESM(require_react());
+  var import_react99 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/focus-manager/hooks.js
-  var import_react96 = __toESM(require_react());
+  var import_react97 = __toESM(require_react());
   function useFocusManager({
     trapping
   }) {
-    const focusManager = (0, import_react96.useContext)(FocusManagerContext);
+    const focusManager = (0, import_react97.useContext)(FocusManagerContext);
     const id = useUniqueId();
     if (!focusManager) {
       throw new MissingAppProviderError("No FocusManager was provided.");
@@ -28676,10 +28687,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       remove: removeFocusItem
     } = focusManager;
     const canSafelyFocus = trapFocusList[0] === id;
-    const value = (0, import_react96.useMemo)(() => ({
+    const value = (0, import_react97.useMemo)(() => ({
       canSafelyFocus
     }), [canSafelyFocus]);
-    (0, import_react96.useEffect)(() => {
+    (0, import_react97.useEffect)(() => {
       if (!trapping)
         return;
       addFocusItem(id);
@@ -28691,13 +28702,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Focus/Focus.js
-  var import_react97 = __toESM(require_react());
-  var Focus = /* @__PURE__ */ (0, import_react97.memo)(function Focus2({
+  var import_react98 = __toESM(require_react());
+  var Focus = /* @__PURE__ */ (0, import_react98.memo)(function Focus2({
     children,
     disabled,
     root: root2
   }) {
-    (0, import_react97.useEffect)(() => {
+    (0, import_react98.useEffect)(() => {
       if (disabled || !root2) {
         return;
       }
@@ -28707,7 +28718,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }
       focusFirstFocusableNode(node, false);
     }, [disabled, root2]);
-    return /* @__PURE__ */ import_react97.default.createElement(import_react97.default.Fragment, null, children);
+    return /* @__PURE__ */ import_react98.default.createElement(import_react98.default.Fragment, null, children);
   });
   function isRef(ref) {
     return ref.current !== void 0;
@@ -28723,9 +28734,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     } = useFocusManager({
       trapping
     });
-    const focusTrapWrapper = (0, import_react98.useRef)(null);
-    const [disableFocus, setDisableFocus] = (0, import_react98.useState)(true);
-    (0, import_react98.useEffect)(() => {
+    const focusTrapWrapper = (0, import_react99.useRef)(null);
+    const [disableFocus, setDisableFocus] = (0, import_react99.useState)(true);
+    (0, import_react99.useEffect)(() => {
       const disable = canSafelyFocus && !(focusTrapWrapper.current && focusTrapWrapper.current.contains(document.activeElement)) ? !trapping : true;
       setDisableFocus(disable);
     }, [canSafelyFocus, trapping]);
@@ -28753,15 +28764,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         focusLastKeyboardFocusableNode(focusTrapWrapper.current);
       }
     };
-    return /* @__PURE__ */ import_react98.default.createElement(Focus, {
+    return /* @__PURE__ */ import_react99.default.createElement(Focus, {
       disabled: disableFocus,
       root: focusTrapWrapper.current
-    }, /* @__PURE__ */ import_react98.default.createElement("div", {
+    }, /* @__PURE__ */ import_react99.default.createElement("div", {
       ref: focusTrapWrapper
-    }, /* @__PURE__ */ import_react98.default.createElement(EventListener, {
+    }, /* @__PURE__ */ import_react99.default.createElement(EventListener, {
       event: "focusin",
       handler: handleFocusIn
-    }), /* @__PURE__ */ import_react98.default.createElement(KeypressListener, {
+    }), /* @__PURE__ */ import_react99.default.createElement(KeypressListener, {
       keyCode: Key.Tab,
       keyEvent: "keydown",
       handler: handleTab
@@ -28769,7 +28780,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Form/Form.js
-  var import_react99 = __toESM(require_react());
+  var import_react100 = __toESM(require_react());
   function Form({
     acceptCharset,
     action,
@@ -28785,7 +28796,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onSubmit
   }) {
     const i18n = useI18n();
-    const handleSubmit = (0, import_react99.useCallback)((event) => {
+    const handleSubmit = (0, import_react100.useCallback)((event) => {
       if (!preventDefault) {
         return;
       }
@@ -28793,12 +28804,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       onSubmit(event);
     }, [onSubmit, preventDefault]);
     const autoCompleteInputs = normalizeAutoComplete(autoComplete);
-    const submitMarkup = implicitSubmit ? /* @__PURE__ */ import_react99.default.createElement(VisuallyHidden, null, /* @__PURE__ */ import_react99.default.createElement("button", {
+    const submitMarkup = implicitSubmit ? /* @__PURE__ */ import_react100.default.createElement(VisuallyHidden, null, /* @__PURE__ */ import_react100.default.createElement("button", {
       type: "submit",
       "aria-hidden": "true",
       tabIndex: -1
     }, i18n.translate("Polaris.Common.submit"))) : null;
-    return /* @__PURE__ */ import_react99.default.createElement("form", {
+    return /* @__PURE__ */ import_react100.default.createElement("form", {
       acceptCharset,
       action,
       autoComplete: autoCompleteInputs,
@@ -28818,7 +28829,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/FormLayout/FormLayout.js
-  var import_react102 = __toESM(require_react());
+  var import_react103 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/FormLayout/FormLayout.scss.js
   var styles29 = {
@@ -28832,12 +28843,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/FormLayout/components/Group/Group.js
-  var import_react101 = __toESM(require_react());
+  var import_react102 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/FormLayout/components/Item/Item.js
-  var import_react100 = __toESM(require_react());
+  var import_react101 = __toESM(require_react());
   function Item5(props) {
-    return /* @__PURE__ */ import_react100.default.createElement("div", {
+    return /* @__PURE__ */ import_react101.default.createElement("div", {
       className: styles29.Item
     }, props.children);
   }
@@ -28857,36 +28868,36 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     let titleID;
     if (helpText) {
       helpTextID2 = `${id}HelpText`;
-      helpTextElement = /* @__PURE__ */ import_react101.default.createElement("div", {
+      helpTextElement = /* @__PURE__ */ import_react102.default.createElement("div", {
         id: helpTextID2,
         className: styles29.HelpText
       }, helpText);
     }
     if (title) {
       titleID = `${id}Title`;
-      titleElement = /* @__PURE__ */ import_react101.default.createElement("div", {
+      titleElement = /* @__PURE__ */ import_react102.default.createElement("div", {
         id: titleID,
         className: styles29.Title
       }, title);
     }
-    const itemsMarkup = import_react101.Children.map(children, (child) => wrapWithComponent(child, Item5, {}));
-    return /* @__PURE__ */ import_react101.default.createElement("div", {
+    const itemsMarkup = import_react102.Children.map(children, (child) => wrapWithComponent(child, Item5, {}));
+    return /* @__PURE__ */ import_react102.default.createElement("div", {
       role: "group",
       className,
       "aria-labelledby": titleID,
       "aria-describedby": helpTextID2
-    }, titleElement, /* @__PURE__ */ import_react101.default.createElement("div", {
+    }, titleElement, /* @__PURE__ */ import_react102.default.createElement("div", {
       className: styles29.Items
     }, itemsMarkup), helpTextElement);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/FormLayout/FormLayout.js
-  var FormLayout = /* @__PURE__ */ (0, import_react102.memo)(function FormLayout2({
+  var FormLayout = /* @__PURE__ */ (0, import_react103.memo)(function FormLayout2({
     children
   }) {
-    return /* @__PURE__ */ import_react102.default.createElement("div", {
+    return /* @__PURE__ */ import_react103.default.createElement("div", {
       className: styles29.FormLayout
-    }, import_react102.Children.map(children, wrapChildren));
+    }, import_react103.Children.map(children, wrapChildren));
   });
   FormLayout.Group = Group;
   function wrapChildren(child, index2) {
@@ -28900,7 +28911,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/Frame.js
-  var import_react119 = __toESM(require_react());
+  var import_react120 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/set-root-property.js
   function setRootProperty(name, value, node) {
@@ -28934,13 +28945,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/Loading/Loading.js
-  var import_react104 = __toESM(require_react());
+  var import_react105 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-is-mounted-ref.js
-  var import_react103 = __toESM(require_react());
+  var import_react104 = __toESM(require_react());
   function useIsMountedRef() {
-    const isMounted = (0, import_react103.useRef)(false);
-    (0, import_react103.useEffect)(() => {
+    const isMounted = (0, import_react104.useRef)(false);
+    (0, import_react104.useEffect)(() => {
       isMounted.current = true;
       return () => {
         isMounted.current = false;
@@ -28960,9 +28971,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   function Loading() {
     const i18n = useI18n();
     const isMountedRef = useIsMountedRef();
-    const [progress, setProgress] = (0, import_react104.useState)(0);
-    const [animating, setAnimating] = (0, import_react104.useState)(false);
-    (0, import_react104.useEffect)(() => {
+    const [progress, setProgress] = (0, import_react105.useState)(0);
+    const [animating, setAnimating] = (0, import_react105.useState)(false);
+    (0, import_react105.useEffect)(() => {
       if (progress >= STUCK_THRESHOLD || animating) {
         return;
       }
@@ -28977,14 +28988,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const customStyles = {
       transform: `scaleX(${Math.floor(progress) / 100})`
     };
-    return /* @__PURE__ */ import_react104.default.createElement("div", {
+    return /* @__PURE__ */ import_react105.default.createElement("div", {
       className: styles31.Loading,
       "aria-valuenow": progress,
       "aria-valuemin": 0,
       "aria-valuemax": 100,
       role: "progressbar",
       "aria-label": i18n.translate("Polaris.Loading.label")
-    }, /* @__PURE__ */ import_react104.default.createElement("div", {
+    }, /* @__PURE__ */ import_react105.default.createElement("div", {
       className: styles31.Level,
       style: customStyles,
       onTransitionEnd: () => setAnimating(false)
@@ -28992,7 +29003,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/CSSAnimation/CSSAnimation.js
-  var import_react105 = __toESM(require_react());
+  var import_react106 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/CSSAnimation/CSSAnimation.scss.js
   var styles32 = {
@@ -29014,26 +29025,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     type,
     children
   }) {
-    const [transitionStatus, setTransitionStatus] = (0, import_react105.useState)(inProp ? TransitionStatus2.Entering : TransitionStatus2.Exited);
-    const isMounted = (0, import_react105.useRef)(false);
-    const node = (0, import_react105.useRef)(null);
-    (0, import_react105.useEffect)(() => {
+    const [transitionStatus, setTransitionStatus] = (0, import_react106.useState)(inProp ? TransitionStatus2.Entering : TransitionStatus2.Exited);
+    const isMounted = (0, import_react106.useRef)(false);
+    const node = (0, import_react106.useRef)(null);
+    (0, import_react106.useEffect)(() => {
       if (!isMounted.current)
         return;
       transitionStatus === TransitionStatus2.Entering && changeTransitionStatus(TransitionStatus2.Entered);
     }, [transitionStatus]);
-    (0, import_react105.useEffect)(() => {
+    (0, import_react106.useEffect)(() => {
       if (!isMounted.current)
         return;
       inProp && changeTransitionStatus(TransitionStatus2.Entering);
       !inProp && changeTransitionStatus(TransitionStatus2.Exiting);
     }, [inProp]);
-    (0, import_react105.useEffect)(() => {
+    (0, import_react106.useEffect)(() => {
       isMounted.current = true;
     }, []);
     const wrapperClassName = classNames(className, styles32[variationName("start", type)], inProp && styles32[variationName("end", type)]);
     const content = transitionStatus === TransitionStatus2.Exited && !inProp ? null : children;
-    return /* @__PURE__ */ import_react105.default.createElement("div", {
+    return /* @__PURE__ */ import_react106.default.createElement("div", {
       className: wrapperClassName,
       ref: node,
       onTransitionEnd: handleTransitionEnd
@@ -29049,7 +29060,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/ContextualSaveBar/ContextualSaveBar.js
-  var import_react113 = __toESM(require_react());
+  var import_react114 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/is-object.js
   function isObject(value) {
@@ -29096,10 +29107,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/ContextualSaveBar/components/DiscardConfirmationModal/DiscardConfirmationModal.js
-  var import_react112 = __toESM(require_react());
+  var import_react113 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/Modal.js
-  var import_react111 = __toESM(require_react());
+  var import_react112 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/Modal.scss.js
   var styles34 = {
@@ -29110,7 +29121,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Dialog/Dialog.js
-  var import_react106 = __toESM(require_react());
+  var import_react107 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Dialog/Dialog.scss.js
   var styles35 = {
@@ -29142,33 +29153,33 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     fullScreen,
     ...props
   }) {
-    const containerNode = (0, import_react106.useRef)(null);
+    const containerNode = (0, import_react107.useRef)(null);
     const classes = classNames(styles35.Modal, small && styles35.sizeSmall, large && styles35.sizeLarge, limitHeight && styles35.limitHeight, fullScreen && styles35.fullScreen);
     const TransitionChild = instant ? Transition_default : FadeUp;
-    (0, import_react106.useEffect)(() => {
+    (0, import_react107.useEffect)(() => {
       containerNode.current && !containerNode.current.contains(document.activeElement) && focusFirstFocusableNode(containerNode.current);
     }, []);
-    return /* @__PURE__ */ import_react106.default.createElement(TransitionChild, Object.assign({}, props, {
+    return /* @__PURE__ */ import_react107.default.createElement(TransitionChild, Object.assign({}, props, {
       nodeRef: containerNode,
       mountOnEnter: true,
       unmountOnExit: true,
       timeout: parseInt(tokens.motion["duration-200"].value, 10),
       onEntered,
       onExited
-    }), /* @__PURE__ */ import_react106.default.createElement("div", {
+    }), /* @__PURE__ */ import_react107.default.createElement("div", {
       className: styles35.Container,
       "data-polaris-layer": true,
       "data-polaris-overlay": true,
       ref: containerNode
-    }, /* @__PURE__ */ import_react106.default.createElement(TrapFocus, null, /* @__PURE__ */ import_react106.default.createElement("div", {
+    }, /* @__PURE__ */ import_react107.default.createElement(TrapFocus, null, /* @__PURE__ */ import_react107.default.createElement("div", {
       role: "dialog",
       "aria-modal": true,
       "aria-labelledby": labelledBy,
       tabIndex: -1,
       className: styles35.Dialog
-    }, /* @__PURE__ */ import_react106.default.createElement("div", {
+    }, /* @__PURE__ */ import_react107.default.createElement("div", {
       className: classes
-    }, /* @__PURE__ */ import_react106.default.createElement(KeypressListener, {
+    }, /* @__PURE__ */ import_react107.default.createElement(KeypressListener, {
       keyCode: Key.Escape,
       handler: onClose
     }), children)))));
@@ -29185,13 +29196,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     children,
     ...props
   }) {
-    return /* @__PURE__ */ import_react106.default.createElement(CSSTransition_default, Object.assign({}, props, {
+    return /* @__PURE__ */ import_react107.default.createElement(CSSTransition_default, Object.assign({}, props, {
       classNames: fadeUpClasses
     }), children);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Header/Header.js
-  var import_react108 = __toESM(require_react());
+  var import_react109 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Header/Header.scss.js
   var styles36 = {
@@ -29201,7 +29212,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/CloseButton/CloseButton.js
-  var import_react107 = __toESM(require_react());
+  var import_react108 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/CloseButton/CloseButton.scss.js
   var styles37 = {
@@ -29215,11 +29226,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onClick
   }) {
     const i18n = useI18n();
-    return /* @__PURE__ */ import_react107.default.createElement("button", {
+    return /* @__PURE__ */ import_react108.default.createElement("button", {
       onClick,
       className: classNames(styles37.CloseButton, titleHidden && styles37.titleHidden),
       "aria-label": i18n.translate("Polaris.Common.close")
-    }, /* @__PURE__ */ import_react107.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react108.default.createElement(Icon, {
       source: SvgMobileCancelMajor,
       color: "base"
     }));
@@ -29232,22 +29243,22 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     children,
     onClose
   }) {
-    return /* @__PURE__ */ import_react108.default.createElement("div", {
+    return /* @__PURE__ */ import_react109.default.createElement("div", {
       className: titleHidden || !children ? styles36.titleHidden : styles36.Header
-    }, /* @__PURE__ */ import_react108.default.createElement("div", {
+    }, /* @__PURE__ */ import_react109.default.createElement("div", {
       id,
       className: styles36.Title
-    }, /* @__PURE__ */ import_react108.default.createElement(DisplayText, {
+    }, /* @__PURE__ */ import_react109.default.createElement(DisplayText, {
       element: "h2",
       size: "small"
-    }, children)), /* @__PURE__ */ import_react108.default.createElement(CloseButton, {
+    }, children)), /* @__PURE__ */ import_react109.default.createElement(CloseButton, {
       titleHidden,
       onClick: onClose
     }));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Section/Section.js
-  var import_react109 = __toESM(require_react());
+  var import_react110 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Section/Section.scss.js
   var styles38 = {
@@ -29265,13 +29276,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     titleHidden = false
   }) {
     const className = classNames(styles38.Section, flush && styles38.flush, subdued && styles38.subdued, titleHidden && styles38.titleHidden);
-    return /* @__PURE__ */ import_react109.default.createElement("section", {
+    return /* @__PURE__ */ import_react110.default.createElement("section", {
       className
     }, children);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Footer/Footer.js
-  var import_react110 = __toESM(require_react());
+  var import_react111 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Modal/components/Footer/Footer.scss.js
   var styles39 = {
@@ -29289,14 +29300,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       primary: true
     }) || null;
     const secondaryActionButtons = secondaryActions && buttonsFrom(secondaryActions) || null;
-    const actions = primaryActionButton || secondaryActionButtons ? /* @__PURE__ */ import_react110.default.createElement(ButtonGroup, null, secondaryActionButtons, primaryActionButton) : null;
-    return /* @__PURE__ */ import_react110.default.createElement("div", {
+    const actions = primaryActionButton || secondaryActionButtons ? /* @__PURE__ */ import_react111.default.createElement(ButtonGroup, null, secondaryActionButtons, primaryActionButton) : null;
+    return /* @__PURE__ */ import_react111.default.createElement("div", {
       className: styles39.Footer
-    }, /* @__PURE__ */ import_react110.default.createElement("div", {
+    }, /* @__PURE__ */ import_react111.default.createElement("div", {
       className: styles39.FooterContent
-    }, /* @__PURE__ */ import_react110.default.createElement(Stack, {
+    }, /* @__PURE__ */ import_react111.default.createElement(Stack, {
       alignment: "center"
-    }, /* @__PURE__ */ import_react110.default.createElement(Stack.Item, {
+    }, /* @__PURE__ */ import_react111.default.createElement(Stack.Item, {
       fill: true
     }, children), actions)));
   }
@@ -29328,26 +29339,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     noScroll,
     fullScreen
   }) {
-    const [iframeHeight, setIframeHeight] = (0, import_react111.useState)(IFRAME_LOADING_HEIGHT);
+    const [iframeHeight, setIframeHeight] = (0, import_react112.useState)(IFRAME_LOADING_HEIGHT);
     const headerId = useUniqueId("modal-header");
-    const activatorRef = (0, import_react111.useRef)(null);
+    const activatorRef = (0, import_react112.useRef)(null);
     const i18n = useI18n();
     const iframeTitle = i18n.translate("Polaris.Modal.iFrameTitle");
     let dialog;
     let backdrop;
-    const handleEntered = (0, import_react111.useCallback)(() => {
+    const handleEntered = (0, import_react112.useCallback)(() => {
       if (onTransitionEnd) {
         onTransitionEnd();
       }
     }, [onTransitionEnd]);
-    const handleExited = (0, import_react111.useCallback)(() => {
+    const handleExited = (0, import_react112.useCallback)(() => {
       setIframeHeight(IFRAME_LOADING_HEIGHT);
       const activatorElement = activator && isRef2(activator) ? activator && activator.current : activatorRef.current;
       if (activatorElement) {
         requestAnimationFrame(() => focusFirstFocusableNode(activatorElement));
       }
     }, [activator]);
-    const handleIFrameLoad = (0, import_react111.useCallback)((evt) => {
+    const handleIFrameLoad = (0, import_react112.useCallback)((evt) => {
       const iframe = evt.target;
       if (iframe && iframe.contentWindow) {
         try {
@@ -29361,24 +29372,24 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }
     }, [onIFrameLoad]);
     if (open) {
-      const footerMarkup = !footer && !primaryAction && !secondaryActions ? null : /* @__PURE__ */ import_react111.default.createElement(Footer, {
+      const footerMarkup = !footer && !primaryAction && !secondaryActions ? null : /* @__PURE__ */ import_react112.default.createElement(Footer, {
         primaryAction,
         secondaryActions
       }, footer);
       const content = sectioned ? wrapWithComponent(children, Section3, {
         titleHidden
       }) : children;
-      const body = loading ? /* @__PURE__ */ import_react111.default.createElement("div", {
+      const body = loading ? /* @__PURE__ */ import_react112.default.createElement("div", {
         className: styles34.Spinner
-      }, /* @__PURE__ */ import_react111.default.createElement(Spinner, null)) : content;
-      const scrollContainerMarkup = noScroll ? /* @__PURE__ */ import_react111.default.createElement("div", {
+      }, /* @__PURE__ */ import_react112.default.createElement(Spinner, null)) : content;
+      const scrollContainerMarkup = noScroll ? /* @__PURE__ */ import_react112.default.createElement("div", {
         className: styles34.Body
-      }, body) : /* @__PURE__ */ import_react111.default.createElement(Scrollable, {
+      }, body) : /* @__PURE__ */ import_react112.default.createElement(Scrollable, {
         shadow: true,
         className: styles34.Body,
         onScrolledToBottom
       }, body);
-      const bodyMarkup = src ? /* @__PURE__ */ import_react111.default.createElement("iframe", {
+      const bodyMarkup = src ? /* @__PURE__ */ import_react112.default.createElement("iframe", {
         name: iFrameName,
         title: iframeTitle,
         src,
@@ -29388,7 +29399,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           height: `${iframeHeight}px`
         }
       }) : scrollContainerMarkup;
-      dialog = /* @__PURE__ */ import_react111.default.createElement(Dialog, {
+      dialog = /* @__PURE__ */ import_react112.default.createElement(Dialog, {
         instant,
         labelledBy: headerId,
         onClose,
@@ -29398,26 +29409,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         small,
         limitHeight,
         fullScreen
-      }, /* @__PURE__ */ import_react111.default.createElement(Header, {
+      }, /* @__PURE__ */ import_react112.default.createElement(Header, {
         titleHidden,
         id: headerId,
         onClose
-      }, title), /* @__PURE__ */ import_react111.default.createElement("div", {
+      }, title), /* @__PURE__ */ import_react112.default.createElement("div", {
         className: styles34.BodyWrapper
       }, bodyMarkup), footerMarkup);
-      backdrop = /* @__PURE__ */ import_react111.default.createElement(Backdrop, {
+      backdrop = /* @__PURE__ */ import_react112.default.createElement(Backdrop, {
         onClick: onClose
       });
     }
     const animated = !instant;
-    const activatorMarkup = activator && !isRef2(activator) ? /* @__PURE__ */ import_react111.default.createElement("div", {
+    const activatorMarkup = activator && !isRef2(activator) ? /* @__PURE__ */ import_react112.default.createElement("div", {
       ref: activatorRef
     }, activator) : null;
-    return /* @__PURE__ */ import_react111.default.createElement(WithinContentContext.Provider, {
+    return /* @__PURE__ */ import_react112.default.createElement(WithinContentContext.Provider, {
       value: true
-    }, activatorMarkup, /* @__PURE__ */ import_react111.default.createElement(Portal, {
+    }, activatorMarkup, /* @__PURE__ */ import_react112.default.createElement(Portal, {
       idPrefix: "modal"
-    }, /* @__PURE__ */ import_react111.default.createElement(TransitionGroup_default, {
+    }, /* @__PURE__ */ import_react112.default.createElement(TransitionGroup_default, {
       appear: animated,
       enter: animated,
       exit: animated
@@ -29435,7 +29446,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     onCancel
   }) {
     const i18n = useI18n();
-    return /* @__PURE__ */ import_react112.default.createElement(Modal, {
+    return /* @__PURE__ */ import_react113.default.createElement(Modal, {
       title: i18n.translate("Polaris.DiscardConfirmationModal.title"),
       open,
       onClose: onCancel,
@@ -29471,7 +29482,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       toggle: toggleDiscardConfirmationModal,
       setFalse: closeDiscardConfirmationModal
     } = useToggle(false);
-    const handleDiscardAction = (0, import_react113.useCallback)(() => {
+    const handleDiscardAction = (0, import_react114.useCallback)(() => {
       if (discardAction && discardAction.onAction) {
         discardAction.onAction();
       }
@@ -29484,12 +29495,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     } else if (discardAction) {
       discardActionHandler = discardAction.onAction;
     }
-    const discardConfirmationModalMarkup = discardAction && discardAction.onAction && discardAction.discardConfirmationModal && /* @__PURE__ */ import_react113.default.createElement(DiscardConfirmationModal, {
+    const discardConfirmationModalMarkup = discardAction && discardAction.onAction && discardAction.discardConfirmationModal && /* @__PURE__ */ import_react114.default.createElement(DiscardConfirmationModal, {
       open: discardConfirmationModalVisible,
       onCancel: toggleDiscardConfirmationModal,
       onDiscard: handleDiscardAction
     });
-    const discardActionMarkup = discardAction && /* @__PURE__ */ import_react113.default.createElement(Button, {
+    const discardActionMarkup = discardAction && /* @__PURE__ */ import_react114.default.createElement(Button, {
       url: discardAction.url,
       onClick: discardActionHandler,
       loading: discardAction.loading,
@@ -29497,7 +29508,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       accessibilityLabel: discardAction.content
     }, discardActionContent);
     const saveActionContent = saveAction && saveAction.content ? saveAction.content : i18n.translate("Polaris.ContextualSaveBar.save");
-    const saveActionMarkup = saveAction && /* @__PURE__ */ import_react113.default.createElement(Button, {
+    const saveActionMarkup = saveAction && /* @__PURE__ */ import_react114.default.createElement(Button, {
       primary: true,
       url: saveAction.url,
       onClick: saveAction.onAction,
@@ -29506,50 +29517,50 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       accessibilityLabel: saveAction.content
     }, saveActionContent);
     const width = getWidth(logo, 104);
-    const imageMarkup = logo && /* @__PURE__ */ import_react113.default.createElement(Image, {
+    const imageMarkup = logo && /* @__PURE__ */ import_react114.default.createElement(Image, {
       style: {
         width
       },
       source: logo.contextualSaveBarSource || "",
       alt: ""
     });
-    const logoMarkup = alignContentFlush || contextControl ? null : /* @__PURE__ */ import_react113.default.createElement("div", {
+    const logoMarkup = alignContentFlush || contextControl ? null : /* @__PURE__ */ import_react114.default.createElement("div", {
       className: styles33.LogoContainer,
       style: {
         width
       }
     }, imageMarkup);
-    const contextControlMarkup = contextControl ? /* @__PURE__ */ import_react113.default.createElement("div", {
+    const contextControlMarkup = contextControl ? /* @__PURE__ */ import_react114.default.createElement("div", {
       className: styles33.ContextControl
     }, contextControl) : null;
     const contentsClassName = classNames(styles33.Contents, fullWidth && styles33.fullWidth);
-    return /* @__PURE__ */ import_react113.default.createElement(import_react113.default.Fragment, null, /* @__PURE__ */ import_react113.default.createElement(CustomProperties, {
+    return /* @__PURE__ */ import_react114.default.createElement(import_react114.default.Fragment, null, /* @__PURE__ */ import_react114.default.createElement(CustomProperties, {
       colorScheme: "dark"
-    }, /* @__PURE__ */ import_react113.default.createElement("div", {
+    }, /* @__PURE__ */ import_react114.default.createElement("div", {
       className: styles33.ContextualSaveBar
-    }, contextControlMarkup, logoMarkup, /* @__PURE__ */ import_react113.default.createElement("div", {
+    }, contextControlMarkup, logoMarkup, /* @__PURE__ */ import_react114.default.createElement("div", {
       className: contentsClassName
-    }, /* @__PURE__ */ import_react113.default.createElement("h2", {
+    }, /* @__PURE__ */ import_react114.default.createElement("h2", {
       className: styles33.Message
-    }, message), /* @__PURE__ */ import_react113.default.createElement("div", {
+    }, message), /* @__PURE__ */ import_react114.default.createElement("div", {
       className: styles33.ActionContainer
-    }, /* @__PURE__ */ import_react113.default.createElement(Stack, {
+    }, /* @__PURE__ */ import_react114.default.createElement(Stack, {
       spacing: "tight",
       wrap: false
     }, secondaryMenu, discardActionMarkup, saveActionMarkup))))), discardConfirmationModalMarkup);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/ToastManager/ToastManager.js
-  var import_react118 = __toESM(require_react());
+  var import_react119 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-deep-effect.js
-  var import_react115 = __toESM(require_react());
+  var import_react116 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-deep-compare-ref.js
-  var import_react114 = __toESM(require_react());
+  var import_react115 = __toESM(require_react());
   var import_react_fast_compare = __toESM(require_react_fast_compare());
   function useDeepCompareRef(dependencies, comparator = import_react_fast_compare.default) {
-    const dependencyList = (0, import_react114.useRef)(dependencies);
+    const dependencyList = (0, import_react115.useRef)(dependencies);
     if (!comparator(dependencyList.current, dependencies)) {
       dependencyList.current = dependencies;
     }
@@ -29558,13 +29569,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-deep-effect.js
   function useDeepEffect(callback, dependencies, customCompare) {
-    (0, import_react115.useEffect)(callback, useDeepCompareRef(dependencies, customCompare));
+    (0, import_react116.useEffect)(callback, useDeepCompareRef(dependencies, customCompare));
   }
 
   // node_modules/@shopify/polaris/build/esm/utilities/use-deep-callback.js
-  var import_react116 = __toESM(require_react());
+  var import_react117 = __toESM(require_react());
   function useDeepCallback(callback, dependencies, customCompare) {
-    return (0, import_react116.useCallback)(callback, useDeepCompareRef(dependencies, customCompare));
+    return (0, import_react117.useCallback)(callback, useDeepCompareRef(dependencies, customCompare));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/ToastManager/ToastManager.scss.js
@@ -29577,7 +29588,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/Toast/Toast.js
-  var import_react117 = __toESM(require_react());
+  var import_react118 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/Toast/Toast.scss.js
   var styles41 = {
@@ -29597,7 +29608,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     error,
     action
   }) {
-    (0, import_react117.useEffect)(() => {
+    (0, import_react118.useEffect)(() => {
       let timeoutDuration = duration || DEFAULT_TOAST_DURATION;
       if (action && !duration) {
         timeoutDuration = DEFAULT_TOAST_DURATION_WITH_ACTION;
@@ -29609,33 +29620,33 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         clearTimeout(timer);
       };
     }, [action, duration, onDismiss]);
-    const dismissMarkup = /* @__PURE__ */ import_react117.default.createElement("button", {
+    const dismissMarkup = /* @__PURE__ */ import_react118.default.createElement("button", {
       type: "button",
       className: styles41.CloseButton,
       onClick: onDismiss
-    }, /* @__PURE__ */ import_react117.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react118.default.createElement(Icon, {
       source: SvgMobileCancelMajor
     }));
-    const actionMarkup = action ? /* @__PURE__ */ import_react117.default.createElement("div", {
+    const actionMarkup = action ? /* @__PURE__ */ import_react118.default.createElement("div", {
       className: styles41.Action
-    }, /* @__PURE__ */ import_react117.default.createElement(Button, {
+    }, /* @__PURE__ */ import_react118.default.createElement(Button, {
       plain: true,
       monochrome: true,
       onClick: action.onAction
     }, action.content)) : null;
     const className = classNames(styles41.Toast, error && styles41.error);
-    return /* @__PURE__ */ import_react117.default.createElement(CustomProperties, {
+    return /* @__PURE__ */ import_react118.default.createElement(CustomProperties, {
       colorScheme: "dark"
-    }, /* @__PURE__ */ import_react117.default.createElement("div", {
+    }, /* @__PURE__ */ import_react118.default.createElement("div", {
       className
-    }, /* @__PURE__ */ import_react117.default.createElement(KeypressListener, {
+    }, /* @__PURE__ */ import_react118.default.createElement(KeypressListener, {
       keyCode: Key.Escape,
       handler: onDismiss
     }), content, actionMarkup, dismissMarkup));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Frame/components/ToastManager/ToastManager.js
-  var ToastManager = /* @__PURE__ */ (0, import_react118.memo)(function ToastManager2({
+  var ToastManager = /* @__PURE__ */ (0, import_react119.memo)(function ToastManager2({
     toastMessages
   }) {
     const toastNodes = [];
@@ -29654,9 +29665,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       updateToasts();
     }, [toastMessages]);
     const toastsMarkup = toastMessages.map((toast, index2) => {
-      const toastNode = /* @__PURE__ */ (0, import_react118.createRef)();
+      const toastNode = /* @__PURE__ */ (0, import_react119.createRef)();
       toastNodes[index2] = toastNode;
-      return /* @__PURE__ */ import_react118.default.createElement(CSSTransition_default, {
+      return /* @__PURE__ */ import_react119.default.createElement(CSSTransition_default, {
         nodeRef: toastNodes[index2],
         key: toast.id,
         timeout: {
@@ -29664,17 +29675,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           exit: 400
         },
         classNames: toastClasses
-      }, /* @__PURE__ */ import_react118.default.createElement("div", {
+      }, /* @__PURE__ */ import_react119.default.createElement("div", {
         ref: toastNode
-      }, /* @__PURE__ */ import_react118.default.createElement(Toast, toast)));
+      }, /* @__PURE__ */ import_react119.default.createElement(Toast, toast)));
     });
-    return /* @__PURE__ */ import_react118.default.createElement(Portal, null, /* @__PURE__ */ import_react118.default.createElement(EventListener, {
+    return /* @__PURE__ */ import_react119.default.createElement(Portal, null, /* @__PURE__ */ import_react119.default.createElement(EventListener, {
       event: "resize",
       handler: updateToasts
-    }), /* @__PURE__ */ import_react118.default.createElement("div", {
+    }), /* @__PURE__ */ import_react119.default.createElement("div", {
       className: styles40.ToastManager,
       "aria-live": "assertive"
-    }, /* @__PURE__ */ import_react118.default.createElement(TransitionGroup_default, {
+    }, /* @__PURE__ */ import_react119.default.createElement(TransitionGroup_default, {
       component: null
     }, toastsMarkup)));
   });
@@ -29689,7 +29700,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   var APP_FRAME_NAV = "AppFrameNav";
   var APP_FRAME_TOP_BAR = "AppFrameTopBar";
   var APP_FRAME_LOADING_BAR = "AppFrameLoadingBar";
-  var FrameInner = class extends import_react119.PureComponent {
+  var FrameInner = class extends import_react120.PureComponent {
     constructor(...args) {
       super(...args);
       this.state = {
@@ -29701,7 +29712,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
       this.contextualSaveBar = null;
       this.globalRibbonContainer = null;
-      this.navigationNode = /* @__PURE__ */ (0, import_react119.createRef)();
+      this.navigationNode = /* @__PURE__ */ (0, import_react120.createRef)();
       this.setGlobalRibbonHeight = () => {
         const {
           globalRibbonContainer
@@ -29879,16 +29890,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           role: "dialog"
         }
       };
-      const navigationMarkup = navigation ? /* @__PURE__ */ import_react119.default.createElement(TrapFocus, {
+      const navigationMarkup = navigation ? /* @__PURE__ */ import_react120.default.createElement(TrapFocus, {
         trapping: mobileNavShowing
-      }, /* @__PURE__ */ import_react119.default.createElement(CSSTransition_default, {
+      }, /* @__PURE__ */ import_react120.default.createElement(CSSTransition_default, {
         nodeRef: this.navigationNode,
         appear: isNavigationCollapsed,
         exit: isNavigationCollapsed,
         in: showMobileNavigation,
         timeout: parseInt(tokens.motion["duration-300"].value, 10),
         classNames: navTransitionClasses
-      }, /* @__PURE__ */ import_react119.default.createElement("div", Object.assign({
+      }, /* @__PURE__ */ import_react120.default.createElement("div", Object.assign({
         key: "NavContent"
       }, mobileNavAttributes, {
         "aria-label": i18n.translate("Polaris.Frame.navigationLabel"),
@@ -29897,39 +29908,39 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onKeyDown: this.handleNavKeydown,
         id: APP_FRAME_NAV,
         hidden: mobileNavHidden
-      }), navigation, /* @__PURE__ */ import_react119.default.createElement("button", {
+      }), navigation, /* @__PURE__ */ import_react120.default.createElement("button", {
         type: "button",
         className: styles30.NavigationDismiss,
         onClick: this.handleNavigationDismiss,
         "aria-hidden": mobileNavHidden || !isNavigationCollapsed && !showMobileNavigation,
         "aria-label": i18n.translate("Polaris.Frame.Navigation.closeMobileNavigationLabel"),
         tabIndex
-      }, /* @__PURE__ */ import_react119.default.createElement(Icon, {
+      }, /* @__PURE__ */ import_react120.default.createElement(Icon, {
         source: SvgMobileCancelMajor
       }))))) : null;
-      const loadingMarkup = loadingStack > 0 ? /* @__PURE__ */ import_react119.default.createElement("div", {
+      const loadingMarkup = loadingStack > 0 ? /* @__PURE__ */ import_react120.default.createElement("div", {
         className: styles30.LoadingBar,
         id: APP_FRAME_LOADING_BAR
-      }, /* @__PURE__ */ import_react119.default.createElement(Loading, null)) : null;
-      const contextualSaveBarMarkup = /* @__PURE__ */ import_react119.default.createElement(CSSAnimation, {
+      }, /* @__PURE__ */ import_react120.default.createElement(Loading, null)) : null;
+      const contextualSaveBarMarkup = /* @__PURE__ */ import_react120.default.createElement(CSSAnimation, {
         in: showContextualSaveBar,
         className: styles30.ContextualSaveBar,
         type: "fade"
-      }, /* @__PURE__ */ import_react119.default.createElement(ContextualSaveBar, this.contextualSaveBar));
-      const topBarMarkup = topBar ? /* @__PURE__ */ import_react119.default.createElement("div", Object.assign({
+      }, /* @__PURE__ */ import_react120.default.createElement(ContextualSaveBar, this.contextualSaveBar));
+      const topBarMarkup = topBar ? /* @__PURE__ */ import_react120.default.createElement("div", Object.assign({
         className: styles30.TopBar
       }, layer.props, dataPolarisTopBar.props, {
         id: APP_FRAME_TOP_BAR
       }), topBar) : null;
-      const globalRibbonMarkup = globalRibbon ? /* @__PURE__ */ import_react119.default.createElement("div", {
+      const globalRibbonMarkup = globalRibbon ? /* @__PURE__ */ import_react120.default.createElement("div", {
         className: styles30.GlobalRibbonContainer,
         ref: this.setGlobalRibbonContainer
       }, globalRibbon) : null;
       const skipClassName = classNames(styles30.Skip, skipFocused && styles30.focused);
       const skipTarget = skipToContentTarget !== null && skipToContentTarget !== void 0 && skipToContentTarget.current ? skipToContentTarget.current.id : APP_FRAME_MAIN;
-      const skipMarkup = /* @__PURE__ */ import_react119.default.createElement("div", {
+      const skipMarkup = /* @__PURE__ */ import_react120.default.createElement("div", {
         className: skipClassName
-      }, /* @__PURE__ */ import_react119.default.createElement("a", {
+      }, /* @__PURE__ */ import_react120.default.createElement("a", {
         href: `#${skipTarget}`,
         onFocus: this.handleFocus,
         onBlur: this.handleBlur,
@@ -29939,7 +29950,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         "data-has-navigation": true
       } : {};
       const frameClassName = classNames(styles30.Frame, navigation && styles30.hasNav, topBar && styles30.hasTopBar);
-      const navigationOverlayMarkup = showMobileNavigation && isNavigationCollapsed ? /* @__PURE__ */ import_react119.default.createElement(Backdrop, {
+      const navigationOverlayMarkup = showMobileNavigation && isNavigationCollapsed ? /* @__PURE__ */ import_react120.default.createElement(Backdrop, {
         belowNavigation: true,
         onClick: this.handleNavigationDismiss,
         onTouchStart: this.handleNavigationDismiss
@@ -29953,19 +29964,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         setContextualSaveBar: this.setContextualSaveBar,
         removeContextualSaveBar: this.removeContextualSaveBar
       };
-      return /* @__PURE__ */ import_react119.default.createElement(FrameContext.Provider, {
+      return /* @__PURE__ */ import_react120.default.createElement(FrameContext.Provider, {
         value: context2
-      }, /* @__PURE__ */ import_react119.default.createElement("div", Object.assign({
+      }, /* @__PURE__ */ import_react120.default.createElement("div", Object.assign({
         className: frameClassName
-      }, layer.props, navigationAttributes), skipMarkup, topBarMarkup, navigationMarkup, contextualSaveBarMarkup, loadingMarkup, navigationOverlayMarkup, /* @__PURE__ */ import_react119.default.createElement("main", {
+      }, layer.props, navigationAttributes), skipMarkup, topBarMarkup, navigationMarkup, contextualSaveBarMarkup, loadingMarkup, navigationOverlayMarkup, /* @__PURE__ */ import_react120.default.createElement("main", {
         className: styles30.Main,
         id: APP_FRAME_MAIN,
         "data-has-global-ribbon": Boolean(globalRibbon)
-      }, /* @__PURE__ */ import_react119.default.createElement("div", {
+      }, /* @__PURE__ */ import_react120.default.createElement("div", {
         className: styles30.Content
-      }, children)), /* @__PURE__ */ import_react119.default.createElement(ToastManager, {
+      }, children)), /* @__PURE__ */ import_react120.default.createElement(ToastManager, {
         toastMessages
-      }), globalRibbonMarkup, /* @__PURE__ */ import_react119.default.createElement(EventListener, {
+      }), globalRibbonMarkup, /* @__PURE__ */ import_react120.default.createElement(EventListener, {
         event: "resize",
         handler: this.handleResize
       })));
@@ -29981,14 +29992,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   function Frame(props) {
     const i18n = useI18n();
     const mediaQuery = useMediaQuery();
-    return /* @__PURE__ */ import_react119.default.createElement(FrameInner, Object.assign({}, props, {
+    return /* @__PURE__ */ import_react120.default.createElement(FrameInner, Object.assign({}, props, {
       i18n,
       mediaQuery
     }));
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Grid/Grid.js
-  var import_react121 = __toESM(require_react());
+  var import_react122 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Grid/Grid.scss.js
   var styles42 = {
@@ -29996,7 +30007,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Grid/components/Cell/Cell.js
-  var import_react120 = __toESM(require_react());
+  var import_react121 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Grid/components/Cell/Cell.scss.js
   var styles43 = {
@@ -30067,7 +30078,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       "--pc-row-lg": row === null || row === void 0 ? void 0 : row.lg,
       "--pc-row-xl": row === null || row === void 0 ? void 0 : row.xl
     };
-    return /* @__PURE__ */ import_react120.default.createElement("div", {
+    return /* @__PURE__ */ import_react121.default.createElement("div", {
       className,
       style
     }, children);
@@ -30097,7 +30108,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       "--pc-grid-areas-lg": formatAreas(areas === null || areas === void 0 ? void 0 : areas.lg),
       "--pc-grid-areas-xl": formatAreas(areas === null || areas === void 0 ? void 0 : areas.xl)
     };
-    return /* @__PURE__ */ import_react121.default.createElement("div", {
+    return /* @__PURE__ */ import_react122.default.createElement("div", {
       className: styles42.Grid,
       style
     }, children);
@@ -30110,13 +30121,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   Grid.Cell = Cell;
 
   // node_modules/@shopify/polaris/build/esm/components/Loading/Loading.js
-  var import_react122 = __toESM(require_react());
-  var Loading2 = /* @__PURE__ */ (0, import_react122.memo)(function Loading3() {
+  var import_react123 = __toESM(require_react());
+  var Loading2 = /* @__PURE__ */ (0, import_react123.memo)(function Loading3() {
     const {
       startLoading,
       stopLoading
     } = useFrame();
-    (0, import_react122.useEffect)(() => {
+    (0, import_react123.useEffect)(() => {
       startLoading();
       return () => {
         stopLoading();
@@ -30126,18 +30137,18 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   });
 
   // node_modules/@shopify/polaris/build/esm/components/Page/Page.js
-  var import_react128 = __toESM(require_react());
+  var import_react129 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/is-interface.js
-  var import_react123 = __toESM(require_react());
+  var import_react124 = __toESM(require_react());
   function isInterface(x) {
-    return !/* @__PURE__ */ (0, import_react123.isValidElement)(x) && x !== void 0;
+    return !/* @__PURE__ */ (0, import_react124.isValidElement)(x) && x !== void 0;
   }
 
   // node_modules/@shopify/polaris/build/esm/utilities/is-react-element.js
-  var import_react124 = __toESM(require_react());
+  var import_react125 = __toESM(require_react());
   function isReactElement(x) {
-    return /* @__PURE__ */ (0, import_react124.isValidElement)(x) && x !== void 0;
+    return /* @__PURE__ */ (0, import_react125.isValidElement)(x) && x !== void 0;
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Page/Page.scss.js
@@ -30150,7 +30161,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Page/components/Header/Header.js
-  var import_react127 = __toESM(require_react());
+  var import_react128 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Page/components/Header/Header.scss.js
   var styles45 = {
@@ -30179,7 +30190,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   };
 
   // node_modules/@shopify/polaris/build/esm/components/Pagination/Pagination.js
-  var import_react125 = __toESM(require_react());
+  var import_react126 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/utilities/is-input-focused.js
   var EditableTarget;
@@ -30216,11 +30227,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     label
   }) {
     const i18n = useI18n();
-    const node = /* @__PURE__ */ (0, import_react125.createRef)();
+    const node = /* @__PURE__ */ (0, import_react126.createRef)();
     const navLabel = accessibilityLabel || i18n.translate("Polaris.Pagination.pagination");
     const previousLabel = (accessibilityLabels === null || accessibilityLabels === void 0 ? void 0 : accessibilityLabels.previous) || i18n.translate("Polaris.Pagination.previous");
     const nextLabel = (accessibilityLabels === null || accessibilityLabels === void 0 ? void 0 : accessibilityLabels.next) || i18n.translate("Polaris.Pagination.next");
-    const prev = /* @__PURE__ */ import_react125.default.createElement(Button, {
+    const prev = /* @__PURE__ */ import_react126.default.createElement(Button, {
       outline: true,
       icon: SvgChevronLeftMinor,
       accessibilityLabel: previousLabel,
@@ -30229,11 +30240,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       disabled: !hasPrevious,
       id: "previousURL"
     });
-    const constructedPrevious = previousTooltip && hasPrevious ? /* @__PURE__ */ import_react125.default.createElement(Tooltip, {
+    const constructedPrevious = previousTooltip && hasPrevious ? /* @__PURE__ */ import_react126.default.createElement(Tooltip, {
       activatorWrapper: "span",
       content: previousTooltip
     }, prev) : prev;
-    const next = /* @__PURE__ */ import_react125.default.createElement(Button, {
+    const next = /* @__PURE__ */ import_react126.default.createElement(Button, {
       outline: true,
       icon: SvgChevronRightMinor,
       accessibilityLabel: nextLabel,
@@ -30242,32 +30253,32 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       disabled: !hasNext,
       id: "nextURL"
     });
-    const constructedNext = nextTooltip && hasNext ? /* @__PURE__ */ import_react125.default.createElement(Tooltip, {
+    const constructedNext = nextTooltip && hasNext ? /* @__PURE__ */ import_react126.default.createElement(Tooltip, {
       activatorWrapper: "span",
       content: nextTooltip
     }, next) : next;
     const previousHandler = onPrevious || noop5;
-    const previousButtonEvents = previousKeys && (previousURL || onPrevious) && hasPrevious && previousKeys.map((key) => /* @__PURE__ */ import_react125.default.createElement(KeypressListener, {
+    const previousButtonEvents = previousKeys && (previousURL || onPrevious) && hasPrevious && previousKeys.map((key) => /* @__PURE__ */ import_react126.default.createElement(KeypressListener, {
       key,
       keyCode: key,
       handler: previousURL ? handleCallback(clickPaginationLink("previousURL", node)) : handleCallback(previousHandler)
     }));
     const nextHandler = onNext || noop5;
-    const nextButtonEvents = nextKeys && (nextURL || onNext) && hasNext && nextKeys.map((key) => /* @__PURE__ */ import_react125.default.createElement(KeypressListener, {
+    const nextButtonEvents = nextKeys && (nextURL || onNext) && hasNext && nextKeys.map((key) => /* @__PURE__ */ import_react126.default.createElement(KeypressListener, {
       key,
       keyCode: key,
       handler: nextURL ? handleCallback(clickPaginationLink("nextURL", node)) : handleCallback(nextHandler)
     }));
-    const labelTextMarkup = hasNext && hasPrevious ? /* @__PURE__ */ import_react125.default.createElement(TextStyle, null, label) : /* @__PURE__ */ import_react125.default.createElement(TextStyle, {
+    const labelTextMarkup = hasNext && hasPrevious ? /* @__PURE__ */ import_react126.default.createElement(TextStyle, null, label) : /* @__PURE__ */ import_react126.default.createElement(TextStyle, {
       variation: "subdued"
     }, label);
-    const labelMarkup = label ? /* @__PURE__ */ import_react125.default.createElement("div", {
+    const labelMarkup = label ? /* @__PURE__ */ import_react126.default.createElement("div", {
       "aria-live": "polite"
     }, labelTextMarkup) : null;
-    return /* @__PURE__ */ import_react125.default.createElement("nav", {
+    return /* @__PURE__ */ import_react126.default.createElement("nav", {
       "aria-label": navLabel,
       ref: node
-    }, previousButtonEvents, nextButtonEvents, /* @__PURE__ */ import_react125.default.createElement(ButtonGroup, {
+    }, previousButtonEvents, nextButtonEvents, /* @__PURE__ */ import_react126.default.createElement(ButtonGroup, {
       segmented: !label
     }, constructedPrevious, labelMarkup, constructedNext));
   }
@@ -30294,7 +30305,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Page/components/Header/components/Title/Title.js
-  var import_react126 = __toESM(require_react());
+  var import_react127 = __toESM(require_react());
 
   // node_modules/@shopify/polaris/build/esm/components/Page/components/Header/components/Title/Title.scss.js
   var styles46 = {
@@ -30314,19 +30325,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     compactTitle
   }) {
     const className = classNames(styles46.Title, subtitle && styles46.TitleWithSubtitle);
-    const titleMarkup = title ? /* @__PURE__ */ import_react126.default.createElement("h1", {
+    const titleMarkup = title ? /* @__PURE__ */ import_react127.default.createElement("h1", {
       className
     }, title) : null;
-    const titleMetadataMarkup = titleMetadata ? /* @__PURE__ */ import_react126.default.createElement("div", {
+    const titleMetadataMarkup = titleMetadata ? /* @__PURE__ */ import_react127.default.createElement("div", {
       className: styles46.TitleMetadata
     }, titleMetadata) : null;
-    const wrappedTitleMarkup = titleMetadata ? /* @__PURE__ */ import_react126.default.createElement("div", {
+    const wrappedTitleMarkup = titleMetadata ? /* @__PURE__ */ import_react127.default.createElement("div", {
       className: styles46.TitleWithMetadataWrapper
     }, titleMarkup, titleMetadataMarkup) : titleMarkup;
-    const subtitleMarkup = subtitle ? /* @__PURE__ */ import_react126.default.createElement("div", {
+    const subtitleMarkup = subtitle ? /* @__PURE__ */ import_react127.default.createElement("div", {
       className: classNames(styles46.SubTitle, compactTitle && styles46.SubtitleCompact)
-    }, /* @__PURE__ */ import_react126.default.createElement("p", null, subtitle)) : null;
-    return /* @__PURE__ */ import_react126.default.createElement(import_react126.default.Fragment, null, wrappedTitleMarkup, subtitleMarkup);
+    }, /* @__PURE__ */ import_react127.default.createElement("p", null, subtitle)) : null;
+    return /* @__PURE__ */ import_react127.default.createElement(import_react127.default.Fragment, null, wrappedTitleMarkup, subtitleMarkup);
   }
 
   // node_modules/@shopify/polaris/build/esm/components/Page/components/Header/Header.js
@@ -30356,34 +30367,34 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       console.warn("Deprecation: The `additionalNavigation` on Page is deprecated and will be removed in the next major version.");
     }
     const isSingleRow = !primaryAction && !pagination && (isInterface(secondaryActions) && !secondaryActions.length || isReactElement(secondaryActions)) && !actionGroups.length;
-    const breadcrumbMarkup = breadcrumbs.length > 0 ? /* @__PURE__ */ import_react127.default.createElement("div", {
+    const breadcrumbMarkup = breadcrumbs.length > 0 ? /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.BreadcrumbWrapper
-    }, /* @__PURE__ */ import_react127.default.createElement(Breadcrumbs, {
+    }, /* @__PURE__ */ import_react128.default.createElement(Breadcrumbs, {
       breadcrumbs
     })) : null;
-    const paginationMarkup = pagination && !isNavigationCollapsed ? /* @__PURE__ */ import_react127.default.createElement("div", {
+    const paginationMarkup = pagination && !isNavigationCollapsed ? /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.PaginationWrapper
-    }, /* @__PURE__ */ import_react127.default.createElement(Pagination, pagination)) : null;
-    const additionalNavigationMarkup = additionalNavigation ? /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement(Pagination, pagination)) : null;
+    const additionalNavigationMarkup = additionalNavigation ? /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.AdditionalNavigationWrapper
     }, additionalNavigation) : null;
-    const navigationMarkup = breadcrumbMarkup || paginationMarkup || additionalNavigationMarkup ? /* @__PURE__ */ import_react127.default.createElement("div", {
+    const navigationMarkup = breadcrumbMarkup || paginationMarkup || additionalNavigationMarkup ? /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.Navigation
     }, breadcrumbMarkup, additionalNavigationMarkup, paginationMarkup) : null;
-    const pageTitleMarkup = /* @__PURE__ */ import_react127.default.createElement("div", {
+    const pageTitleMarkup = /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.TitleWrapper
-    }, /* @__PURE__ */ import_react127.default.createElement(Title, {
+    }, /* @__PURE__ */ import_react128.default.createElement(Title, {
       title,
       subtitle,
       titleMetadata,
       compactTitle
     }));
-    const primaryActionMarkup = primaryAction ? /* @__PURE__ */ import_react127.default.createElement(PrimaryActionMarkup, {
+    const primaryActionMarkup = primaryAction ? /* @__PURE__ */ import_react128.default.createElement(PrimaryActionMarkup, {
       primaryAction
     }) : null;
     let actionMenuMarkup = null;
     if (isInterface(secondaryActions) && (secondaryActions.length > 0 || hasGroupsWithActions(actionGroups))) {
-      actionMenuMarkup = /* @__PURE__ */ import_react127.default.createElement(ActionMenu, {
+      actionMenuMarkup = /* @__PURE__ */ import_react128.default.createElement(ActionMenu, {
         actions: secondaryActions,
         groups: actionGroups,
         rollup: isNavigationCollapsed,
@@ -30393,11 +30404,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onActionRollup
       });
     } else if (isReactElement(secondaryActions)) {
-      actionMenuMarkup = /* @__PURE__ */ import_react127.default.createElement(import_react127.default.Fragment, null, secondaryActions);
+      actionMenuMarkup = /* @__PURE__ */ import_react128.default.createElement(import_react128.default.Fragment, null, secondaryActions);
     }
-    const additionalMetadataMarkup = additionalMetadata ? /* @__PURE__ */ import_react127.default.createElement("div", {
+    const additionalMetadataMarkup = additionalMetadata ? /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.AdditionalMetaData
-    }, /* @__PURE__ */ import_react127.default.createElement(TextStyle, {
+    }, /* @__PURE__ */ import_react128.default.createElement(TextStyle, {
       variation: "subdued"
     }, additionalMetadata)) : null;
     const headerClassNames = classNames(styles45.Header, isSingleRow && styles45.isSingleRow, titleHidden && styles45.titleHidden, navigationMarkup && styles45.hasNavigation, actionMenuMarkup && styles45.hasActionMenu, isNavigationCollapsed && styles45.mobileView, !breadcrumbs.length && styles45.noBreadcrumbs, title && title.length < LONG_TITLE && styles45.mediumTitle, title && title.length > LONG_TITLE && styles45.longTitle);
@@ -30419,30 +30430,30 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       primaryActionMarkup,
       title
     });
-    return /* @__PURE__ */ import_react127.default.createElement("div", {
+    return /* @__PURE__ */ import_react128.default.createElement("div", {
       className: headerClassNames
-    }, /* @__PURE__ */ import_react127.default.createElement(ConditionalRender, {
+    }, /* @__PURE__ */ import_react128.default.createElement(ConditionalRender, {
       condition: [slot1, slot2, slot3, slot4].some(notNull)
-    }, /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.Row
-    }, slot1, slot2, /* @__PURE__ */ import_react127.default.createElement(ConditionalRender, {
+    }, slot1, slot2, /* @__PURE__ */ import_react128.default.createElement(ConditionalRender, {
       condition: [slot3, slot4].some(notNull)
-    }, /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.RightAlign
-    }, /* @__PURE__ */ import_react127.default.createElement(ConditionalWrapper, {
+    }, /* @__PURE__ */ import_react128.default.createElement(ConditionalWrapper, {
       condition: [slot3, slot4].every(notNull),
-      wrapper: (children) => /* @__PURE__ */ import_react127.default.createElement("div", {
+      wrapper: (children) => /* @__PURE__ */ import_react128.default.createElement("div", {
         className: styles45.Actions
       }, children)
-    }, slot3, slot4))))), /* @__PURE__ */ import_react127.default.createElement(ConditionalRender, {
+    }, slot3, slot4))))), /* @__PURE__ */ import_react128.default.createElement(ConditionalRender, {
       condition: [slot5, slot6].some(notNull)
-    }, /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.Row
-    }, /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.LeftAlign
-    }, slot5), /* @__PURE__ */ import_react127.default.createElement(ConditionalRender, {
+    }, slot5), /* @__PURE__ */ import_react128.default.createElement(ConditionalRender, {
       condition: slot6 != null
-    }, /* @__PURE__ */ import_react127.default.createElement("div", {
+    }, /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.RightAlign
     }, slot6)))));
   }
@@ -30459,7 +30470,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         primary
       });
     }
-    return /* @__PURE__ */ import_react127.default.createElement("div", {
+    return /* @__PURE__ */ import_react128.default.createElement("div", {
       className: styles45.PrimaryActionWrapper
     }, content);
   }
@@ -30539,7 +30550,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         slots: {
           slot1: breadcrumbMarkup,
           slot2: pageTitleMarkup,
-          slot3: /* @__PURE__ */ import_react127.default.createElement(import_react127.default.Fragment, null, actionMenuMarkup, primaryActionMarkup),
+          slot3: /* @__PURE__ */ import_react128.default.createElement(import_react128.default.Fragment, null, actionMenuMarkup, primaryActionMarkup),
           slot4: paginationMarkup,
           slot5: additionalMetadataMarkup,
           slot6: additionalNavigationMarkup
@@ -30562,205 +30573,38 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const pageClassName = classNames(styles44.Page, fullWidth && styles44.fullWidth, narrowWidth && styles44.narrowWidth);
     const hasHeaderContent = rest.title != null && rest.title !== "" || rest.primaryAction != null || rest.secondaryActions != null && (isInterface(rest.secondaryActions) && rest.secondaryActions.length > 0 || isReactElement(rest.secondaryActions)) || rest.actionGroups != null && rest.actionGroups.length > 0 || rest.breadcrumbs != null && rest.breadcrumbs.length > 0;
     const contentClassName = classNames(!hasHeaderContent && styles44.Content, divider && hasHeaderContent && styles44.divider);
-    const headerMarkup = hasHeaderContent ? /* @__PURE__ */ import_react128.default.createElement(Header2, rest) : null;
-    return /* @__PURE__ */ import_react128.default.createElement("div", {
+    const headerMarkup = hasHeaderContent ? /* @__PURE__ */ import_react129.default.createElement(Header2, rest) : null;
+    return /* @__PURE__ */ import_react129.default.createElement("div", {
       className: pageClassName
-    }, headerMarkup, /* @__PURE__ */ import_react128.default.createElement("div", {
+    }, headerMarkup, /* @__PURE__ */ import_react129.default.createElement("div", {
       className: contentClassName
     }, children));
   }
 
   // src/components/app.jsx
-  var import_react140 = __toESM(require_react());
+  var import_react143 = __toESM(require_react());
 
-  // src/components/Users/users.jsx
-  var import_react136 = __toESM(require_react());
+  // src/components/Users/RoutesSwitch.jsx
+  var import_react142 = __toESM(require_react());
 
-  // src/components/Users/user.jsx
-  var import_react132 = __toESM(require_react());
-
-  // node_modules/react-router-dom/esm/react-router-dom.js
-  var import_react131 = __toESM(require_react());
-
-  // node_modules/mini-create-react-context/dist/esm/index.js
-  var import_react129 = __toESM(require_react());
-
-  // node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+  // node_modules/react-router/node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
   function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p2) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf4(o2, p2) {
       o2.__proto__ = p2;
       return o2;
     };
     return _setPrototypeOf(o, p);
   }
 
-  // node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+  // node_modules/react-router/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
   function _inheritsLoose2(subClass, superClass) {
     subClass.prototype = Object.create(superClass.prototype);
     subClass.prototype.constructor = subClass;
     _setPrototypeOf(subClass, superClass);
   }
 
-  // node_modules/mini-create-react-context/dist/esm/index.js
-  var import_prop_types5 = __toESM(require_prop_types());
-
-  // node_modules/tiny-warning/dist/tiny-warning.esm.js
-  var isProduction = false;
-  function warning(condition, message) {
-    if (!isProduction) {
-      if (condition) {
-        return;
-      }
-      var text = "Warning: " + message;
-      if (typeof console !== "undefined") {
-        console.warn(text);
-      }
-      try {
-        throw Error(text);
-      } catch (x) {
-      }
-    }
-  }
-  var tiny_warning_esm_default = warning;
-
-  // node_modules/mini-create-react-context/dist/esm/index.js
-  var MAX_SIGNED_31_BIT_INT = 1073741823;
-  var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
-  function getUniqueId() {
-    var key = "__global_unique_id__";
-    return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
-  }
-  function objectIs(x, y) {
-    if (x === y) {
-      return x !== 0 || 1 / x === 1 / y;
-    } else {
-      return x !== x && y !== y;
-    }
-  }
-  function createEventEmitter(value) {
-    var handlers = [];
-    return {
-      on: function on(handler) {
-        handlers.push(handler);
-      },
-      off: function off(handler) {
-        handlers = handlers.filter(function(h) {
-          return h !== handler;
-        });
-      },
-      get: function get2() {
-        return value;
-      },
-      set: function set(newValue, changedBits) {
-        value = newValue;
-        handlers.forEach(function(handler) {
-          return handler(value, changedBits);
-        });
-      }
-    };
-  }
-  function onlyChild(children) {
-    return Array.isArray(children) ? children[0] : children;
-  }
-  function createReactContext(defaultValue, calculateChangedBits) {
-    var _Provider$childContex, _Consumer$contextType;
-    var contextProp = "__create-react-context-" + getUniqueId() + "__";
-    var Provider = /* @__PURE__ */ function(_Component) {
-      _inheritsLoose2(Provider2, _Component);
-      function Provider2() {
-        var _this;
-        _this = _Component.apply(this, arguments) || this;
-        _this.emitter = createEventEmitter(_this.props.value);
-        return _this;
-      }
-      var _proto = Provider2.prototype;
-      _proto.getChildContext = function getChildContext() {
-        var _ref;
-        return _ref = {}, _ref[contextProp] = this.emitter, _ref;
-      };
-      _proto.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-        if (this.props.value !== nextProps.value) {
-          var oldValue = this.props.value;
-          var newValue = nextProps.value;
-          var changedBits;
-          if (objectIs(oldValue, newValue)) {
-            changedBits = 0;
-          } else {
-            changedBits = typeof calculateChangedBits === "function" ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-            if (true) {
-              tiny_warning_esm_default((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, "calculateChangedBits: Expected the return value to be a 31-bit integer. Instead received: " + changedBits);
-            }
-            changedBits |= 0;
-            if (changedBits !== 0) {
-              this.emitter.set(nextProps.value, changedBits);
-            }
-          }
-        }
-      };
-      _proto.render = function render() {
-        return this.props.children;
-      };
-      return Provider2;
-    }(import_react129.Component);
-    Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = import_prop_types5.default.object.isRequired, _Provider$childContex);
-    var Consumer = /* @__PURE__ */ function(_Component2) {
-      _inheritsLoose2(Consumer2, _Component2);
-      function Consumer2() {
-        var _this2;
-        _this2 = _Component2.apply(this, arguments) || this;
-        _this2.state = {
-          value: _this2.getValue()
-        };
-        _this2.onUpdate = function(newValue, changedBits) {
-          var observedBits = _this2.observedBits | 0;
-          if ((observedBits & changedBits) !== 0) {
-            _this2.setState({
-              value: _this2.getValue()
-            });
-          }
-        };
-        return _this2;
-      }
-      var _proto2 = Consumer2.prototype;
-      _proto2.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-        var observedBits = nextProps.observedBits;
-        this.observedBits = observedBits === void 0 || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
-      };
-      _proto2.componentDidMount = function componentDidMount() {
-        if (this.context[contextProp]) {
-          this.context[contextProp].on(this.onUpdate);
-        }
-        var observedBits = this.props.observedBits;
-        this.observedBits = observedBits === void 0 || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
-      };
-      _proto2.componentWillUnmount = function componentWillUnmount() {
-        if (this.context[contextProp]) {
-          this.context[contextProp].off(this.onUpdate);
-        }
-      };
-      _proto2.getValue = function getValue() {
-        if (this.context[contextProp]) {
-          return this.context[contextProp].get();
-        } else {
-          return defaultValue;
-        }
-      };
-      _proto2.render = function render() {
-        return onlyChild(this.props.children)(this.state.value);
-      };
-      return Consumer2;
-    }(import_react129.Component);
-    Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = import_prop_types5.default.object, _Consumer$contextType);
-    return {
-      Provider,
-      Consumer
-    };
-  }
-  var index = import_react129.default.createContext || createReactContext;
-  var esm_default = index;
-
   // node_modules/react-router/esm/react-router.js
-  var import_react130 = __toESM(require_react());
+  var import_react131 = __toESM(require_react());
   var import_prop_types6 = __toESM(require_prop_types());
 
   // node_modules/resolve-pathname/esm/resolve-pathname.js
@@ -30847,6 +30691,25 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     return false;
   }
   var value_equal_default = valueEqual;
+
+  // node_modules/tiny-warning/dist/tiny-warning.esm.js
+  var isProduction = false;
+  function warning(condition, message) {
+    if (!isProduction) {
+      if (condition) {
+        return;
+      }
+      var text = "Warning: " + message;
+      if (typeof console !== "undefined") {
+        console.warn(text);
+      }
+      try {
+        throw Error(text);
+      } catch (x) {
+      }
+    }
+  }
+  var tiny_warning_esm_default = warning;
 
   // node_modules/tiny-invariant/dist/tiny-invariant.esm.js
   var isProduction2 = false;
@@ -31591,18 +31454,209 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     return history;
   }
 
+  // node_modules/mini-create-react-context/dist/esm/index.js
+  var import_react130 = __toESM(require_react());
+
+  // node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+  function _setPrototypeOf2(o, p) {
+    _setPrototypeOf2 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf4(o2, p2) {
+      o2.__proto__ = p2;
+      return o2;
+    };
+    return _setPrototypeOf2(o, p);
+  }
+
+  // node_modules/mini-create-react-context/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+  function _inheritsLoose3(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    _setPrototypeOf2(subClass, superClass);
+  }
+
+  // node_modules/mini-create-react-context/dist/esm/index.js
+  var import_prop_types5 = __toESM(require_prop_types());
+  var MAX_SIGNED_31_BIT_INT = 1073741823;
+  var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
+  function getUniqueId() {
+    var key = "__global_unique_id__";
+    return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
+  }
+  function objectIs(x, y) {
+    if (x === y) {
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      return x !== x && y !== y;
+    }
+  }
+  function createEventEmitter(value) {
+    var handlers = [];
+    return {
+      on: function on(handler) {
+        handlers.push(handler);
+      },
+      off: function off(handler) {
+        handlers = handlers.filter(function(h) {
+          return h !== handler;
+        });
+      },
+      get: function get2() {
+        return value;
+      },
+      set: function set(newValue, changedBits) {
+        value = newValue;
+        handlers.forEach(function(handler) {
+          return handler(value, changedBits);
+        });
+      }
+    };
+  }
+  function onlyChild(children) {
+    return Array.isArray(children) ? children[0] : children;
+  }
+  function createReactContext(defaultValue, calculateChangedBits) {
+    var _Provider$childContex, _Consumer$contextType;
+    var contextProp = "__create-react-context-" + getUniqueId() + "__";
+    var Provider = /* @__PURE__ */ function(_Component) {
+      _inheritsLoose3(Provider2, _Component);
+      function Provider2() {
+        var _this;
+        _this = _Component.apply(this, arguments) || this;
+        _this.emitter = createEventEmitter(_this.props.value);
+        return _this;
+      }
+      var _proto = Provider2.prototype;
+      _proto.getChildContext = function getChildContext() {
+        var _ref;
+        return _ref = {}, _ref[contextProp] = this.emitter, _ref;
+      };
+      _proto.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+        if (this.props.value !== nextProps.value) {
+          var oldValue = this.props.value;
+          var newValue = nextProps.value;
+          var changedBits;
+          if (objectIs(oldValue, newValue)) {
+            changedBits = 0;
+          } else {
+            changedBits = typeof calculateChangedBits === "function" ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
+            if (true) {
+              tiny_warning_esm_default((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, "calculateChangedBits: Expected the return value to be a 31-bit integer. Instead received: " + changedBits);
+            }
+            changedBits |= 0;
+            if (changedBits !== 0) {
+              this.emitter.set(nextProps.value, changedBits);
+            }
+          }
+        }
+      };
+      _proto.render = function render() {
+        return this.props.children;
+      };
+      return Provider2;
+    }(import_react130.Component);
+    Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = import_prop_types5.default.object.isRequired, _Provider$childContex);
+    var Consumer = /* @__PURE__ */ function(_Component2) {
+      _inheritsLoose3(Consumer2, _Component2);
+      function Consumer2() {
+        var _this2;
+        _this2 = _Component2.apply(this, arguments) || this;
+        _this2.state = {
+          value: _this2.getValue()
+        };
+        _this2.onUpdate = function(newValue, changedBits) {
+          var observedBits = _this2.observedBits | 0;
+          if ((observedBits & changedBits) !== 0) {
+            _this2.setState({
+              value: _this2.getValue()
+            });
+          }
+        };
+        return _this2;
+      }
+      var _proto2 = Consumer2.prototype;
+      _proto2.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+        var observedBits = nextProps.observedBits;
+        this.observedBits = observedBits === void 0 || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
+      };
+      _proto2.componentDidMount = function componentDidMount() {
+        if (this.context[contextProp]) {
+          this.context[contextProp].on(this.onUpdate);
+        }
+        var observedBits = this.props.observedBits;
+        this.observedBits = observedBits === void 0 || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
+      };
+      _proto2.componentWillUnmount = function componentWillUnmount() {
+        if (this.context[contextProp]) {
+          this.context[contextProp].off(this.onUpdate);
+        }
+      };
+      _proto2.getValue = function getValue() {
+        if (this.context[contextProp]) {
+          return this.context[contextProp].get();
+        } else {
+          return defaultValue;
+        }
+      };
+      _proto2.render = function render() {
+        return onlyChild(this.props.children)(this.state.value);
+      };
+      return Consumer2;
+    }(import_react130.Component);
+    Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = import_prop_types5.default.object, _Consumer$contextType);
+    return {
+      Provider,
+      Consumer
+    };
+  }
+  var index = import_react130.default.createContext || createReactContext;
+  var esm_default = index;
+
+  // node_modules/react-router/node_modules/@babel/runtime/helpers/esm/extends.js
+  function _extends2() {
+    _extends2 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends2.apply(this, arguments);
+  }
+
   // node_modules/react-router/esm/react-router.js
   var import_path_to_regexp = __toESM(require_path_to_regexp());
   var import_react_is = __toESM(require_react_is());
+
+  // node_modules/react-router/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+  function _objectWithoutPropertiesLoose2(source, excluded) {
+    if (source == null)
+      return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0)
+        continue;
+      target[key] = source[key];
+    }
+    return target;
+  }
+
+  // node_modules/react-router/esm/react-router.js
   var import_hoist_non_react_statics = __toESM(require_hoist_non_react_statics_cjs());
   var createNamedContext = function createNamedContext2(name) {
     var context2 = esm_default();
     context2.displayName = name;
     return context2;
   };
+  var historyContext = /* @__PURE__ */ createNamedContext("Router-History");
   var context = /* @__PURE__ */ createNamedContext("Router");
   var Router = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(Router2, _React$Component);
+    _inheritsLoose2(Router2, _React$Component);
     Router2.computeRootMatch = function computeRootMatch(pathname) {
       return {
         path: "/",
@@ -31642,22 +31696,27 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }
     };
     _proto.componentWillUnmount = function componentWillUnmount() {
-      if (this.unlisten)
+      if (this.unlisten) {
         this.unlisten();
+        this._isMounted = false;
+        this._pendingLocation = null;
+      }
     };
     _proto.render = function render() {
-      return import_react130.default.createElement(context.Provider, {
-        children: this.props.children || null,
+      return /* @__PURE__ */ import_react131.default.createElement(context.Provider, {
         value: {
           history: this.props.history,
           location: this.state.location,
           match: Router2.computeRootMatch(this.state.location.pathname),
           staticContext: this.props.staticContext
         }
-      });
+      }, /* @__PURE__ */ import_react131.default.createElement(historyContext.Provider, {
+        children: this.props.children || null,
+        value: this.props.history
+      }));
     };
     return Router2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   if (true) {
     Router.propTypes = {
       children: import_prop_types6.default.node,
@@ -31669,7 +31728,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   }
   var MemoryRouter = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(MemoryRouter2, _React$Component);
+    _inheritsLoose2(MemoryRouter2, _React$Component);
     function MemoryRouter2() {
       var _this;
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -31681,13 +31740,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
     var _proto = MemoryRouter2.prototype;
     _proto.render = function render() {
-      return import_react130.default.createElement(Router, {
+      return /* @__PURE__ */ import_react131.default.createElement(Router, {
         history: this.history,
         children: this.props.children
       });
     };
     return MemoryRouter2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   if (true) {
     MemoryRouter.propTypes = {
       initialEntries: import_prop_types6.default.array,
@@ -31701,7 +31760,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   }
   var Lifecycle = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(Lifecycle2, _React$Component);
+    _inheritsLoose2(Lifecycle2, _React$Component);
     function Lifecycle2() {
       return _React$Component.apply(this, arguments) || this;
     }
@@ -31722,15 +31781,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       return null;
     };
     return Lifecycle2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   function Prompt(_ref) {
     var message = _ref.message, _ref$when = _ref.when, when = _ref$when === void 0 ? true : _ref$when;
-    return import_react130.default.createElement(context.Consumer, null, function(context$$1) {
-      !context$$1 ? true ? invariant(false, "You should not use <Prompt> outside a <Router>") : invariant(false) : void 0;
-      if (!when || context$$1.staticContext)
+    return /* @__PURE__ */ import_react131.default.createElement(context.Consumer, null, function(context2) {
+      !context2 ? true ? invariant(false, "You should not use <Prompt> outside a <Router>") : invariant(false) : void 0;
+      if (!when || context2.staticContext)
         return null;
-      var method = context$$1.history.block;
-      return import_react130.default.createElement(Lifecycle, {
+      var method = context2.history.block;
+      return /* @__PURE__ */ import_react131.default.createElement(Lifecycle, {
         onMount: function onMount(self2) {
           self2.release = method(message);
         },
@@ -31781,24 +31840,24 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   }
   function Redirect(_ref) {
     var computedMatch = _ref.computedMatch, to = _ref.to, _ref$push = _ref.push, push = _ref$push === void 0 ? false : _ref$push;
-    return import_react130.default.createElement(context.Consumer, null, function(context$$1) {
-      !context$$1 ? true ? invariant(false, "You should not use <Redirect> outside a <Router>") : invariant(false) : void 0;
-      var history = context$$1.history, staticContext = context$$1.staticContext;
+    return /* @__PURE__ */ import_react131.default.createElement(context.Consumer, null, function(context2) {
+      !context2 ? true ? invariant(false, "You should not use <Redirect> outside a <Router>") : invariant(false) : void 0;
+      var history = context2.history, staticContext = context2.staticContext;
       var method = push ? history.push : history.replace;
-      var location = createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extends({}, to, {
+      var location = createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extends2({}, to, {
         pathname: generatePath(to.pathname, computedMatch.params)
       }) : to);
       if (staticContext) {
         method(location);
         return null;
       }
-      return import_react130.default.createElement(Lifecycle, {
+      return /* @__PURE__ */ import_react131.default.createElement(Lifecycle, {
         onMount: function onMount() {
           method(location);
         },
         onUpdate: function onUpdate(self2, prevProps) {
           var prevLocation = createLocation(prevProps.to);
-          if (!locationsAreEqual(prevLocation, _extends({}, location, {
+          if (!locationsAreEqual(prevLocation, _extends2({}, location, {
             key: prevLocation.key
           }))) {
             method(location);
@@ -31839,14 +31898,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     if (options === void 0) {
       options = {};
     }
-    if (typeof options === "string")
+    if (typeof options === "string" || Array.isArray(options)) {
       options = {
         path: options
       };
+    }
     var _options = options, path = _options.path, _options$exact = _options.exact, exact = _options$exact === void 0 ? false : _options$exact, _options$strict = _options.strict, strict = _options$strict === void 0 ? false : _options$strict, _options$sensitive = _options.sensitive, sensitive = _options$sensitive === void 0 ? false : _options$sensitive;
     var paths = [].concat(path);
     return paths.reduce(function(matched, path2) {
-      if (!path2)
+      if (!path2 && path2 !== "")
         return null;
       if (matched)
         return matched;
@@ -31874,45 +31934,40 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }, null);
   }
   function isEmptyChildren(children) {
-    return import_react130.default.Children.count(children) === 0;
+    return import_react131.default.Children.count(children) === 0;
+  }
+  function evalChildrenDev(children, props, path) {
+    var value = children(props);
+    true ? tiny_warning_esm_default(value !== void 0, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? ' path="' + path + '"' : "") + ">, but you ") + "should have returned a React element or `null`") : void 0;
+    return value || null;
   }
   var Route = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(Route2, _React$Component);
+    _inheritsLoose2(Route2, _React$Component);
     function Route2() {
       return _React$Component.apply(this, arguments) || this;
     }
     var _proto = Route2.prototype;
     _proto.render = function render() {
       var _this = this;
-      return import_react130.default.createElement(context.Consumer, null, function(context$$1) {
-        !context$$1 ? true ? invariant(false, "You should not use <Route> outside a <Router>") : invariant(false) : void 0;
-        var location = _this.props.location || context$$1.location;
-        var match = _this.props.computedMatch ? _this.props.computedMatch : _this.props.path ? matchPath(location.pathname, _this.props) : context$$1.match;
-        var props = _extends({}, context$$1, {
+      return /* @__PURE__ */ import_react131.default.createElement(context.Consumer, null, function(context$1) {
+        !context$1 ? true ? invariant(false, "You should not use <Route> outside a <Router>") : invariant(false) : void 0;
+        var location = _this.props.location || context$1.location;
+        var match = _this.props.computedMatch ? _this.props.computedMatch : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
+        var props = _extends2({}, context$1, {
           location,
           match
         });
         var _this$props = _this.props, children = _this$props.children, component = _this$props.component, render2 = _this$props.render;
-        if (Array.isArray(children) && children.length === 0) {
+        if (Array.isArray(children) && isEmptyChildren(children)) {
           children = null;
         }
-        if (typeof children === "function") {
-          children = children(props);
-          if (children === void 0) {
-            if (true) {
-              var path = _this.props.path;
-              true ? tiny_warning_esm_default(false, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? ' path="' + path + '"' : "") + ">, but you ") + "should have returned a React element or `null`") : void 0;
-            }
-            children = null;
-          }
-        }
-        return import_react130.default.createElement(context.Provider, {
+        return /* @__PURE__ */ import_react131.default.createElement(context.Provider, {
           value: props
-        }, children && !isEmptyChildren(children) ? children : props.match ? component ? import_react130.default.createElement(component, props) : render2 ? render2(props) : null : null);
+        }, props.match ? children ? typeof children === "function" ? true ? evalChildrenDev(children, props, _this.props.path) : children(props) : children : component ? /* @__PURE__ */ import_react131.default.createElement(component, props) : render2 ? render2(props) : null : typeof children === "function" ? true ? evalChildrenDev(children, props, _this.props.path) : children(props) : null);
       });
     };
     return Route2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   if (true) {
     Route.propTypes = {
       children: import_prop_types6.default.oneOfType([import_prop_types6.default.func, import_prop_types6.default.node]),
@@ -31944,7 +31999,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   function addBasename(basename, location) {
     if (!basename)
       return location;
-    return _extends({}, location, {
+    return _extends2({}, location, {
       pathname: addLeadingSlash2(basename) + location.pathname
     });
   }
@@ -31954,7 +32009,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     var base = addLeadingSlash2(basename);
     if (location.pathname.indexOf(base) !== 0)
       return location;
-    return _extends({}, location, {
+    return _extends2({}, location, {
       pathname: location.pathname.substr(base.length)
     });
   }
@@ -31969,7 +32024,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   function noop6() {
   }
   var StaticRouter = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(StaticRouter2, _React$Component);
+    _inheritsLoose2(StaticRouter2, _React$Component);
     function StaticRouter2() {
       var _this;
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -31998,7 +32053,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       context2.url = createURL(context2.location);
     };
     _proto.render = function render() {
-      var _this$props2 = this.props, _this$props2$basename = _this$props2.basename, basename = _this$props2$basename === void 0 ? "" : _this$props2$basename, _this$props2$context = _this$props2.context, context2 = _this$props2$context === void 0 ? {} : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLoose(_this$props2, ["basename", "context", "location"]);
+      var _this$props2 = this.props, _this$props2$basename = _this$props2.basename, basename = _this$props2$basename === void 0 ? "" : _this$props2$basename, _this$props2$context = _this$props2.context, context2 = _this$props2$context === void 0 ? {} : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLoose2(_this$props2, ["basename", "context", "location"]);
       var history = {
         createHref: function createHref(path) {
           return addLeadingSlash2(basename + createURL(path));
@@ -32013,13 +32068,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         listen: this.handleListen,
         block: this.handleBlock
       };
-      return import_react130.default.createElement(Router, _extends({}, rest, {
+      return /* @__PURE__ */ import_react131.default.createElement(Router, _extends2({}, rest, {
         history,
         staticContext: context2
       }));
     };
     return StaticRouter2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   if (true) {
     StaticRouter.propTypes = {
       basename: import_prop_types6.default.string,
@@ -32031,34 +32086,34 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   }
   var Switch = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(Switch2, _React$Component);
+    _inheritsLoose2(Switch2, _React$Component);
     function Switch2() {
       return _React$Component.apply(this, arguments) || this;
     }
     var _proto = Switch2.prototype;
     _proto.render = function render() {
       var _this = this;
-      return import_react130.default.createElement(context.Consumer, null, function(context$$1) {
-        !context$$1 ? true ? invariant(false, "You should not use <Switch> outside a <Router>") : invariant(false) : void 0;
-        var location = _this.props.location || context$$1.location;
+      return /* @__PURE__ */ import_react131.default.createElement(context.Consumer, null, function(context2) {
+        !context2 ? true ? invariant(false, "You should not use <Switch> outside a <Router>") : invariant(false) : void 0;
+        var location = _this.props.location || context2.location;
         var element, match;
-        import_react130.default.Children.forEach(_this.props.children, function(child) {
-          if (match == null && import_react130.default.isValidElement(child)) {
+        import_react131.default.Children.forEach(_this.props.children, function(child) {
+          if (match == null && /* @__PURE__ */ import_react131.default.isValidElement(child)) {
             element = child;
             var path = child.props.path || child.props.from;
-            match = path ? matchPath(location.pathname, _extends({}, child.props, {
+            match = path ? matchPath(location.pathname, _extends2({}, child.props, {
               path
-            })) : context$$1.match;
+            })) : context2.match;
           }
         });
-        return match ? import_react130.default.cloneElement(element, {
+        return match ? /* @__PURE__ */ import_react131.default.cloneElement(element, {
           location,
           computedMatch: match
         }) : null;
       });
     };
     return Switch2;
-  }(import_react130.default.Component);
+  }(import_react131.default.Component);
   if (true) {
     Switch.propTypes = {
       children: import_prop_types6.default.node,
@@ -32068,6 +32123,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       true ? tiny_warning_esm_default(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
       true ? tiny_warning_esm_default(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
     };
+  }
+  var useContext11 = import_react131.default.useContext;
+  function useHistory() {
+    if (true) {
+      !(typeof useContext11 === "function") ? true ? invariant(false, "You must use React >= 16.8 in order to use useHistory()") : invariant(false) : void 0;
+    }
+    return useContext11(historyContext);
+  }
+  function useLocation() {
+    if (true) {
+      !(typeof useContext11 === "function") ? true ? invariant(false, "You must use React >= 16.8 in order to use useLocation()") : invariant(false) : void 0;
+    }
+    return useContext11(context).location;
+  }
+  function useParams() {
+    if (true) {
+      !(typeof useContext11 === "function") ? true ? invariant(false, "You must use React >= 16.8 in order to use useParams()") : invariant(false) : void 0;
+    }
+    var match = useContext11(context).match;
+    return match ? match.params : {};
   }
   if (true) {
     if (typeof window !== "undefined") {
@@ -32092,10 +32167,61 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   var initialBuildName;
   var secondaryBuildName;
 
+  // node_modules/react-router-dom/node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+  function _setPrototypeOf3(o, p) {
+    _setPrototypeOf3 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf4(o2, p2) {
+      o2.__proto__ = p2;
+      return o2;
+    };
+    return _setPrototypeOf3(o, p);
+  }
+
+  // node_modules/react-router-dom/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+  function _inheritsLoose4(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    _setPrototypeOf3(subClass, superClass);
+  }
+
   // node_modules/react-router-dom/esm/react-router-dom.js
+  var import_react132 = __toESM(require_react());
   var import_prop_types7 = __toESM(require_prop_types());
+
+  // node_modules/react-router-dom/node_modules/@babel/runtime/helpers/esm/extends.js
+  function _extends3() {
+    _extends3 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends3.apply(this, arguments);
+  }
+
+  // node_modules/react-router-dom/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+  function _objectWithoutPropertiesLoose3(source, excluded) {
+    if (source == null)
+      return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0)
+        continue;
+      target[key] = source[key];
+    }
+    return target;
+  }
+
+  // node_modules/react-router-dom/esm/react-router-dom.js
   var BrowserRouter = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(BrowserRouter2, _React$Component);
+    _inheritsLoose4(BrowserRouter2, _React$Component);
     function BrowserRouter2() {
       var _this;
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -32107,13 +32233,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
     var _proto = BrowserRouter2.prototype;
     _proto.render = function render() {
-      return import_react131.default.createElement(Router, {
+      return /* @__PURE__ */ import_react132.default.createElement(Router, {
         history: this.history,
         children: this.props.children
       });
     };
     return BrowserRouter2;
-  }(import_react131.default.Component);
+  }(import_react132.default.Component);
   if (true) {
     BrowserRouter.propTypes = {
       basename: import_prop_types7.default.string,
@@ -32127,7 +32253,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   }
   var HashRouter = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(HashRouter2, _React$Component);
+    _inheritsLoose4(HashRouter2, _React$Component);
     function HashRouter2() {
       var _this;
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -32139,13 +32265,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
     var _proto = HashRouter2.prototype;
     _proto.render = function render() {
-      return import_react131.default.createElement(Router, {
+      return /* @__PURE__ */ import_react132.default.createElement(Router, {
         history: this.history,
         children: this.props.children
       });
     };
     return HashRouter2;
-  }(import_react131.default.Component);
+  }(import_react132.default.Component);
   if (true) {
     HashRouter.propTypes = {
       basename: import_prop_types7.default.string,
@@ -32157,54 +32283,82 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       true ? tiny_warning_esm_default(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { HashRouter as Router }`.") : void 0;
     };
   }
+  var resolveToLocation = function resolveToLocation2(to, currentLocation) {
+    return typeof to === "function" ? to(currentLocation) : to;
+  };
+  var normalizeToLocation = function normalizeToLocation2(to, currentLocation) {
+    return typeof to === "string" ? createLocation(to, null, null, currentLocation) : to;
+  };
+  var forwardRefShim = function forwardRefShim2(C) {
+    return C;
+  };
+  var forwardRef4 = import_react132.default.forwardRef;
+  if (typeof forwardRef4 === "undefined") {
+    forwardRef4 = forwardRefShim;
+  }
   function isModifiedEvent(event) {
     return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
   }
-  var Link = /* @__PURE__ */ function(_React$Component) {
-    _inheritsLoose(Link2, _React$Component);
-    function Link2() {
-      return _React$Component.apply(this, arguments) || this;
+  var LinkAnchor = forwardRef4(function(_ref, forwardedRef) {
+    var innerRef = _ref.innerRef, navigate = _ref.navigate, _onClick = _ref.onClick, rest = _objectWithoutPropertiesLoose3(_ref, ["innerRef", "navigate", "onClick"]);
+    var target = rest.target;
+    var props = _extends3({}, rest, {
+      onClick: function onClick(event) {
+        try {
+          if (_onClick)
+            _onClick(event);
+        } catch (ex) {
+          event.preventDefault();
+          throw ex;
+        }
+        if (!event.defaultPrevented && event.button === 0 && (!target || target === "_self") && !isModifiedEvent(event)) {
+          event.preventDefault();
+          navigate();
+        }
+      }
+    });
+    if (forwardRefShim !== forwardRef4) {
+      props.ref = forwardedRef || innerRef;
+    } else {
+      props.ref = innerRef;
     }
-    var _proto = Link2.prototype;
-    _proto.handleClick = function handleClick(event, history) {
-      try {
-        if (this.props.onClick)
-          this.props.onClick(event);
-      } catch (ex) {
-        event.preventDefault();
-        throw ex;
-      }
-      if (!event.defaultPrevented && event.button === 0 && (!this.props.target || this.props.target === "_self") && !isModifiedEvent(event)) {
-        event.preventDefault();
-        var method = this.props.replace ? history.replace : history.push;
-        method(this.props.to);
-      }
-    };
-    _proto.render = function render() {
-      var _this = this;
-      var _this$props = this.props, innerRef = _this$props.innerRef, replace = _this$props.replace, to = _this$props.to, rest = _objectWithoutPropertiesLoose(_this$props, ["innerRef", "replace", "to"]);
-      return import_react131.default.createElement(context.Consumer, null, function(context2) {
-        !context2 ? true ? invariant(false, "You should not use <Link> outside a <Router>") : invariant(false) : void 0;
-        var location = typeof to === "string" ? createLocation(to, null, null, context2.location) : to;
-        var href = location ? context2.history.createHref(location) : "";
-        return import_react131.default.createElement("a", _extends({}, rest, {
-          onClick: function onClick(event) {
-            return _this.handleClick(event, context2.history);
-          },
-          href,
-          ref: innerRef
-        }));
-      });
-    };
-    return Link2;
-  }(import_react131.default.Component);
+    return /* @__PURE__ */ import_react132.default.createElement("a", props);
+  });
   if (true) {
-    toType = import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.object]);
-    innerRefType = import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.func, import_prop_types7.default.shape({
+    LinkAnchor.displayName = "LinkAnchor";
+  }
+  var Link = forwardRef4(function(_ref2, forwardedRef) {
+    var _ref2$component = _ref2.component, component = _ref2$component === void 0 ? LinkAnchor : _ref2$component, replace = _ref2.replace, to = _ref2.to, innerRef = _ref2.innerRef, rest = _objectWithoutPropertiesLoose3(_ref2, ["component", "replace", "to", "innerRef"]);
+    return /* @__PURE__ */ import_react132.default.createElement(context.Consumer, null, function(context2) {
+      !context2 ? true ? invariant(false, "You should not use <Link> outside a <Router>") : invariant(false) : void 0;
+      var history = context2.history;
+      var location = normalizeToLocation(resolveToLocation(to, context2.location), context2.location);
+      var href = location ? history.createHref(location) : "";
+      var props = _extends3({}, rest, {
+        href,
+        navigate: function navigate() {
+          var location2 = resolveToLocation(to, context2.location);
+          var isDuplicateNavigation = createPath(context2.location) === createPath(normalizeToLocation(location2));
+          var method = replace || isDuplicateNavigation ? history.replace : history.push;
+          method(location2);
+        }
+      });
+      if (forwardRefShim !== forwardRef4) {
+        props.ref = forwardedRef || innerRef;
+      } else {
+        props.innerRef = innerRef;
+      }
+      return /* @__PURE__ */ import_react132.default.createElement(component, props);
+    });
+  });
+  if (true) {
+    toType = import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.object, import_prop_types7.default.func]);
+    refType = import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.func, import_prop_types7.default.shape({
       current: import_prop_types7.default.any
     })]);
+    Link.displayName = "Link";
     Link.propTypes = {
-      innerRef: innerRefType,
+      innerRef: refType,
       onClick: import_prop_types7.default.func,
       replace: import_prop_types7.default.bool,
       target: import_prop_types7.default.string,
@@ -32212,7 +32366,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   }
   var toType;
-  var innerRefType;
+  var refType;
+  var forwardRefShim$1 = function forwardRefShim3(C) {
+    return C;
+  };
+  var forwardRef$1 = import_react132.default.forwardRef;
+  if (typeof forwardRef$1 === "undefined") {
+    forwardRef$1 = forwardRefShim$1;
+  }
   function joinClassnames() {
     for (var _len = arguments.length, classnames = new Array(_len), _key = 0; _key < _len; _key++) {
       classnames[_key] = arguments[_key];
@@ -32221,92 +32382,124 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       return i;
     }).join(" ");
   }
-  function NavLink(_ref) {
-    var _ref$ariaCurrent = _ref["aria-current"], ariaCurrent = _ref$ariaCurrent === void 0 ? "page" : _ref$ariaCurrent, _ref$activeClassName = _ref.activeClassName, activeClassName = _ref$activeClassName === void 0 ? "active" : _ref$activeClassName, activeStyle = _ref.activeStyle, classNameProp = _ref.className, exact = _ref.exact, isActiveProp = _ref.isActive, locationProp = _ref.location, strict = _ref.strict, styleProp = _ref.style, to = _ref.to, rest = _objectWithoutPropertiesLoose(_ref, ["aria-current", "activeClassName", "activeStyle", "className", "exact", "isActive", "location", "strict", "style", "to"]);
-    var path = typeof to === "object" ? to.pathname : to;
-    var escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
-    return import_react131.default.createElement(context.Consumer, null, function(context2) {
+  var NavLink = forwardRef$1(function(_ref, forwardedRef) {
+    var _ref$ariaCurrent = _ref["aria-current"], ariaCurrent = _ref$ariaCurrent === void 0 ? "page" : _ref$ariaCurrent, _ref$activeClassName = _ref.activeClassName, activeClassName = _ref$activeClassName === void 0 ? "active" : _ref$activeClassName, activeStyle = _ref.activeStyle, classNameProp = _ref.className, exact = _ref.exact, isActiveProp = _ref.isActive, locationProp = _ref.location, sensitive = _ref.sensitive, strict = _ref.strict, styleProp = _ref.style, to = _ref.to, innerRef = _ref.innerRef, rest = _objectWithoutPropertiesLoose3(_ref, ["aria-current", "activeClassName", "activeStyle", "className", "exact", "isActive", "location", "sensitive", "strict", "style", "to", "innerRef"]);
+    return /* @__PURE__ */ import_react132.default.createElement(context.Consumer, null, function(context2) {
       !context2 ? true ? invariant(false, "You should not use <NavLink> outside a <Router>") : invariant(false) : void 0;
-      var pathToMatch = locationProp ? locationProp.pathname : context2.location.pathname;
-      var match = escapedPath ? matchPath(pathToMatch, {
+      var currentLocation = locationProp || context2.location;
+      var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
+      var path = toLocation.pathname;
+      var escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
+      var match = escapedPath ? matchPath(currentLocation.pathname, {
         path: escapedPath,
         exact,
+        sensitive,
         strict
       }) : null;
-      var isActive = !!(isActiveProp ? isActiveProp(match, context2.location) : match);
-      var className = isActive ? joinClassnames(classNameProp, activeClassName) : classNameProp;
-      var style = isActive ? _extends({}, styleProp, activeStyle) : styleProp;
-      return import_react131.default.createElement(Link, _extends({
+      var isActive = !!(isActiveProp ? isActiveProp(match, currentLocation) : match);
+      var className = typeof classNameProp === "function" ? classNameProp(isActive) : classNameProp;
+      var style = typeof styleProp === "function" ? styleProp(isActive) : styleProp;
+      if (isActive) {
+        className = joinClassnames(className, activeClassName);
+        style = _extends3({}, style, activeStyle);
+      }
+      var props = _extends3({
         "aria-current": isActive && ariaCurrent || null,
         className,
         style,
-        to
-      }, rest));
+        to: toLocation
+      }, rest);
+      if (forwardRefShim$1 !== forwardRef$1) {
+        props.ref = forwardedRef || innerRef;
+      } else {
+        props.innerRef = innerRef;
+      }
+      return /* @__PURE__ */ import_react132.default.createElement(Link, props);
     });
-  }
+  });
   if (true) {
-    ariaCurrentType = import_prop_types7.default.oneOf(["page", "step", "location", "date", "time", "true"]);
-    NavLink.propTypes = _extends({}, Link.propTypes, {
+    NavLink.displayName = "NavLink";
+    ariaCurrentType = import_prop_types7.default.oneOf(["page", "step", "location", "date", "time", "true", "false"]);
+    NavLink.propTypes = _extends3({}, Link.propTypes, {
       "aria-current": ariaCurrentType,
       activeClassName: import_prop_types7.default.string,
       activeStyle: import_prop_types7.default.object,
-      className: import_prop_types7.default.string,
+      className: import_prop_types7.default.oneOfType([import_prop_types7.default.string, import_prop_types7.default.func]),
       exact: import_prop_types7.default.bool,
       isActive: import_prop_types7.default.func,
       location: import_prop_types7.default.object,
+      sensitive: import_prop_types7.default.bool,
       strict: import_prop_types7.default.bool,
-      style: import_prop_types7.default.object
+      style: import_prop_types7.default.oneOfType([import_prop_types7.default.object, import_prop_types7.default.func])
     });
   }
   var ariaCurrentType;
 
+  // src/components/Users/users.jsx
+  var import_react137 = __toESM(require_react());
+
   // src/components/Users/user.jsx
+  var import_react133 = __toESM(require_react());
   function User({ users }) {
-    const userRows = users.map(({ id, name, rocket, twitter }) => /* @__PURE__ */ import_react132.default.createElement(Grid, {
+    let location = useLocation();
+    const userRows = users.map(({ id, name, rocket, twitter }) => /* @__PURE__ */ import_react133.default.createElement(Grid, {
       key: id
-    }, /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, name)), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, name)), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, twitter)), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, twitter)), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, rocket)), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(Link, {
+    }, rocket)), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(Link, {
       to: {
         pathname: `/users/${id}`,
-        state: { id, name, rocket, twitter }
+        state: { background: location }
       }
-    }, /* @__PURE__ */ import_react132.default.createElement(Icon, {
+    }, /* @__PURE__ */ import_react133.default.createElement(Icon, {
       source: SvgEditMajor
+    }))), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(Link, {
+      to: {
+        pathname: `/users/delete/${id}`,
+        state: { background: location }
+      }
+    }, /* @__PURE__ */ import_react133.default.createElement(Icon, {
+      source: SvgDeleteMajor
     })))));
-    return /* @__PURE__ */ import_react132.default.createElement(Page, {
+    return /* @__PURE__ */ import_react133.default.createElement("div", null, /* @__PURE__ */ import_react133.default.createElement(Page, {
       fullWidth: true
-    }, /* @__PURE__ */ import_react132.default.createElement(Grid, {
+    }, /* @__PURE__ */ import_react133.default.createElement(Grid, {
       key: "userHeading"
-    }, /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, "Name")), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, "Name")), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, "Twitter")), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, "Twitter")), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, "Rocket")), /* @__PURE__ */ import_react132.default.createElement(Grid.Cell, {
-      columnSpan: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }
-    }, /* @__PURE__ */ import_react132.default.createElement(DisplayText, {
+    }, "Rocket")), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
       size: "small"
-    }, "Edit User"))), userRows);
+    }, "Edit User")), /* @__PURE__ */ import_react133.default.createElement(Grid.Cell, {
+      columnSpan: { xs: 2, sm: 3, md: 2, lg: 2, xl: 2 }
+    }, /* @__PURE__ */ import_react133.default.createElement(DisplayText, {
+      size: "small"
+    }, "Delete User"))), userRows));
   }
   var user_default = User;
 
@@ -39922,13 +40115,13 @@ const client = new ApolloClient({
   setVerbosity(DEV_default ? "log" : "silent");
 
   // node_modules/@apollo/client/react/context/ApolloContext.js
-  var React97 = __toESM(require_react(), 1);
+  var React98 = __toESM(require_react(), 1);
   var contextKey = canUseSymbol ? Symbol.for("__APOLLO_CONTEXT__") : "__APOLLO_CONTEXT__";
   function getApolloContext() {
-    var context2 = React97.createContext[contextKey];
+    var context2 = React98.createContext[contextKey];
     if (!context2) {
-      Object.defineProperty(React97.createContext, contextKey, {
-        value: context2 = React97.createContext({}),
+      Object.defineProperty(React98.createContext, contextKey, {
+        value: context2 = React98.createContext({}),
         enumerable: false,
         writable: false,
         configurable: true
@@ -39939,31 +40132,31 @@ const client = new ApolloClient({
   }
 
   // node_modules/@apollo/client/react/hooks/useApolloClient.js
-  var import_react133 = __toESM(require_react(), 1);
+  var import_react134 = __toESM(require_react(), 1);
   function useApolloClient(override) {
-    var context2 = (0, import_react133.useContext)(getApolloContext());
+    var context2 = (0, import_react134.useContext)(getApolloContext());
     var client = override || context2.client;
     __DEV__ ? invariant2(!!client, 'Could not find "client" in the context or passed in as an option. Wrap the root component in an <ApolloProvider>, or pass an ApolloClient instance in via options.') : invariant2(!!client, 29);
     return client;
   }
 
   // node_modules/@apollo/client/react/hooks/useQuery.js
-  var import_react134 = __toESM(require_react(), 1);
+  var import_react135 = __toESM(require_react(), 1);
 
   // node_modules/@apollo/client/react/hooks/useSyncExternalStore.js
-  var React98 = __toESM(require_react(), 1);
+  var React99 = __toESM(require_react(), 1);
   var didWarnUncachedGetSnapshot = false;
   var uSESKey = "useSyncExternalStore";
-  var realHook = React98[uSESKey];
+  var realHook = React99[uSESKey];
   var useSyncExternalStore = realHook || function(subscribe, getSnapshot, getServerSnapshot) {
     var value = getSnapshot();
     if (__DEV__ && !didWarnUncachedGetSnapshot && value !== getSnapshot()) {
       didWarnUncachedGetSnapshot = true;
       __DEV__ && invariant2.error("The result of getSnapshot should be cached to avoid an infinite loop");
     }
-    var _a5 = React98.useState({ inst: { value, getSnapshot } }), inst = _a5[0].inst, forceUpdate = _a5[1];
+    var _a5 = React99.useState({ inst: { value, getSnapshot } }), inst = _a5[0].inst, forceUpdate = _a5[1];
     if (canUseLayoutEffect) {
-      React98.useLayoutEffect(function() {
+      React99.useLayoutEffect(function() {
         Object.assign(inst, { value, getSnapshot });
         if (checkIfSnapshotChanged(inst)) {
           forceUpdate({ inst });
@@ -39972,7 +40165,7 @@ const client = new ApolloClient({
     } else {
       Object.assign(inst, { value, getSnapshot });
     }
-    React98.useEffect(function() {
+    React99.useEffect(function() {
       if (checkIfSnapshotChanged(inst)) {
         forceUpdate({ inst });
       }
@@ -40080,12 +40273,12 @@ const client = new ApolloClient({
     return useInternalState(useApolloClient(options.client), query).useQuery(options);
   }
   function useInternalState(client, query) {
-    var stateRef = (0, import_react134.useRef)();
+    var stateRef = (0, import_react135.useRef)();
     if (!stateRef.current || client !== stateRef.current.client || query !== stateRef.current.query) {
       stateRef.current = new InternalState(client, query, stateRef.current);
     }
     var state = stateRef.current;
-    var _a5 = (0, import_react134.useState)(0), _tick = _a5[0], setTick = _a5[1];
+    var _a5 = (0, import_react135.useState)(0), _tick = _a5[0], setTick = _a5[1];
     state.forceUpdate = function() {
       setTick(function(tick) {
         return tick + 1;
@@ -40132,10 +40325,10 @@ const client = new ApolloClient({
     };
     InternalState2.prototype.useQuery = function(options) {
       var _this = this;
-      this.renderPromises = (0, import_react134.useContext)(getApolloContext()).renderPromises;
+      this.renderPromises = (0, import_react135.useContext)(getApolloContext()).renderPromises;
       this.useOptions(options);
       var obsQuery = this.useObservableQuery();
-      var result2 = useSyncExternalStore((0, import_react134.useCallback)(function() {
+      var result2 = useSyncExternalStore((0, import_react135.useCallback)(function() {
         if (_this.renderPromises) {
           return function() {
           };
@@ -40261,7 +40454,7 @@ const client = new ApolloClient({
     };
     InternalState2.prototype.useObservableQuery = function() {
       var obsQuery = this.observable = this.renderPromises && this.renderPromises.getSSRObservable(this.watchQueryOptions) || this.observable || this.client.watchQuery(this.getObsQueryOptions());
-      this.obsQueryFields = (0, import_react134.useMemo)(function() {
+      this.obsQueryFields = (0, import_react135.useMemo)(function() {
         return {
           refetch: obsQuery.refetch.bind(obsQuery),
           reobserve: obsQuery.reobserve.bind(obsQuery),
@@ -40329,16 +40522,16 @@ const client = new ApolloClient({
   }();
 
   // node_modules/@apollo/client/react/hooks/useMutation.js
-  var import_react135 = __toESM(require_react(), 1);
+  var import_react136 = __toESM(require_react(), 1);
   function useMutation(mutation, options) {
     var client = useApolloClient(options === null || options === void 0 ? void 0 : options.client);
     verifyDocumentType(mutation, DocumentType.Mutation);
-    var _a5 = (0, import_react135.useState)({
+    var _a5 = (0, import_react136.useState)({
       called: false,
       loading: false,
       client
     }), result2 = _a5[0], setResult = _a5[1];
-    var ref = (0, import_react135.useRef)({
+    var ref = (0, import_react136.useRef)({
       result: result2,
       mutationId: 0,
       isMounted: true,
@@ -40349,7 +40542,7 @@ const client = new ApolloClient({
     {
       Object.assign(ref.current, { client, options, mutation });
     }
-    var execute2 = (0, import_react135.useCallback)(function(executeOptions) {
+    var execute2 = (0, import_react136.useCallback)(function(executeOptions) {
       if (executeOptions === void 0) {
         executeOptions = {};
       }
@@ -40407,10 +40600,10 @@ const client = new ApolloClient({
         throw error;
       });
     }, []);
-    var reset = (0, import_react135.useCallback)(function() {
+    var reset = (0, import_react136.useCallback)(function() {
       setResult({ called: false, loading: false, client });
     }, []);
-    (0, import_react135.useEffect)(function() {
+    (0, import_react136.useEffect)(function() {
       ref.current.isMounted = true;
       return function() {
         ref.current.isMounted = false;
@@ -40452,37 +40645,60 @@ const client = new ApolloClient({
 		}
 	}
 `;
+  var UPDATE_USER = gql`
+	mutation Mutation($set: users_set_input, $where: users_bool_exp!) {
+		update_users(_set: $set, where: $where) {
+			returning {
+				id
+				name
+				twitter
+				rocket
+			}
+		}
+	}
+`;
+  var DELETE_USER = gql`
+	mutation Delete_users($where: users_bool_exp!) {
+		delete_users(where: $where) {
+			returning {
+				name
+			}
+		}
+	}
+`;
 
   // src/components/Users/users.jsx
   function Users() {
-    const { loading, error, data } = useQuery(GET_USERS);
+    let location = useLocation();
+    const { loading, error, data } = useQuery(GET_USERS, {});
     if (loading)
-      return /* @__PURE__ */ import_react136.default.createElement("div", null, /* @__PURE__ */ import_react136.default.createElement(Frame, null, /* @__PURE__ */ import_react136.default.createElement(Loading2, null)));
+      return /* @__PURE__ */ import_react137.default.createElement("div", null, /* @__PURE__ */ import_react137.default.createElement(Frame, null, /* @__PURE__ */ import_react137.default.createElement(Loading2, null)));
     if (error)
-      return /* @__PURE__ */ import_react136.default.createElement("p", null, "Error :");
-    return /* @__PURE__ */ import_react136.default.createElement("div", null, /* @__PURE__ */ import_react136.default.createElement("div", {
+      return /* @__PURE__ */ import_react137.default.createElement("p", null, "Error :");
+    return /* @__PURE__ */ import_react137.default.createElement("div", {
+      className: "container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10"
+    }, /* @__PURE__ */ import_react137.default.createElement("div", {
       className: "topRight"
-    }, /* @__PURE__ */ import_react136.default.createElement(Link, {
-      to: "/users",
+    }, /* @__PURE__ */ import_react137.default.createElement(Link, {
+      to: { pathname: "/adduser", state: { background: location } },
       className: "btn btn-primary"
-    }, "Add New User")), /* @__PURE__ */ import_react136.default.createElement(Heading, null, "List of Users"), /* @__PURE__ */ import_react136.default.createElement(user_default, {
+    }, /* @__PURE__ */ import_react137.default.createElement(Button, {
+      primary: true
+    }, "Add New User"))), /* @__PURE__ */ import_react137.default.createElement(Heading, null, "List of Users"), /* @__PURE__ */ import_react137.default.createElement(user_default, {
       users: data.users
     }));
   }
   var users_default = Users;
 
   // src/components/Users/NewUser.jsx
-  var import_react138 = __toESM(require_react());
+  var import_react139 = __toESM(require_react());
 
   // src/components/Users/UserForm.jsx
-  var import_react137 = __toESM(require_react());
-  function UserForm({ user, addUser }) {
-    const [userDetail, setUserDetails] = (0, import_react137.useState)({});
-    const handleSubmit = (_event) => {
-      let newuser = {
-        objects: [userDetail]
-      };
-      addUser({ variables: newuser });
+  var import_react138 = __toESM(require_react());
+  function UserForm({ user, addUpdateUser, goBack }) {
+    const [userDetail, setUserDetails] = (0, import_react138.useState)({});
+    const handleSubmit = () => {
+      addUpdateUser(userDetail);
     };
     const onInputChange = (type, value) => {
       let obj = {
@@ -40491,82 +40707,231 @@ const client = new ApolloClient({
       let users = { ...userDetail, ...obj };
       setUserDetails(users);
     };
-    return /* @__PURE__ */ import_react137.default.createElement("div", null, /* @__PURE__ */ import_react137.default.createElement(DisplayText, {
-      size: "large"
-    }, user ? "Edit User" : "Add User"), /* @__PURE__ */ import_react137.default.createElement(Form, {
+    (0, import_react138.useEffect)(() => {
+      setUserDetails(user);
+    }, [user]);
+    return /* @__PURE__ */ import_react138.default.createElement("div", null, /* @__PURE__ */ import_react138.default.createElement(Form, {
       onSubmit: handleSubmit
-    }, /* @__PURE__ */ import_react137.default.createElement(FormLayout, null, /* @__PURE__ */ import_react137.default.createElement(TextField, {
-      value: userDetail?.name,
+    }, /* @__PURE__ */ import_react138.default.createElement(FormLayout, null, /* @__PURE__ */ import_react138.default.createElement(TextField, {
+      value: userDetail?.name || "",
       onChange: (e) => onInputChange("name", e),
       label: "Name",
       type: "text"
-    }), /* @__PURE__ */ import_react137.default.createElement(TextField, {
+    }), /* @__PURE__ */ import_react138.default.createElement(TextField, {
       onChange: (e) => onInputChange("rocket", e),
-      value: userDetail?.rocket,
+      value: userDetail?.rocket || "",
       label: "Rocket",
       type: "text"
-    }), /* @__PURE__ */ import_react137.default.createElement(TextField, {
-      value: userDetail?.twitter,
+    }), /* @__PURE__ */ import_react138.default.createElement(TextField, {
+      value: userDetail?.twitter || "",
       label: "Twitter ID",
       type: "text",
       onChange: (e) => onInputChange("twitter", e)
-    }), /* @__PURE__ */ import_react137.default.createElement(Button, {
+    }), /* @__PURE__ */ import_react138.default.createElement(Button, {
       submit: true
-    }, userDetail ? "Create User" : "Update User"))));
+    }, user ? "Update user" : "Create user"), /* @__PURE__ */ import_react138.default.createElement(Button, {
+      onClick: (e) => goBack(e)
+    }, "Back"))));
   }
   var UserForm_default = UserForm;
 
   // src/components/Users/NewUser.jsx
   function NewUser() {
-    const [addUser, { data, loading, error }] = useMutation(ADD_USER);
+    let history = useHistory();
+    let back = () => {
+      history.goBack();
+    };
+    const [addUser, { data, loading, error }] = useMutation(ADD_USER, {
+      refetchQueries: [{ query: GET_USERS }]
+    });
     if (loading)
       return "creating new users...";
     if (error)
-      return `Failed to create/update user details  ${error.message}`;
+      return `Failed to create user  ${error.message}`;
     if (data) {
-      return /* @__PURE__ */ import_react138.default.createElement(Redirect, {
+      return /* @__PURE__ */ import_react139.default.createElement(Redirect, {
         to: {
           pathname: "/"
         }
       });
     }
-    return /* @__PURE__ */ import_react138.default.createElement("div", null, /* @__PURE__ */ import_react138.default.createElement(UserForm_default, {
-      addUser
-    }));
+    function addUpdateUser(userDetail) {
+      let newuser = {
+        objects: [userDetail]
+      };
+      addUser({ variables: newuser });
+    }
+    return /* @__PURE__ */ import_react139.default.createElement("div", {
+      style: {
+        position: "absolute",
+        background: "#fff",
+        top: 25,
+        left: "10%",
+        right: "10%",
+        padding: 15
+      }
+    }, /* @__PURE__ */ import_react139.default.createElement(Modal, {
+      onClose: back,
+      open: "true",
+      title: "Create New User"
+    }, /* @__PURE__ */ import_react139.default.createElement(Modal.Section, null, /* @__PURE__ */ import_react139.default.createElement(UserForm_default, {
+      addUpdateUser,
+      goBack: back
+    }))));
   }
   var NewUser_default = NewUser;
 
   // src/components/Users/UserDetail.jsx
-  var import_react139 = __toESM(require_react());
+  var import_react140 = __toESM(require_react());
   function UserDetail() {
-    let user = window.location.pathname.split("/users/")[1];
-    const { loading, error, data } = useQuery(GET_USER, {
+    let history = useHistory();
+    let back = () => {
+      history.goBack();
+    };
+    let { userid: user } = useParams();
+    const { data, loading, error } = useQuery(GET_USER, {
       variables: {
         userid: user
       }
     });
+    const [updateUser, { data: updatedUsers, loading: updatingUserLoading }] = useMutation(UPDATE_USER, {
+      onError(error2) {
+        return `Failed to get user details ->   ${error2.message}`;
+      },
+      refetchQueries: [{ query: GET_USERS }]
+    });
+    if (updatingUserLoading) {
+      return "Updating user";
+    }
+    if (updatedUsers) {
+      return /* @__PURE__ */ import_react140.default.createElement(Redirect, {
+        to: {
+          pathname: "/"
+        }
+      });
+    }
+    function addUpdateUser(users) {
+      let updateObj = {
+        set: users,
+        where: {
+          id: {
+            _eq: user
+          }
+        }
+      };
+      updateUser({ variables: updateObj });
+    }
     if (loading)
       return user ? "getting user details..." : "creating new users...";
     if (error)
-      return `Failed to get user details  ${error.message}`;
+      return `Failed to get user details -> ${error.message}`;
     if (data)
-      return /* @__PURE__ */ import_react139.default.createElement("div", null, /* @__PURE__ */ import_react139.default.createElement(UserForm_default, {
-        user: data.users_by_pk
-      }));
+      return /* @__PURE__ */ import_react140.default.createElement("div", {
+        style: {
+          position: "fixed",
+          background: "#fff",
+          top: "10%",
+          left: "10%",
+          right: "10%",
+          padding: 15
+        }
+      }, /* @__PURE__ */ import_react140.default.createElement(Modal, {
+        onClose: back,
+        open: "true",
+        title: "Edit User"
+      }, /* @__PURE__ */ import_react140.default.createElement(Modal.Section, null, /* @__PURE__ */ import_react140.default.createElement(UserForm_default, {
+        user: data.users_by_pk,
+        addUpdateUser,
+        goBack: back
+      }))));
   }
   var UserDetail_default = UserDetail;
 
+  // src/components/Users/DeleteUser.jsx
+  var import_react141 = __toESM(require_react());
+  function DeleteUser() {
+    let history = useHistory();
+    let back = () => {
+      history.goBack();
+    };
+    let { userid } = useParams();
+    console.log(userid);
+    const [delete_user, { data, loading, error }] = useMutation(DELETE_USER, {
+      refetchQueries: [{ query: GET_USERS }]
+    });
+    const deleteUser = async () => {
+      let deleteObj = {
+        where: {
+          id: {
+            _eq: userid
+          }
+        }
+      };
+      await delete_user({ variables: deleteObj });
+      return history.goBack();
+    };
+    if (data) {
+      return "user deleted successfully";
+    }
+    return /* @__PURE__ */ import_react141.default.createElement("div", {
+      style: {
+        position: "absolute",
+        background: "#fff",
+        top: 25,
+        left: "10%",
+        right: "10%",
+        padding: 15
+      }
+    }, /* @__PURE__ */ import_react141.default.createElement(Modal, {
+      onClose: back,
+      open: "true",
+      title: "Are you sure you want to delete the user?",
+      primaryAction: {
+        content: "Delete User",
+        onAction: deleteUser
+      },
+      secondaryActions: [
+        {
+          content: "Cancel",
+          onAction: back
+        }
+      ]
+    }));
+  }
+  var DeleteUser_default = DeleteUser;
+
+  // src/components/Users/RoutesSwitch.jsx
+  function RoutesSwitch() {
+    let location = useLocation();
+    let background = location.state && location.state.background;
+    return /* @__PURE__ */ import_react142.default.createElement("div", null, /* @__PURE__ */ import_react142.default.createElement(Switch, {
+      location: background || location
+    }, /* @__PURE__ */ import_react142.default.createElement(Route, {
+      path: "/users/:userid"
+    }, /* @__PURE__ */ import_react142.default.createElement(UserDetail_default, null)), /* @__PURE__ */ import_react142.default.createElement(Route, {
+      path: "/adduser"
+    }, /* @__PURE__ */ import_react142.default.createElement(NewUser_default, null)), /* @__PURE__ */ import_react142.default.createElement(Route, {
+      path: "/"
+    }, /* @__PURE__ */ import_react142.default.createElement(users_default, null))), background && /* @__PURE__ */ import_react142.default.createElement(Route, {
+      path: "/adduser",
+      children: /* @__PURE__ */ import_react142.default.createElement(NewUser_default, null)
+    }), background && /* @__PURE__ */ import_react142.default.createElement(Route, {
+      exact: true,
+      path: "/users/delete/:userid",
+      children: /* @__PURE__ */ import_react142.default.createElement(DeleteUser_default, null)
+    }), background && /* @__PURE__ */ import_react142.default.createElement(Route, {
+      exact: true,
+      path: "/users/:userid",
+      children: /* @__PURE__ */ import_react142.default.createElement(UserDetail_default, null)
+    }));
+  }
+  var RoutesSwitch_default = RoutesSwitch;
+
   // src/components/app.jsx
   function App() {
-    return /* @__PURE__ */ import_react140.default.createElement(AppProvider, null, /* @__PURE__ */ import_react140.default.createElement(Page, {
+    return /* @__PURE__ */ import_react143.default.createElement(AppProvider, null, /* @__PURE__ */ import_react143.default.createElement(Page, {
       title: "SpaceX Users"
-    }, /* @__PURE__ */ import_react140.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react140.default.createElement(Switch, null, /* @__PURE__ */ import_react140.default.createElement(Route, {
-      path: "/users/:userid"
-    }, /* @__PURE__ */ import_react140.default.createElement(UserDetail_default, null)), /* @__PURE__ */ import_react140.default.createElement(Route, {
-      path: "/users"
-    }, /* @__PURE__ */ import_react140.default.createElement(NewUser_default, null)), /* @__PURE__ */ import_react140.default.createElement(Route, {
-      path: "/"
-    }, /* @__PURE__ */ import_react140.default.createElement(users_default, null))))));
+    }, /* @__PURE__ */ import_react143.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react143.default.createElement(RoutesSwitch_default, null))));
   }
   var app_default = App;
 })();

@@ -44,4 +44,13 @@ const UPDATE_USER = gql`
 		}
 	}
 `;
-export { GET_USERS, ADD_USER, GET_USER, UPDATE_USER };
+const DELETE_USER = gql`
+	mutation Delete_users($where: users_bool_exp!) {
+		delete_users(where: $where) {
+			returning {
+				name
+			}
+		}
+	}
+`;
+export { GET_USERS, ADD_USER, GET_USER, UPDATE_USER, DELETE_USER };

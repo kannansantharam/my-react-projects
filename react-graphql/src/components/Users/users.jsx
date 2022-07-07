@@ -1,14 +1,13 @@
 import React from "react";
 import User from "./user";
-import { Heading, Frame, Loading } from "@shopify/polaris";
+import { Heading, Frame, Loading, Button } from "@shopify/polaris";
 import { useQuery } from "@apollo/client";
 import { GET_USERS } from "./usersgql";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 function Users() {
-	const { loading, error, data } = useQuery(GET_USERS, {
-		fetchPolicy: "cache-and-network",
-		nextFetchPolicy: "cache-first",
-	});
+	let location = useLocation();
+	const { loading, error, data } = useQuery(GET_USERS, {});
 	if (loading)
 		return (
 			<div>
@@ -20,13 +19,15 @@ function Users() {
 	if (error) return <p>Error :</p>;
 
 	return (
-		<div>
-			<div className="topRight">
-				<Link to="/adduser" className="btn btn-primary">
-					Add New User
+		<div className="container p-6 rounded-xl shadow-lg items-center space-x-4 border-r-4">
+			<div className="text-right block mb-10">
+				<Link
+					to={{ pathname: "/adduser", state: { background: location } }}
+					className="btn btn-primary"
+				>
+					<Button primary>Add New User</Button>
 				</Link>
 			</div>
-			<Heading>List of Users</Heading>
 			<User users={data.users} />
 		</div>
 	);
