@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_USER, GET_USERS } from "./usersgql";
 import { Modal } from "@shopify/polaris";
@@ -12,7 +12,7 @@ function DeleteUser() {
 	let { userid } = useParams();
 	console.log(userid);
 
-	const [delete_user, { data, loading, error }] = useMutation(DELETE_USER, {
+	const [delete_user, { error }] = useMutation(DELETE_USER, {
 		refetchQueries: [{ query: GET_USERS }],
 	});
 	const deleteUser = async () => {
@@ -26,8 +26,8 @@ function DeleteUser() {
 		await delete_user({ variables: deleteObj });
 		return history.goBack();
 	};
-	if (data) {
-		return "user deleted successfully";
+	if (error) {
+		return "failed to delete the user";
 	}
 	return (
 		<div

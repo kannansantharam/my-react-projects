@@ -1,6 +1,6 @@
 import React from "react";
 import User from "./user";
-import { Heading, Frame, Loading, Button } from "@shopify/polaris";
+import { Frame, Loading, Button } from "@shopify/polaris";
 import { useQuery } from "@apollo/client";
 import { GET_USERS } from "./usersgql";
 import { Link, useLocation } from "react-router-dom";
@@ -19,7 +19,7 @@ function Users() {
 	if (error) return <p>Error :</p>;
 
 	return (
-		<div className="container p-6 rounded-xl shadow-lg items-center space-x-4 border-r-4">
+		<div className="w-full p-6 rounded-xl shadow-lg items-center space-x-4 border-r-4">
 			<div className="text-right block mb-10">
 				<Link
 					to={{ pathname: "/adduser", state: { background: location } }}

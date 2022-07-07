@@ -16,6 +16,7 @@ function UserDetail() {
 		variables: {
 			userid: user,
 		},
+		fetchPolicy: "cache-and-network",
 	});
 	const [updateUser, { data: updatedUsers, loading: updatingUserLoading }] =
 		useMutation(UPDATE_USER, {

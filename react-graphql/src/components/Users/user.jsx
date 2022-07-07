@@ -1,8 +1,6 @@
 import React from "react";
-import { Button, DisplayText } from "@shopify/polaris";
 import { Icon } from "@shopify/polaris";
 import { EditMajor, DeleteMajor } from "@shopify/polaris-icons";
-import { Page, Grid } from "@shopify/polaris";
 import { Link, useLocation } from "react-router-dom";
 
 function User({ users }) {
@@ -86,13 +84,13 @@ function User({ users }) {
 							scope="col"
 							className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
 						>
-							Twitter
+							Rocket
 						</th>
 						<th
 							scope="col"
 							className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
 						>
-							Rocket
+							Twitter
 						</th>
 						<th
 							scope="col"

@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
 	return (
 		<AppProvider>
-			<Page title="SpaceX Users">
+			<Page fullWidth title="SpaceX Users">
 				<Router>
 					<RoutesSwitch />
 				</Router>

@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-	Form,
-	FormLayout,
-	TextField,
-	Button,
-	DisplayText,
-} from "@shopify/polaris";
+import { Form, FormLayout, TextField, Button } from "@shopify/polaris";
 function UserForm({ user, addUpdateUser, goBack }) {
 	const [userDetail, setUserDetails] = useState({});
 	const handleSubmit = () => {
@@ -43,8 +37,18 @@ function UserForm({ user, addUpdateUser, goBack }) {
 						type="text"
 						onChange={(e) => onInputChange("twitter", e)}
 					/>
-					<Button submit>{user ? "Update user" : "Create user"}</Button>
-					<Button onClick={(e) => goBack(e)}>Back</Button>
+					<div>
+						<div className="inline-block mr-5">
+							<Button className="text-right" onClick={(e) => goBack(e)}>
+								{"<"} Back
+							</Button>
+						</div>
+						<div className="inline-block ">
+							<Button primary className="text-right mr-5" submit>
+								{user ? "Update user" : "Create user"}
+							</Button>
+						</div>
+					</div>
 				</FormLayout>
 			</Form>
 		</div>
