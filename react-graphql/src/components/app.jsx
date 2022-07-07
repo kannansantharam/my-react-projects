@@ -1,17 +1,30 @@
-
-import {AppProvider, Page, Card, Button} from '@shopify/polaris';
-import '@shopify/polaris/build/esm/styles.css';
+import { AppProvider, Page } from "@shopify/polaris";
+import "@shopify/polaris/build/esm/styles.css";
 import React from "react";
-function App(){
-    return (
-       <AppProvider>
-          <Page title="Example app">
-            <Card sectioned>
-              <Button>Show SpaceX ships</Button>
-            </Card>
-          </Page>
-        </AppProvider>
-      )
+import Users from "./Users/users";
+import NewUser from "./Users/NewUser";
+import UserDetail from "./Users/UserDetail";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+function App() {
+	return (
+		<AppProvider>
+			<Page title="SpaceX Users">
+				<Router>
+					<Switch>
+						<Route path="/users/:userid">
+							<UserDetail />
+						</Route>
+						<Route path="/adduser">
+							<NewUser />
+						</Route>
+						<Route path="/">
+							<Users />
+						</Route>
+					</Switch>
+				</Router>
+			</Page>
+		</AppProvider>
+	);
 }
 
 export default App;

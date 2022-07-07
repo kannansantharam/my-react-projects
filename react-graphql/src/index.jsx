@@ -1,12 +1,19 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/app";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app';
-
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+const client = new ApolloClient({
+	uri: "https://api.spacex.land/graphql/",
+	cache: new InMemoryCache({
+		addTypename: false,
+	}),
+});
+// const client = ...
 
 ReactDOM.render(
-  <>
-    <App />
-  </>,
-  document.getElementById('root')
+	<ApolloProvider client={client}>
+		<App />
+	</ApolloProvider>,
+	document.getElementById("root")
 );
