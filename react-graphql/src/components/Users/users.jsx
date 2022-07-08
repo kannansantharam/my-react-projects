@@ -42,18 +42,17 @@ function Users() {
 			</div>
 			<User users={data.users} />
 			{networkStatus !== NetworkStatus.fetchMore &&
-				data.users.length % variables.limit === 0 &&
-				!fullyLoaded && (
+				data.users.length % variables.limit === 0 && (
 					<InView
-						onChange={async (inView) => {
-							if (inView) {
+						onChange={async (inView, entry) => {
+							if (inView && fullyLoaded) {
 								const result = await fetchMore({
 									variables: {
 										offset: data.users.length,
 									},
 								});
-								setFullyLoaded(!result.data.users.length);
 							}
+							setFullyLoaded(!inView);
 						}}
 					/>
 				)}

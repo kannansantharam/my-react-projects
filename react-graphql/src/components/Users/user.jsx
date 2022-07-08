@@ -155,24 +155,24 @@ function User({ users }) {
 						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
 						label="Name"
 						dataKey="name"
-						width={300}
+						width={width}
 					/>
 					<Column
 						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-						width={300}
+						width={width}
 						label="Twitter"
 						dataKey="twitter"
 					/>
 					<Column
 						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-						width={300}
+						width={width}
 						label="Rocket"
 						dataKey="rocket"
 					/>
 					<Column
-						width={100}
+						width={200}
 						dataKey=""
-						label="Edit"
+						label=""
 						className="px-8 py-6 w-5 whitespace-nowrap text-sm font-light text-gray-900 invisible group-hover:visible"
 						cellRenderer={({ rowData }) => {
 							return (
@@ -189,9 +189,9 @@ function User({ users }) {
 					></Column>
 					<Column
 						className="whitespace-nowrap px-8 py-6 w-5 text-sm font-light text-gray-900 invisible group-hover:visible"
-						width={100}
-						dataKey="edit"
-						label="Delete"
+						width={200}
+						dataKey=""
+						label=""
 						cellRenderer={({ rowData }) => {
 							return (
 								<Link
