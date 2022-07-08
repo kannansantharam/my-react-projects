@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const GET_USERS = gql`
-	query ExampleQuery {
-		users {
+	query Query($offset: Int, $limit: Int) {
+		users(offset: $offset, limit: $limit) {
 			name
 			rocket
 			twitter

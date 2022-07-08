@@ -7,7 +7,12 @@ import { Link, useLocation } from "react-router-dom";
 
 function Users() {
 	let location = useLocation();
-	const { loading, error, data } = useQuery(GET_USERS, {});
+	const { loading, error, data } = useQuery(GET_USERS, {
+		variables: {
+			offset: 0,
+			limit: 5,
+		},
+	});
 	if (loading)
 		return (
 			<div>
@@ -19,7 +24,7 @@ function Users() {
 	if (error) return <p>Error :</p>;
 
 	return (
-		<div className="w-full p-6 rounded-xl shadow-lg items-center space-x-4 border-r-4">
+		<div className="w-full h-full overflow-scroll p-6 rounded-xl shadow-lg items-center space-x-4 border-r-4">
 			<div className="text-right block mb-10">
 				<Link
 					to={{ pathname: "/adduser", state: { background: location } }}

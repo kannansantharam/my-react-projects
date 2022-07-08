@@ -9,7 +9,7 @@ function RoutesSwitch() {
 	let location = useLocation();
 	let background = location.state && location.state.background;
 	return (
-		<div>
+		<div className="h-screen w-full">
 			<Switch location={background || location}>
 				<Route path="/users/:userid">
 					<UserDetail />
