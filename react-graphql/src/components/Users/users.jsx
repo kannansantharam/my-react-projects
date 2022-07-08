@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import User from "./user";
 import { Frame, Loading, Button } from "@shopify/polaris";
-import { useQuery } from "@apollo/client";
+import { useQuery, NetworkStatus } from "@apollo/client";
 import { GET_USERS } from "./usersgql";
 import { Link, useLocation } from "react-router-dom";
+import { InView } from "react-intersection-observer";
 
 function Users() {
 	let location = useLocation();
-	const { loading, error, data } = useQuery(GET_USERS, {
-		variables: {
-			offset: 0,
-			limit: 5,
-		},
-	});
-	if (loading)
+	const [fullyLoaded, setFullyLoaded] = useState(false);
+	const { error, data, networkStatus, fetchMore, variables } = useQuery(
+		GET_USERS,
+		{
+			variables: {
+				offset: 0,
+				limit: 3,
+			},
+			notifyOnNetworkStatusChange: true,
+			fetchPolicy: "cache-and-network",
+		}
+	);
+	if (networkStatus === NetworkStatus.loading)
 		return (
 			<div>
 				<Frame>
@@ -34,6 +41,22 @@ function Users() {
 				</Link>
 			</div>
 			<User users={data.users} />
+			{networkStatus !== NetworkStatus.fetchMore &&
+				data.users.length % variables.limit === 0 &&
+				!fullyLoaded && (
+					<InView
+						onChange={async (inView) => {
+							if (inView) {
+								const result = await fetchMore({
+									variables: {
+										offset: data.users.length,
+									},
+								});
+								setFullyLoaded(!result.data.users.length);
+							}
+						}}
+					/>
+				)}
 		</div>
 	);
 }
