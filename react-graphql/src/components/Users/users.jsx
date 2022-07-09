@@ -14,7 +14,7 @@ function Users() {
 		{
 			variables: {
 				offset: 0,
-				limit: 3,
+				limit: 1000,
 			},
 			notifyOnNetworkStatusChange: true,
 			fetchPolicy: "cache-and-network",
@@ -46,11 +46,11 @@ function Users() {
 					<InView
 						onChange={async (inView, entry) => {
 							if (inView && fullyLoaded) {
-								const result = await fetchMore({
-									variables: {
-										offset: data.users.length,
-									},
-								});
+								// const result = await fetchMore({
+								// 	variables: {
+								// 		offset: data.users.length,
+								// 	},
+								// });
 							}
 							setFullyLoaded(!inView);
 						}}

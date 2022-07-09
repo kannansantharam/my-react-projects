@@ -7,7 +7,7 @@ import { offsetLimitPagination } from "@apollo/client/utilities";
 const client = new ApolloClient({
 	uri: "https://api.spacex.land/graphql/",
 	cache: new InMemoryCache({
-		addTypename: false,
+		//	addTypename: false,
 		typePolicies: {
 			Query: {
 				fields: {
