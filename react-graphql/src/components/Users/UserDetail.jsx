@@ -1,7 +1,7 @@
 import React from "react";
 import UserForm from "./UserForm";
 import { useMutation, useQuery } from "@apollo/client";
-import { UPDATE_USER, GET_USER, GET_USERS } from "./usersgql";
+import { UPDATE_USER, GET_USER } from "./usersgql";
 import { useHistory, useParams } from "react-router-dom";
 import { Modal, Spinner } from "@shopify/polaris";
 import { WriteUsers } from "./UserCache";
@@ -18,22 +18,21 @@ function UserDetail() {
 		},
 		fetchPolicy: "cache-and-network",
 	});
-	const [updateUser, { data: updatedUsers, loading: updatingUserLoading }] =
-		useMutation(UPDATE_USER, {
-			onError(error) {
-				return `Failed to get user details ->   ${error.message}`;
-			},
-			update(cache, { data }) {
-				cache.modify({
-					fields: {
-						users(existingUsers = []) {
-							WriteUsers(data.update_users.returning[0], cache, existingUsers);
-						},
+	const [updateUser, { data: updatedUsers }] = useMutation(UPDATE_USER, {
+		onError(error) {
+			return `Failed to get user details ->   ${error.message}`;
+		},
+		update(cache, { data }) {
+			cache.modify({
+				fields: {
+					users(existingUsers = []) {
+						WriteUsers(data.update_users.returning[0], cache, existingUsers);
 					},
-				});
-			},
-			//refetchQueries: [{ query: GET_USERS }],
-		});
+				},
+			});
+		},
+		//refetchQueries: [{ query: GET_USERS }],
+	});
 	if (updatedUsers) {
 		back();
 	}

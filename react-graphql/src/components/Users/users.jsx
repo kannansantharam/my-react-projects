@@ -8,16 +8,13 @@ import { Link, useLocation } from "react-router-dom";
 function Users() {
 	let location = useLocation();
 
-	const { error, data, networkStatus, fetchMore, variables } = useQuery(
-		GET_USERS,
-		{
-			variables: {
-				offset: 0,
-				limit: 1000,
-			},
-			fetchPolicy: "cache-and-network",
-		}
-	);
+	const { error, data, networkStatus, fetchMore } = useQuery(GET_USERS, {
+		variables: {
+			offset: 0,
+			limit: 1000,
+		},
+		fetchPolicy: "cache-and-network",
+	});
 	if (networkStatus === NetworkStatus.loading)
 		return (
 			<div>

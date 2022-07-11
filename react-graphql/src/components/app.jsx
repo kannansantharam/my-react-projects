@@ -1,4 +1,4 @@
-import { AppProvider, Page } from "@shopify/polaris";
+import { AppProvider } from "@shopify/polaris";
 import "@shopify/polaris/build/esm/styles.css";
 import React from "react";
 import RoutesSwitch from "./Users/RoutesSwitch";
