@@ -65,7 +65,12 @@ function UserDetail() {
 					padding: 15,
 				}}
 			>
-				<Modal onClose={back} open="true" title="Edit User">
+				<Modal
+					onClose={back}
+					open="true"
+					className="font-extrabold"
+					title="Edit User"
+				>
 					<Modal.Section>
 						<UserForm
 							user={data.users_by_pk}

@@ -22,6 +22,9 @@ function User({ users, fetchMore }) {
 			}
 		}
 	};
+	const checkEmpty = (value) => {
+		return value ? value : "--";
+	};
 	const Example = () => (
 		<AutoSizer>
 			{({ height, width }) => (
@@ -32,27 +35,36 @@ function User({ users, fetchMore }) {
 					rowHeight={50}
 					width={width}
 					className="border-b"
-					headerClassName="text-black font-extrabold text-sm px-6 py-4 text-left"
+					headerClassName="text-black font-extrabold text-sm px-6 py-4 text-center"
 					rowClassName="border-b hover:bg-gray-200 group"
 					rowGetter={({ index }) => users[index]}
 				>
 					<Column
-						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+						className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
 						label="Name"
 						dataKey="name"
 						width={width}
+						cellRenderer={({ rowData }) => {
+							return checkEmpty(rowData.name);
+						}}
 					/>
 					<Column
-						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+						className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
 						width={width}
 						label="Twitter"
 						dataKey="twitter"
+						cellRenderer={({ rowData }) => {
+							return checkEmpty(rowData.twitter);
+						}}
 					/>
 					<Column
-						className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+						className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
 						width={width}
 						label="Rocket"
 						dataKey="rocket"
+						cellRenderer={({ rowData }) => {
+							return checkEmpty(rowData.rocket);
+						}}
 					/>
 					<Column
 						width={200}

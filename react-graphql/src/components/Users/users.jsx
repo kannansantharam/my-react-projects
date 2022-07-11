@@ -11,7 +11,7 @@ function Users() {
 	const { error, data, networkStatus, fetchMore } = useQuery(GET_USERS, {
 		variables: {
 			offset: 0,
-			limit: 1000,
+			limit: 20,
 		},
 		fetchPolicy: "cache-and-network",
 	});
