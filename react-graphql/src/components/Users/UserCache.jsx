@@ -1,19 +1,11 @@
 import { GET_USERS } from "./usersgql";
 
-function WriteUsers(user, client) {
+function WriteUsers(user, cache, existingUsers) {
 	let usersQuery = GET_USERS;
-	const existingUsers = client.readQuery({ query: usersQuery });
-
-	let writeNewUserToCache = {
-		id: user.id,
-		name: user.name,
-		rocket: user.rocket,
-		twitter: user.twitter,
-	};
-	client.writeQuery({
+	cache.writeQuery({
 		query: usersQuery,
 		data: {
-			users: [writeNewUserToCache, ...existingUsers.users],
+			users: [user, ...existingUsers],
 		},
 		variables: {
 			id: user.id,

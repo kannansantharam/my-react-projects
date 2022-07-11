@@ -11,12 +11,12 @@ function RoutesSwitch() {
 	return (
 		<div className="h-screen w-full">
 			<Switch location={background || location}>
-				{/* <Route path="/users/:userid">
+				<Route path="/users/:userid">
 					<UserDetail />
 				</Route>
 				<Route path="/adduser">
 					<NewUser />
-				</Route> */}
+				</Route>
 				<Route path="/">
 					<Users />
 				</Route>

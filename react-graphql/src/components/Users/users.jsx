@@ -4,7 +4,6 @@ import { Frame, Loading, Button } from "@shopify/polaris";
 import { useQuery, NetworkStatus } from "@apollo/client";
 import { GET_USERS } from "./usersgql";
 import { Link, useLocation } from "react-router-dom";
-import { InView } from "react-intersection-observer";
 
 function Users() {
 	let location = useLocation();
@@ -14,9 +13,8 @@ function Users() {
 		{
 			variables: {
 				offset: 0,
-				limit: 12,
+				limit: 1000,
 			},
-			//	notifyOnNetworkStatusChange: true,
 			fetchPolicy: "cache-and-network",
 		}
 	);
@@ -41,21 +39,6 @@ function Users() {
 				</Link>
 			</div>
 			<User users={data.users} fetchMore={fetchMore} />
-			{/* {networkStatus !== NetworkStatus.fetchMore &&
-				data.users.length % variables.limit === 0 && (
-					<InView
-						onChange={async (inView, entry) => {
-							if (inView && fullyLoaded) {
-								// const result = await fetchMore({
-								// 	variables: {
-								// 		offset: data.users.length,
-								// 	},
-								// });
-							}
-							setFullyLoaded(!inView);
-						}}
-					/>
-				)} */}
 		</div>
 	);
 }

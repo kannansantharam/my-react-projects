@@ -28,11 +28,11 @@ function User({ users, fetchMore }) {
 				<Table
 					height={height}
 					rowCount={users.length}
-					headerHeight={20}
+					headerHeight={50}
 					rowHeight={50}
 					width={width}
 					className="border-b"
-					headerClassName=" text-sm font-medium text-gray-900 px-6 py-4 text-left"
+					headerClassName="text-black font-extrabold text-sm px-6 py-4 text-left"
 					rowClassName="border-b hover:bg-gray-200 group"
 					rowGetter={({ index }) => users[index]}
 				>

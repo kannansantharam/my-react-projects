@@ -54,11 +54,7 @@ function DeleteUser() {
 						onAction: back,
 					},
 				]}
-			>
-				{/* <Modal.Section>
-					<UserForm />
-				</Modal.Section> */}
-			</Modal>
+			></Modal>
 		</div>
 	);
 }
