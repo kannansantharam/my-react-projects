@@ -16,8 +16,8 @@ function Users() {
 				offset: 0,
 				limit: 1000,
 			},
-			notifyOnNetworkStatusChange: true,
-			fetchPolicy: "cache-and-network",
+			//	notifyOnNetworkStatusChange: true,
+			//fetchPolicy: "cache-and-network",
 		}
 	);
 	if (networkStatus === NetworkStatus.loading)

@@ -1,11 +1,13 @@
 import React from "react";
 import UserForm from "./UserForm";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery, useApolloClient, gql } from "@apollo/client";
 import { UPDATE_USER, GET_USER, GET_USERS } from "./usersgql";
 import { Redirect, useHistory, useParams } from "react-router-dom";
 import { Modal } from "@shopify/polaris";
+import { WriteUsers } from "./UserCache";
 
 function UserDetail() {
+	const client = new useApolloClient();
 	let history = useHistory();
 	let back = () => {
 		//e.stopPropagation();
@@ -23,19 +25,40 @@ function UserDetail() {
 			onError(error) {
 				return `Failed to get user details ->   ${error.message}`;
 			},
-			refetchQueries: [{ query: GET_USERS }],
+			update(cache, { data }) {
+				cache.modify({
+					fields: {
+						users(existingUsers = []) {
+							cache.writeQuery({
+								query: GET_USERS,
+								data: {
+									users: [data.update_users.returning[0], ...existingUsers],
+								},
+								variables: {
+									id: data.update_users.returning[0].id,
+								},
+							});
+							//back();
+						},
+					},
+				});
+			},
+			//refetchQueries: [{ query: GET_USERS }],
 		});
 	if (updatingUserLoading) {
 		return "Updating user";
 	}
 	if (updatedUsers) {
-		return (
-			<Redirect
-				to={{
-					pathname: "/",
-				}}
-			/>
-		);
+		//let returnedUser = updatedUsers.update_users.returning[0];
+		//WriteUsers(returnedUser, client);
+		back();
+		// return (
+		// 	<Redirect
+		// 		to={{
+		// 			pathname: "/",
+		// 		}}
+		// 	/>
+		// );
 	}
 	function addUpdateUser(users) {
 		let updateObj = {
