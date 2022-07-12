@@ -3,8 +3,9 @@ import { Icon } from "@shopify/polaris";
 import { EditMajor, DeleteMajor } from "@shopify/polaris-icons";
 import { Link, useLocation } from "react-router-dom";
 import { AutoSizer, Column, Table } from "react-virtualized";
-//import "react-virtualized/styles.css";
+import "react-virtualized/styles.css";
 import "./users.css";
+
 function User({ users, fetchMore }) {
 	let location = useLocation();
 	const onScroll = async (tableRef) => {
@@ -116,7 +117,7 @@ function User({ users, fetchMore }) {
 		</AutoSizer>
 	);
 	return (
-		<div className="h-screen overflow-y-auto" onScroll={(e) => onScroll(e)}>
+		<div className="h-screen" onScroll={(e) => onScroll(e)}>
 			<Example className="h-screen overflow-y-auto" />
 		</div>
 	);

@@ -38181,7 +38181,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       rowClassName: "border-b hover:bg-gray-200 group",
       rowGetter: ({ index: index2 }) => users[index2]
     }, /* @__PURE__ */ import_react112.default.createElement(Column, {
-      className: "text-sm font-medium text-gray-900 px-6 py-4 text-center",
+      className: "text-sm font-medium text-gray-100 px-6 py-4 text-center",
+      label: "#",
+      dataKey: "",
+      width: 150,
+      cellRenderer: ({ rowIndex }) => {
+        return rowIndex + 1;
+      }
+    }), /* @__PURE__ */ import_react112.default.createElement(Column, {
+      className: "text-sm font-medium text-gray-100 px-6 py-4 text-center",
       label: "Name",
       dataKey: "name",
       width,

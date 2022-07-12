@@ -12548,3 +12548,14 @@ body {
 }
 .ReactVirtualized__List {
 }
+
+/* src/components/Users/users.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.text-sm {
+  font-size: 14px;
+}
+.text-center {
+  text-align: center;
+}
